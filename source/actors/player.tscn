@@ -17,21 +17,27 @@ size = Vector2(128, 128)
 size = Vector2(128, 128)
 
 [node name="Gloom" type="CharacterBody2D"]
+z_index = 10
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_aoa8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
 texture = ExtResource("2_5cj1b")
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_ocrjt")
 
 [node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]
-offset_top = -68.0
-offset_bottom = -68.0
+offset_top = -132.0
+offset_bottom = -132.0
+metadata/_edit_use_anchors_ = true
 
 [node name="DashArrow" parent="." instance=ExtResource("4_vt5gr")]
+offset_top = -64.0
+offset_bottom = -64.0
+metadata/_edit_use_anchors_ = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_k66pc")
@@ -49,6 +55,7 @@ script = ExtResource("5_sr2d6")
 script = ExtResource("6_2lhc3")
 
 [node name="StarCollider" type="Area2D" parent="."]
+position = Vector2(0, -64)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StarCollider"]

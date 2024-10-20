@@ -20,6 +20,8 @@ class_name Room extends Node2D
 signal room_exited
 
 @export var player: Player
+@export var room_size: Vector2
+@export var camera_zoom: float
 
 # Initial state stuff
 var spawn_point: Vector2
@@ -39,7 +41,7 @@ func _ready() -> void:
 	capture_initial_state()
 
 	# simplified for early dev
-	player.position = spawn_point
+	#player.position = spawn_point
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quick_reset"): # todo: only active room, somehow

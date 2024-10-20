@@ -2,17 +2,16 @@ Bloom and Gloom platformer
 (sorta)
 (also not the original b&g platformer idea)
 
-Bugs
+Bugs etc
     -   Steps to reproduce
         Expected behavior
         Actual behavior
     -   Collide with star
         Cleanses star
         Should you have to dash?
+    -   Should all stars apply the same impulse?
 
 Major todos
-    Rooms / room transitions
-        Camera changes size to room
     Fine tune character movement
     Lighting
     Music
@@ -65,7 +64,7 @@ Small dark hallway for screen transitions
 Credits
 Kenny icons
 Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
-gdquest statemachine?
+gdquest statemachine
 
 Addons
 Better-Terrain                              
