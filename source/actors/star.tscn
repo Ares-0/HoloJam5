@@ -3,25 +3,31 @@
 [ext_resource type="Script" path="res://source/actors/star.gd" id="1_7ts7t"]
 [ext_resource type="Texture2D" uid="uid://b0h2vnx2qxc3n" path="res://assets/white_circle.png" id="1_rxoau"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ohjb3"]
-radius = 33.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtqo8"]
 radius = 230.035
 
-[node name="Star" type="Area2D"]
-collision_layer = 2
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohjb3"]
+radius = 33.0
+
+[node name="Star" type="Node2D"]
 script = ExtResource("1_7ts7t")
-
-[node name="OverlapShape" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_ohjb3")
-
-[node name="NearbyShape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vtqo8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("1_rxoau")
 
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[node name="NearbyShape" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NearbyShape"]
+shape = SubResource("CircleShape2D_vtqo8")
+
+[node name="OverlapShape" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapShape"]
+shape = SubResource("CircleShape2D_ohjb3")
+
+[connection signal="area_entered" from="OverlapShape" to="." method="_on_overlap_shape_area_entered"]

@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -600.0
 const ACCELERATION = 60.0*50.0 # per second aka per 60 frames, so N is delta per frame
 const FRICTION = 60.0*30.0
 const AIR_FRICTION = 60.0*10.0
+const DASH_IMPULSE = 1000.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity") # default default is 980
 
@@ -75,12 +76,12 @@ func has_nearest_star() -> bool:
 		return false
 	return true
 
-func _on_star_collider_area_shape_entered(_area_rid: RID, area: Area2D, area_shape_index: int, _local_shape_index: int) -> void:
-	if area is Star:
-		if area_shape_index == (area as Star).shape.NEAR:
-			nearby_stars.append(area)
+func _on_star_collider_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	var parent: Star = area.get_parent() as Star
+	if parent is Star: # or != null?
+		nearby_stars.append(parent)
 
-func _on_star_collider_area_shape_exited(_area_rid: RID, area: Area2D, area_shape_index: int, _local_shape_index: int) -> void:
-	if area is Star:
-		if area_shape_index == (area as Star).shape.NEAR:
-			nearby_stars.erase(area)
+func _on_star_collider_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	var parent: Star = area.get_parent() as Star
+	if parent is Star:
+		nearby_stars.erase(parent)

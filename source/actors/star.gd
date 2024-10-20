@@ -1,10 +1,11 @@
-class_name Star extends Area2D
+class_name Star extends Node2D
 
 enum shape {OVERLAP, NEAR}
 
 @export var clean: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var near_shape: Area2D = $NearbyShape
 
 func _ready() -> void:
 	if clean:
@@ -29,8 +30,9 @@ func corrupt() -> void:
 
 func cleanse() -> void:
 	sprite.set_modulate(Color.WHITE)
+	near_shape.set_deferred("monitorable", false)
+	near_shape.visible = false
 
-
-func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_overlap_shape_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		self.cleanse()

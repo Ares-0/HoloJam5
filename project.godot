@@ -82,7 +82,8 @@ debug_01={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Stars"
+2d_physics/layer_2="Star near"
+2d_physics/layer_3="Star overlap"
 
 [rendering]
 
