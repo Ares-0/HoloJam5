@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://nf3l7necirw1"]
+
+[ext_resource type="Script" path="res://source/actors/player.gd" id="1_aoa8o"]
+[ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_5cj1b"]
+[ext_resource type="PackedScene" uid="uid://b4wv6oj37jqjf" path="res://source/components/DebugLabel.tscn" id="3_i26ru"]
+[ext_resource type="Script" path="res://source/states/state_machine.gd" id="3_k66pc"]
+[ext_resource type="Script" path="res://source/states/player_states/player_idle.gd" id="4_lxr0t"]
+[ext_resource type="Script" path="res://source/states/player_states/player_air.gd" id="5_sr2d6"]
+[ext_resource type="Script" path="res://source/states/player_states/player_dash.gd" id="6_2lhc3"]
+[ext_resource type="Script" path="res://source/states/player_states/player_run.gd" id="6_tqfvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocrjt"]
+size = Vector2(128, 128)
+
+[node name="Gloom" type="CharacterBody2D"]
+script = ExtResource("1_aoa8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5cj1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ocrjt")
+
+[node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]
+offset_top = -68.0
+offset_bottom = -68.0
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_k66pc")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_lxr0t")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("6_tqfvu")
+
+[node name="Air" type="Node" parent="StateMachine"]
+script = ExtResource("5_sr2d6")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("6_2lhc3")

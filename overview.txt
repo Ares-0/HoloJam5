@@ -1,0 +1,43 @@
+Bloom and Gloom platformer
+(sorta)
+(also not the original b&g platformer idea)
+
+
+Player Character
+Gloom
+When near a lamp, can right click to dash through the lamp
+thats it
+
+Challenge comes from the timing, not over/undershooting it
+Hold right click to launch further (faster?)
+
+When player falls into darkness, they reset
+
+
+Lamps
+Two modes
+Dark (corrupted), still has faint light
+Light (cleaned), bright
+Gloom dashes through a lamp to cleanse it
+
+
+Visuals
+Rooms are mostly pitch black
+Lamps light up area slightly
+
+
+Rooms
+Single room puzzles
+Small dark hallway for screen transitions
+
+
+
+
+
+
+Credits
+Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
+gdquest statemachine?
+
+Addons
+Better-Terrain                              

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4wv6oj37jqjf"]
+
+[ext_resource type="Script" path="res://source/components/debug_label.gd" id="1_tljtr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbmch"]
+
+[node name="DebugLabel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tljtr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = -49.0
+offset_top = -478.0
+offset_right = 49.0
+grow_horizontal = 2
+text = "test test test
+line 2
+line 3"
+label_settings = SubResource("LabelSettings_wbmch")
+horizontal_alignment = 1
+vertical_alignment = 2
