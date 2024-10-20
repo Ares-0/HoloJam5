@@ -2,6 +2,27 @@ Bloom and Gloom platformer
 (sorta)
 (also not the original b&g platformer idea)
 
+Bugs
+    - Steps to reproduce
+      Expected behavior
+      Actual behavior
+
+Major todos
+    Import background
+    Rooms / room transitions
+        Camera changes size to room
+    Fine tune character movement
+    Lighting
+    Music
+    Menus
+    SFX
+    Character art
+
+Stretch
+    Intro cutscene
+    Ending
+    Bloom character
+
 
 Player Character
 Gloom
@@ -27,6 +48,7 @@ After finishing the game, dolly out to see all the stars are lit up and twinklin
 Visuals
 Rooms are mostly pitch black
 Stars light up area slightly
+Make sure to have a distinct boundary line for "nearby a star"
 
 
 Rooms

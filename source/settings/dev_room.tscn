@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmxjhtcva1inj"]
+[gd_scene load_steps=5 format=3 uid="uid://cmxjhtcva1inj"]
 
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="1_dv3om"]
 [ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="2_t4eic"]
+[ext_resource type="Script" path="res://source/actors/camera.gd" id="3_lfgdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5f6p"]
 size = Vector2(96, 102)
@@ -30,3 +31,7 @@ position = Vector2(883, 276)
 
 [node name="Star2" parent="." instance=ExtResource("2_t4eic")]
 position = Vector2(242, 238)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("3_lfgdw")
