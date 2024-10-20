@@ -34,6 +34,9 @@ func physics_update(delta: float) -> void:
 			falling = true
 
 	# Change states
+	if Input.is_action_just_pressed("dash"):
+		if player.has_nearest_star():
+			finished.emit("Dash")
 	if player.is_on_floor():
 		if is_zero_approx(input_direction):
 			finished.emit("Idle", {do_land = true})

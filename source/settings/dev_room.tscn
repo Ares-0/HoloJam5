@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmxjhtcva1inj"]
+[gd_scene load_steps=4 format=3 uid="uid://cmxjhtcva1inj"]
 
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="1_dv3om"]
+[ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="2_t4eic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5f6p"]
 size = Vector2(96, 102)
@@ -23,3 +24,9 @@ scale = Vector2(13.4, 0.4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 shape = SubResource("RectangleShape2D_j5f6p")
+
+[node name="Star" parent="." instance=ExtResource("2_t4eic")]
+position = Vector2(883, 276)
+
+[node name="Star2" parent="." instance=ExtResource("2_t4eic")]
+position = Vector2(242, 238)

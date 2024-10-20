@@ -5,25 +5,28 @@ Bloom and Gloom platformer
 
 Player Character
 Gloom
-When near a lamp, can right click to dash through the lamp
-thats it
+Right click performs *dash*
+    When near a lamp, can right click to dash through the lamp
+    Challenge comes from the timing, not over/undershooting it
+    Hold right click to launch further (faster?)
 
-Challenge comes from the timing, not over/undershooting it
-Hold right click to launch further (faster?)
+Left click performs a *tilt*
+    Stops all current momentum and does a slight air dodge in a direction for correction
 
 When player falls into darkness, they reset
 
 
-Lamps
+Stars
 Two modes
 Dark (corrupted), still has faint light
 Light (cleaned), bright
 Gloom dashes through a lamp to cleanse it
-
+Initial main menu is a mostly black screen with some stars
+After finishing the game, dolly out to see all the stars are lit up and twinkling
 
 Visuals
 Rooms are mostly pitch black
-Lamps light up area slightly
+Stars light up area slightly
 
 
 Rooms
@@ -36,6 +39,7 @@ Small dark hallway for screen transitions
 
 
 Credits
+Kenny icons
 Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
 gdquest statemachine?
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://nf3l7necirw1"]
+[gd_scene load_steps=12 format=3 uid="uid://nf3l7necirw1"]
 
 [ext_resource type="Script" path="res://source/actors/player.gd" id="1_aoa8o"]
 [ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_5cj1b"]
 [ext_resource type="PackedScene" uid="uid://b4wv6oj37jqjf" path="res://source/components/DebugLabel.tscn" id="3_i26ru"]
 [ext_resource type="Script" path="res://source/states/state_machine.gd" id="3_k66pc"]
 [ext_resource type="Script" path="res://source/states/player_states/player_idle.gd" id="4_lxr0t"]
+[ext_resource type="PackedScene" uid="uid://dnyv2hoyl7hif" path="res://source/gui/dash_arrow.tscn" id="4_vt5gr"]
 [ext_resource type="Script" path="res://source/states/player_states/player_air.gd" id="5_sr2d6"]
 [ext_resource type="Script" path="res://source/states/player_states/player_dash.gd" id="6_2lhc3"]
 [ext_resource type="Script" path="res://source/states/player_states/player_run.gd" id="6_tqfvu"]
@@ -12,18 +13,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocrjt"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oot4"]
+size = Vector2(128, 128)
+
 [node name="Gloom" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_aoa8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_5cj1b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PhysicsShape" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_ocrjt")
 
 [node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]
 offset_top = -68.0
 offset_bottom = -68.0
+
+[node name="DashArrow" parent="." instance=ExtResource("4_vt5gr")]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_k66pc")
@@ -39,3 +47,12 @@ script = ExtResource("5_sr2d6")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("6_2lhc3")
+
+[node name="StarCollider" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StarCollider"]
+shape = SubResource("RectangleShape2D_7oot4")
+
+[connection signal="area_shape_entered" from="StarCollider" to="." method="_on_star_collider_area_shape_entered"]
+[connection signal="area_shape_exited" from="StarCollider" to="." method="_on_star_collider_area_shape_exited"]

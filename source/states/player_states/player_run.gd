@@ -10,6 +10,7 @@ func physics_update(delta: float) -> void:
 		return
 
 	var direction: float = player.get_input_direction()
+
 	if not is_zero_approx(direction):
 		#player.velocity.x = direction * player.SPEED # 1 frame velocity update
 		player.velocity.x = move_toward(player.velocity.x, player.SPEED*direction, player.ACCELERATION*delta)		
@@ -18,5 +19,8 @@ func physics_update(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump"):
 		finished.emit("Air", {do_jump = true})
+	elif Input.is_action_just_pressed("dash"):
+		if player.has_nearest_star():
+			finished.emit("Dash")
 	elif is_zero_approx(direction):
 		finished.emit("Idle")

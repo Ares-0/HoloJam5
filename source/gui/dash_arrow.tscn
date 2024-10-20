@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnyv2hoyl7hif"]
+
+[ext_resource type="Texture2D" uid="uid://c13y4457vfkyr" path="res://assets/kenny/arrowRight.png" id="1_h7hnc"]
+[ext_resource type="Script" path="res://source/gui/dash_arrow.gd" id="1_r4oy4"]
+
+[node name="DashArrow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_r4oy4")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.015
+anchor_bottom = 0.015
+offset_top = -10.8
+offset_right = 178.0
+offset_bottom = 11.2
+grow_vertical = 2
+texture = ExtResource("1_h7hnc")
+region_rect = Rect2(8, 0, 42, 50)
+patch_margin_left = 13
+patch_margin_right = 28
