@@ -14,6 +14,7 @@ var room_count: int = 0
 func _ready() -> void:
 	fill_room_list()
 	current_room.room_exited.connect(_on_room_exited)
+	current_room.enable()
 	$ColorRect.visible = true
 
 func _process(_delta: float) -> void:
@@ -63,6 +64,7 @@ func change_to_room(num: int) -> void:
 	tween2.tween_property(current_room, "modulate", Color.WHITE, 1.0)
 	await tween2.finished
 	
+	current_room.enable()
 	# reenable player movement
 
 func center_camera_on_room() -> void:
@@ -84,7 +86,6 @@ func fill_room_list() -> void:
 	# This is just down here because I want it at the bottom of the file
 	room_list = [
 		"res://source/settings/practice_room_01.tscn",
-		"res://source/settings/empty_room.tscn",
-		"res://source/settings/practice_room_01.tscn"
+		"res://source/settings/practice_room_02.tscn"
 	]
 	room_count = room_list.size()

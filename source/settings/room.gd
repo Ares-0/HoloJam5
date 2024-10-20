@@ -23,6 +23,8 @@ signal room_exited
 @export var room_size: Vector2
 @export var camera_zoom: float
 
+var room_enabled: bool = false # if false, some room elements are disabled or not ready
+
 # Initial state stuff
 var spawn_point: Vector2
 var stars_list: Array[Star] = []
@@ -36,12 +38,11 @@ func _ready() -> void:
 	var scene_path = get_tree().current_scene.scene_file_path
 	assert(player_respawn_ref != null, str("Level ", scene_path, " does not have a player spawn point"))
 	assert(exit_ref != null, str("Level ", scene_path, " does not have an exit"))
+	assert(camera_zoom != 0, str("Level ", scene_path, " zoom not set"))
+	assert(room_size != Vector2.ZERO, str("Level ", scene_path, " size not set"))
 
 	exit_ref.exit_entered.connect(_on_room_exit_exit_entered)
 	capture_initial_state()
-
-	# simplified for early dev
-	#player.position = spawn_point
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quick_reset"): # todo: only active room, somehow
@@ -67,6 +68,10 @@ func reset() -> void:
 		else:
 			stars_list[idx].corrupt()
 
+func enable():
+	room_enabled = true
+
 func _on_room_exit_exit_entered() -> void:
-	room_exited.emit()
-	print("leaving room")
+	if room_enabled:
+		room_exited.emit()
+		print("leaving room")

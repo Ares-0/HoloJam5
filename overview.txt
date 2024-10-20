@@ -10,6 +10,9 @@ Bugs etc
         Cleanses star
         Should you have to dash?
     -   Should all stars apply the same impulse?
+    -   Occasional collide with star
+        star should cleanse
+        star sometimes can be targeted again
 
 Major todos
     Fine tune character movement
