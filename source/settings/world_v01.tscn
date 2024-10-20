@@ -1,21 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyfw7tkb1qr8j"]
+[gd_scene load_steps=5 format=3 uid="uid://dyfw7tkb1qr8j"]
 
 [ext_resource type="PackedScene" uid="uid://c7pc7bes3n6ct" path="res://source/settings/practice_room_01.tscn" id="1_k44td"]
 [ext_resource type="Script" path="res://source/settings/world_v_01.gd" id="1_m55d4"]
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="3_l1ixq"]
+[ext_resource type="Script" path="res://source/actors/camera.gd" id="4_r7w8w"]
 
-[node name="WorldV01" type="Node2D"]
+[node name="WorldV01" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_m55d4")
+current_room = NodePath("PracticeRoom01")
 
 [node name="PracticeRoom01" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_k44td")]
-position = Vector2(1280, 0)
-player = NodePath("../Common/Gloom")
+player = NodePath("../Gloom")
 
-[node name="Common" type="Node2D" parent="."]
-position = Vector2(1280, 0)
-
-[node name="Gloom" parent="Common" instance=ExtResource("3_l1ixq")]
+[node name="Gloom" parent="." instance=ExtResource("3_l1ixq")]
 position = Vector2(93, 463)
 
-[node name="Camera2D" type="Camera2D" parent="Common"]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+script = ExtResource("4_r7w8w")

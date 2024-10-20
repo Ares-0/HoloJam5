@@ -18,7 +18,7 @@ scale = Vector2(13.4, 0.4)
 shape = SubResource("RectangleShape2D_0oc4n")
 
 [node name="RoomExit" parent="." instance=ExtResource("1_2poqi")]
-position = Vector2(1223, 583)
+position = Vector2(727, 583)
 
 [node name="PlayerRespawn" parent="." instance=ExtResource("3_f0nx1")]
 position = Vector2(60, 577)

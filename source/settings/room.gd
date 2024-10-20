@@ -11,10 +11,13 @@ class_name Room extends Node2D
 #	loading the room? the next room?
 #	resizing the camera
 #	player moving to position
+#	fade old room to black, zoom camera/player to position, fade new room in from black
 #
 # These rooms should have really basic initial states that fully describe them
 # Player starting location
 # If stars are on or not
+
+signal room_exited
 
 @export var player: Player
 
@@ -31,15 +34,19 @@ func _ready() -> void:
 	var scene_path = get_tree().current_scene.scene_file_path
 	assert(player_respawn_ref != null, str("Level ", scene_path, " does not have a player spawn point"))
 	assert(exit_ref != null, str("Level ", scene_path, " does not have an exit"))
-	
-	# connect signals
+
+	exit_ref.exit_entered.connect(_on_room_exit_exit_entered)
 	capture_initial_state()
 
+	# simplified for early dev
+	player.position = spawn_point
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quick_reset"): # todo: only active room, somehow
 		reset()
+
+func set_player(p: Player) -> void:
+	player = p
 
 func capture_initial_state() -> void:
 	# I want to do this this way because these are simple rooms
@@ -59,4 +66,5 @@ func reset() -> void:
 			stars_list[idx].corrupt()
 
 func _on_room_exit_exit_entered() -> void:
-	pass # Replace with function body.
+	room_exited.emit()
+	print("leaving room")

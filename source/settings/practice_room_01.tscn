@@ -40,5 +40,3 @@ position = Vector2(1233, 586)
 
 [node name="PlayerRespawn" parent="." instance=ExtResource("4_3rwrs")]
 position = Vector2(75, 599)
-
-[connection signal="exit_entered" from="RoomExit" to="." method="_on_room_exit_exit_entered"]
