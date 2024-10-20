@@ -4,6 +4,7 @@ extends Node2D
 
 var room_index: int = 0
 var room_list: Array[String]
+var room_count: int = 0
 
 @onready var player: Player = $Gloom
 
@@ -36,8 +37,16 @@ func fill_room_list() -> void:
 		"res://source/settings/empty_room.tscn",
 		"res://source/settings/practice_room_01.tscn"
 	]
+	room_count = room_list.size()
+
+func exit_world() -> void:
+	# After final room, quit or show cutscene or something
+	print("Game Over")
+	get_tree().quit()
 
 func _on_room_exited() -> void:
 	room_index += 1
-	# if room index is high enough, end game
-	change_to_room(room_index)
+	if room_index >= room_count:
+		exit_world()
+	else:
+		change_to_room(room_index)
