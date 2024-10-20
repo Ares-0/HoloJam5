@@ -3,9 +3,12 @@ Bloom and Gloom platformer
 (also not the original b&g platformer idea)
 
 Bugs
-    - Steps to reproduce
-      Expected behavior
-      Actual behavior
+    -   Steps to reproduce
+        Expected behavior
+        Actual behavior
+    -   Collide with star
+        Cleanses star
+        Should you have to dash?
 
 Major todos
     Import background

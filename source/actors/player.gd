@@ -76,9 +76,12 @@ func has_nearest_star() -> bool:
 		return false
 	return true
 
+func forget_star(star: Star) -> void:
+	nearby_stars.erase(star)
+
 func _on_star_collider_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	var parent: Star = area.get_parent() as Star
-	if parent is Star: # or != null?
+	if parent is Star and parent.is_corrupted(): # or != null?
 		nearby_stars.append(parent)
 
 func _on_star_collider_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dos7k57tdeqp6"]
+
+[ext_resource type="Script" path="res://source/settings/room_exit.gd" id="1_2ovyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_midjy"]
+size = Vector2(66, 64)
+
+[node name="RoomExit" type="Area2D"]
+script = ExtResource("1_2ovyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_midjy")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
