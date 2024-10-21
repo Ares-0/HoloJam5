@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://pr82feiectmp"]
+[gd_scene load_steps=6 format=3 uid="uid://pr82feiectmp"]
 
 [ext_resource type="Script" path="res://source/actors/star.gd" id="1_7ts7t"]
 [ext_resource type="Texture2D" uid="uid://b0h2vnx2qxc3n" path="res://assets/white_circle.png" id="1_rxoau"]
+[ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="3_52xph"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtqo8"]
 radius = 230.035
@@ -30,5 +31,9 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OverlapShape"]
 shape = SubResource("CircleShape2D_ohjb3")
+
+[node name="Light" type="PointLight2D" parent="."]
+color = Color(0.880833, 0.87, 1, 1)
+texture = ExtResource("3_52xph")
 
 [connection signal="area_entered" from="OverlapShape" to="." method="_on_overlap_shape_area_entered"]

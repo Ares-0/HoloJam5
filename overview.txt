@@ -10,7 +10,7 @@ Bugs etc
         Cleanses star
         Should you have to dash?
     -   Should all stars apply the same impulse?
-    -   Occasional collide with star
+    -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
 
@@ -26,6 +26,7 @@ Stretch
     Intro cutscene
     Ending
     Bloom character
+    smokey texture on dark stars
 
 
 Player Character
@@ -53,6 +54,11 @@ Visuals
 Rooms are mostly pitch black
 Stars light up area slightly
 Make sure to have a distinct boundary line for "nearby a star"
+
+Lighting
+    Pitch black
+        insta death
+    
 
 
 Rooms

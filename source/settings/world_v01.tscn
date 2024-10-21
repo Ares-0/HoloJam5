@@ -42,3 +42,7 @@ position = Vector2(640, 360)
 script = ExtResource("4_r7w8w")
 
 [node name="FadeAnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.190762, 0.190762, 0.190762, 1)

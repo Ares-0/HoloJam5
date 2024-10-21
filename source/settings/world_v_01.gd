@@ -15,6 +15,7 @@ func _ready() -> void:
 	fill_room_list()
 	current_room.room_exited.connect(_on_room_exited)
 	current_room.enable()
+	current_room.set_player(player)
 	$ColorRect.visible = true
 
 func _process(_delta: float) -> void:

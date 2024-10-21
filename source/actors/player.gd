@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-
 const SPEED = 300.0 # really should be max speed
 const JUMP_VELOCITY = -600.0
 const ACCELERATION = 60.0*50.0 # per second aka per 60 frames, so N is delta per frame
@@ -13,13 +12,14 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity") #
 
 var last_direction: float = 0.0
 
-var nearby_stars: Array[Star] = []
+#var nearby_stars: Array[Star] = []
 var nearest_star: Star = null
 var angle_to_nearest_star: float = 0.0
 
 @onready var machine: StateMachine = $StateMachine
 @onready var dlabel: DebugLabel = $DebugLabel
 @onready var dash_arrow: DashArrow = $DashArrow
+@onready var star_collider: Area2D = $StarCollider
 
 func _ready() -> void:
 	# Prep initial is_on_floor
@@ -57,7 +57,12 @@ func update_nearest_star() -> void:
 	var closest_star: Star
 	var closest_delta: float = 1e9
 	var delta: float = 0.0
-	for star in nearby_stars:
+	for area in star_collider.get_overlapping_areas():
+		if not area.monitorable:
+			continue
+		var star: Star = area.get_parent() as Star
+		if star == null:
+			continue
 		delta = self.global_position.distance_squared_to(star.global_position)
 		if delta < closest_delta:
 			closest_delta = delta
@@ -76,15 +81,17 @@ func has_nearest_star() -> bool:
 		return false
 	return true
 
-func forget_star(star: Star) -> void:
-	nearby_stars.erase(star)
+#func forget_star(star: Star) -> void:
+	#nearby_stars.erase(star)
 
-func _on_star_collider_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	var parent: Star = area.get_parent() as Star
-	if parent is Star and parent.is_corrupted(): # or != null?
-		nearby_stars.append(parent)
+func _on_star_collider_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	pass
+	#var parent: Star = area.get_parent() as Star
+	#if parent is Star and parent.is_corrupted(): # or != null?
+		#nearby_stars.append(parent)
 
-func _on_star_collider_area_shape_exited(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
-	var parent: Star = area.get_parent() as Star
-	if parent is Star:
-		nearby_stars.erase(parent)
+func _on_star_collider_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
+	pass
+	#var parent: Star = area.get_parent() as Star
+	#if parent is Star:
+		#nearby_stars.erase(parent)

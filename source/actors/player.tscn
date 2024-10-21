@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://nf3l7necirw1"]
+[gd_scene load_steps=13 format=3 uid="uid://nf3l7necirw1"]
 
 [ext_resource type="Script" path="res://source/actors/player.gd" id="1_aoa8o"]
 [ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_5cj1b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://source/states/player_states/player_air.gd" id="5_sr2d6"]
 [ext_resource type="Script" path="res://source/states/player_states/player_dash.gd" id="6_2lhc3"]
 [ext_resource type="Script" path="res://source/states/player_states/player_run.gd" id="6_tqfvu"]
+[ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="10_i2k6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocrjt"]
 size = Vector2(128, 128)
@@ -60,6 +61,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StarCollider"]
 shape = SubResource("RectangleShape2D_7oot4")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_i2k6b")
 
 [connection signal="area_shape_entered" from="StarCollider" to="." method="_on_star_collider_area_shape_entered"]
 [connection signal="area_shape_exited" from="StarCollider" to="." method="_on_star_collider_area_shape_exited"]
