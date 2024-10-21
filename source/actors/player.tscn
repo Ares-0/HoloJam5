@@ -65,6 +65,7 @@ shape = SubResource("RectangleShape2D_7oot4")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -64)
 scale = Vector2(1.5, 1.5)
+energy = 0.5
 texture = ExtResource("10_i2k6b")
 
 [connection signal="area_shape_entered" from="StarCollider" to="." method="_on_star_collider_area_shape_entered"]

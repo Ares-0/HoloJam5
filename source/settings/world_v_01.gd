@@ -86,7 +86,7 @@ func _on_room_exited() -> void:
 func fill_room_list() -> void:
 	# This is just down here because I want it at the bottom of the file
 	room_list = [
-		"res://source/settings/practice_room_01.tscn",
-		"res://source/settings/practice_room_02.tscn"
+		"res://source/settings/rooms/practice_room_01.tscn",
+		"res://source/settings/rooms/practice_room_02.tscn"
 	]
 	room_count = room_list.size()

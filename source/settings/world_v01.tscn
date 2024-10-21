@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dyfw7tkb1qr8j"]
 
-[ext_resource type="PackedScene" uid="uid://c7pc7bes3n6ct" path="res://source/settings/practice_room_01.tscn" id="1_k44td"]
+[ext_resource type="PackedScene" uid="uid://c7pc7bes3n6ct" path="res://source/settings/rooms/practice_room_01.tscn" id="1_k44td"]
 [ext_resource type="Script" path="res://source/settings/world_v_01.gd" id="1_m55d4"]
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="3_l1ixq"]
 [ext_resource type="Script" path="res://source/actors/camera.gd" id="4_r7w8w"]

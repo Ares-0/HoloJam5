@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dos7k57tdeqp6"]
 
-[ext_resource type="Script" path="res://source/settings/room_exit.gd" id="1_2ovyn"]
-[ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="2_6x87g"]
+[ext_resource type="Script" path="res://source/actors/room_exit.gd" id="1_0glun"]
+[ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="2_d8gmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_midjy"]
 size = Vector2(66, 64)
 
 [node name="RoomExit" type="Area2D"]
-script = ExtResource("1_2ovyn")
+script = ExtResource("1_0glun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_midjy")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-texture = ExtResource("2_6x87g")
+texture = ExtResource("2_d8gmx")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

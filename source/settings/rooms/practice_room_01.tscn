@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://source/settings/room.gd" id="1_6sfub"]
 [ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="1_jm3rb"]
-[ext_resource type="PackedScene" uid="uid://dos7k57tdeqp6" path="res://source/settings/RoomExit.tscn" id="3_pr5us"]
-[ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/settings/player_respawn.tscn" id="4_3rwrs"]
+[ext_resource type="PackedScene" uid="uid://dos7k57tdeqp6" path="res://source/actors/room_exit.tscn" id="3_pr5us"]
+[ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/actors/player_respawn.tscn" id="4_3rwrs"]
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="5_fi6j3"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="6_a8jrt"]
 
