@@ -9,16 +9,14 @@ Bugs etc
     -   Collide with star
         Cleanses star
         Should you have to dash?
-    -   Should all stars apply the same impulse?
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
-    -   Move player onto 2 tile gap
-        Player should fall through
-        Doesn't, too wide
-    -   Hold right while dashing in the same direction
-        Speed should be additive at best (like DI)
-        Speed is much less than just dashing (no moving)
+
+Small todos that aren't bugs
+    omnidirectional DI
+    railgun stars
+    stars with different impulses?
 
 Major todos
     Fine tune character movement

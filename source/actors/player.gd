@@ -1,14 +1,15 @@
 class_name Player
 extends CharacterBody2D
 
-const SPEED = 300.0 # really should be max speed
-const JUMP_VELOCITY = -600.0
-const ACCELERATION = 60.0*50.0 # per second aka per 60 frames, so N is delta per frame
-const FRICTION = 60.0*30.0
-const AIR_FRICTION = 60.0*10.0
-const DASH_IMPULSE = 1000.0
+const SPEED: float = 400.0 # really should be max speed
+const JUMP_IMPULSE: float = -600.0
+const ACCELERATION: float = 60.0*60.0 # per second aka per 60 frames, so N is delta per frame
+const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
+const AIR_FRICTION: float = 60.0*10.0
+const DASH_IMPULSE: float = 1000.0
+const BASE_GRAVITY: float = 980.0*1.5
 
-var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity") # default default is 980
+var gravity: float = BASE_GRAVITY
 
 var last_direction: float = 0.0
 
@@ -44,7 +45,7 @@ func get_input_direction() -> float:
 	return direction
 
 func reset_gravity() -> void:
-	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+	gravity = BASE_GRAVITY
 
 func update_arrow() -> void:
 	if nearest_star == null:

@@ -12,7 +12,6 @@ func physics_update(delta: float) -> void:
 	var direction: float = player.get_input_direction()
 
 	if not is_zero_approx(direction):
-		#player.velocity.x = direction * player.SPEED # 1 frame velocity update
 		player.velocity.x = move_toward(player.velocity.x, player.SPEED*direction, player.ACCELERATION*delta)		
 
 	player.move_and_slide()
