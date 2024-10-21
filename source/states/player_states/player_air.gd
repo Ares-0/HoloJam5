@@ -20,7 +20,7 @@ func physics_update(delta: float) -> void:
 	var input_direction: float = player.get_input_direction()
 	if is_zero_approx(input_direction):
 		player.velocity.x = move_toward(player.velocity.x, 0, player.AIR_FRICTION*delta)
-	else:
+	else: # todo: apply omni DI
 		if abs(player.velocity.x) > player.SPEED:
 			# if impulsed, just do friction
 			player.velocity.x = move_toward(player.velocity.x, 0, player.AIR_FRICTION*delta)

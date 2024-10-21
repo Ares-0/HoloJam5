@@ -23,6 +23,9 @@ func _ready() -> void:
 	current_room.enable()
 	current_room.set_player(player)
 	$ColorRect.visible = true
+	
+	if room_index > 0:
+		change_to_room(room_index)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("skip_room"):

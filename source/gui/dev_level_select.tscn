@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccsd6ihjjcox0"]
+
+[ext_resource type="Script" path="res://source/gui/dev_level_select.gd" id="1_r5lj3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5lj3")
+
+[node name="debugB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 140.0
+offset_right = 354.0
+offset_bottom = 251.0
+text = "Debug"
+
+[node name="worldB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 144.0
+offset_right = 853.0
+offset_bottom = 254.0
+text = "World P"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 287.0
+offset_right = 717.0
+offset_bottom = 310.0
+text = "Todo: stage select box"
+
+[connection signal="pressed" from="debugB" to="." method="_on_debug_b_pressed"]
+[connection signal="pressed" from="worldB" to="." method="_on_world_b_pressed"]

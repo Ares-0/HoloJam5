@@ -2,29 +2,37 @@ Bloom and Gloom platformer
 (sorta)
 (also not the original b&g platformer idea)
 
+Next
+    Air dodge
+    omni DI
+    1 song or a sfx or two (placeholders are fine)
+    block out a few stages a day
+
 Bugs etc
     -   Steps to reproduce
         Expected behavior
         Actual behavior
-    -   Collide with star
-        Cleanses star
-        Should you have to dash?
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
 
 Small todos that aren't bugs
     omnidirectional DI
+        DI can reduce or increase air friction on x
+        reduce or increase gravity on y
     railgun stars
-    stars with different impulses?
+    stars with different impulses? yes
+    Door doesn't open if skipped a star? yes
+    have to dash to cleanse star? yes
 
 Major todos
-    Fine tune character movement
-    Lighting
     Music
     Menus
     SFX
     Character art
+    itch page
+    Lighting (ongoing)
+    Fine tune character movement (ongoing)
 
 Stretch
     Intro cutscene
@@ -63,6 +71,14 @@ Lighting
     Pitch black
         insta death
     
+
+SFX
+    Walk?
+    Jump
+    Dash
+    Death
+    Reset
+    Room change
 
 
 Rooms
