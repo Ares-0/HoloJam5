@@ -13,6 +13,12 @@ Bugs etc
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
+    -   Move player onto 2 tile gap
+        Player should fall through
+        Doesn't, too wide
+    -   Hold right while dashing in the same direction
+        Speed should be additive at best (like DI)
+        Speed is much less than just dashing (no moving)
 
 Major todos
     Fine tune character movement

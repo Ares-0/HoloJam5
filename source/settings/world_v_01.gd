@@ -1,8 +1,11 @@
-extends Node2D
+class_name World extends Node2D
+
+# World is a sequence of levels/rooms
+# All the levels/rooms?
 
 @export var current_room: Room
+@export var room_index: int = 0
 
-var room_index: int = 0
 var room_list: Array[String]
 var room_count: int = 0
 
@@ -12,6 +15,9 @@ var room_count: int = 0
 @onready var camera: GameCamera = $Camera2D
 
 func _ready() -> void:
+	var scene_path = get_tree().current_scene.scene_file_path
+	assert(current_room != null, str("World ", scene_path, " does not have an inital room"))
+
 	fill_room_list()
 	current_room.room_exited.connect(_on_room_exited)
 	current_room.enable()
@@ -19,7 +25,12 @@ func _ready() -> void:
 	$ColorRect.visible = true
 
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("skip_room"):
+		room_index += 1
+		if room_index >= room_count:
+			exit_world()
+		else:
+			change_to_room(room_index)
 
 func change_to_room(num: int) -> void:
 	# Catch out of bounds error

@@ -24,6 +24,11 @@ texture = ExtResource("1_sgwij")
 15:0/0/metadata/_better_terrain = {
 "type": 7
 }
+16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:0/0/metadata/_better_terrain = {
+"type": 8
+}
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
@@ -227,7 +232,17 @@ texture = ExtResource("1_sgwij")
 "type": 0
 }
 2:5/0 = 0
+2:5/0/metadata/_better_terrain = {
+4: [0],
+8: [0],
+"type": 0
+}
 3:5/0 = 0
+3:5/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+"type": 0
+}
 4:5/0 = 0
 4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:5/0/metadata/_better_terrain = {
@@ -1019,7 +1034,7 @@ metadata/_better_terrain = {
 "source_id": 0
 }], ["Invisible Wall", Color(0.44677, 0.389715, 0.649605, 1), 0, [], {
 "path": ""
-}], ["Black", Color(0.380504, 0.429903, 0.833819, 1), 0, [], {
+}], ["Black Barrier", Color(0.380504, 0.429903, 0.833819, 1), 0, [], {
 "path": ""
 }]],
 "version": "0.2"
