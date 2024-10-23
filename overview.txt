@@ -80,6 +80,23 @@ SFX
     Reset
     Room change
 
+Rigging
+    Body        1
+    Arms        2x2
+    Legs        1x2
+    Head        1
+    Ears        2x2
+    Mouth       Shapekey
+    Eyes        Shapekey        Narrow
+
+Animations
+    (For left right I think I can just make a right animation then swap the eye colors and mirror the render)
+    Run         10-15
+    Jump        5-7
+    Fall        7
+    Land        5
+    Dash        7ish
+    Air dodge   2 frames might be enough
 
 Rooms
 Single room puzzles

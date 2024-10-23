@@ -28,7 +28,7 @@ var room_enabled: bool = false # if false, some room elements are disabled or no
 # Initial state stuff
 var spawn_point: Vector2
 var stars_list: Array[Star] = []
-var stars_state_list: Array[bool] = []
+var stars_state_list: Array[int] = []
 
 @onready var player_respawn_ref: Node2D = $PlayerRespawn
 @onready var exit_ref: RoomExit = $RoomExit
@@ -43,10 +43,15 @@ func _ready() -> void:
 
 	exit_ref.exit_entered.connect(_on_room_exit_exit_entered)
 	capture_initial_state()
+	
+	exit_ref.deactivate()
+	check_door()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quick_reset"): # todo: only active room, somehow
 		reset()
+
+	check_door() # this doesn't have to be every frame
 
 func set_player(p: Player) -> void:
 	player = p
@@ -58,18 +63,26 @@ func capture_initial_state() -> void:
 	for child in get_children():
 		if child is Star:
 			stars_list.append(child)
-			stars_state_list.append(child.clean)
+			stars_state_list.append(child.charges)
 
 func reset() -> void:
 	player.position = spawn_point
 	for idx in range(0, stars_list.size()):
-		if stars_state_list[idx]:
-			stars_list[idx].cleanse()
-		else:
-			stars_list[idx].corrupt()
+		stars_list[idx].set_charges(stars_state_list[idx])
+	exit_ref.deactivate()
+	check_door()
 
 func enable():
 	room_enabled = true
+
+func check_door() -> void:
+	var all_clean: bool = true
+	for star in stars_list:
+		if not star.clean:
+			all_clean = false
+			break
+	if all_clean:
+		exit_ref.activate()
 
 func _on_room_exit_exit_entered() -> void:
 	if room_enabled:

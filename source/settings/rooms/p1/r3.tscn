@@ -26,7 +26,7 @@ tile_map_data = PackedByteArray("AAACAAIAAAAMACEAAAADAAIAAAAKACIAAAAEAAIAAAAMACE
 tile_set = ExtResource("2_ldc34")
 
 [node name="RoomExit" parent="." instance=ExtResource("3_o0hty")]
-position = Vector2(800, 608)
+position = Vector2(742, 642)
 
 [node name="PlayerRespawn" parent="." instance=ExtResource("4_6maog")]
 z_index = 20
@@ -34,6 +34,7 @@ position = Vector2(51, 642)
 
 [node name="Star" parent="." instance=ExtResource("5_1o4rf")]
 position = Vector2(338, 523)
+charges = 3
 
 [node name="CanvasModulateMed" type="CanvasModulate" parent="."]
 visible = false

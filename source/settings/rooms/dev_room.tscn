@@ -22,6 +22,7 @@ position = Vector2(478, 413)
 [node name="Star" parent="." instance=ExtResource("2_n8y4o")]
 position = Vector2(746, 291)
 always_on = true
+charges = 2
 
 [node name="Star2" parent="." instance=ExtResource("2_n8y4o")]
 position = Vector2(173, 353)

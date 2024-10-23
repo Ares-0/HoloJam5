@@ -2,6 +2,7 @@ class_name Star extends Node2D
 
 @export var clean: bool = false
 @export var always_on: bool = false
+@export var charges: int = 1
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var near_shape: Area2D = $NearbyShape
@@ -16,6 +17,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debug_01"):
 		flip()
+	$Label.text = str(charges)
 
 func is_corrupted() -> bool:
 	return not clean
@@ -23,10 +25,8 @@ func is_corrupted() -> bool:
 func flip() -> void:
 	if clean:
 		corrupt()
-		clean = false
 	else:
 		cleanse()
-		clean = true
 
 func corrupt() -> void:
 	sprite.set_modulate(Color.BLACK)
@@ -34,6 +34,7 @@ func corrupt() -> void:
 	near_shape.visible = true
 	light.energy = 1.0
 	light.scale = Vector2.ONE
+	clean = false
 
 func cleanse() -> void:
 	sprite.set_modulate(Color.WHITE)
@@ -41,9 +42,25 @@ func cleanse() -> void:
 	near_shape.visible = false
 	light.energy = 1.5
 	light.scale = Vector2.ONE * 2.0
+	clean = true
 
-func _on_overlap_shape_area_entered(area: Area2D) -> void:
-	if area.get_parent() is Player:
+func charge_down() -> void:
+	if charges > 0:
+		charges -= 1
+	if charges == 0:
 		if not always_on:
 			self.cleanse()
-			#area.get_parent().forget_star(self)
+
+func set_charges(value: int) -> void:
+	if value >= 0:
+		charges = value
+	if charges == 0:
+		cleanse()
+	else:
+		corrupt()
+
+func _on_overlap_shape_area_entered(area: Area2D) -> void:
+	var obj = area.get_parent()
+	if obj is Player:
+		charge_down()
+		obj.end_dash()

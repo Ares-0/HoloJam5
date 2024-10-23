@@ -24,7 +24,7 @@ tile_map_data = PackedByteArray("AAACAAIAAAAMACEAAAADAAIAAAAKACIAAAAEAAIAAAAMACE
 tile_set = ExtResource("2_1vyfu")
 
 [node name="RoomExit" parent="." instance=ExtResource("3_q8qom")]
-position = Vector2(1274, 604)
+position = Vector2(1222, 642)
 
 [node name="PlayerRespawn" parent="." instance=ExtResource("4_gl256")]
 z_index = 20

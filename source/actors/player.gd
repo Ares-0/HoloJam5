@@ -5,7 +5,7 @@ const SPEED: float = 400.0 # really should be max speed
 const JUMP_IMPULSE: float = -600.0
 const ACCELERATION: float = 60.0*60.0 # per second aka per 60 frames, so N is delta per frame
 const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
-const AIR_FRICTION: float = 60.0*10.0
+const AIR_FRICTION: float = 60.0*20.0
 const DASH_IMPULSE: float = 1000.0
 const BASE_GRAVITY: float = 980.0*1.5
 
@@ -33,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 	#print(nearby_stars)
 	update_nearest_star()
 	update_arrow()
+	#print(self.velocity.length())
 
 func get_input_direction() -> float:
 	var direction: float = Input.get_axis("move_left", "move_right")
@@ -82,8 +83,9 @@ func has_nearest_star() -> bool:
 		return false
 	return true
 
-#func forget_star(star: Star) -> void:
-	#nearby_stars.erase(star)
+func end_dash() -> void:
+	if machine.state.name == "Dash":
+		machine._transition_to_next_state("Air")
 
 func _on_star_collider_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	pass
