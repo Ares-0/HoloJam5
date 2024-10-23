@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://nf3l7necirw1"]
+[gd_scene load_steps=14 format=3 uid="uid://nf3l7necirw1"]
 
 [ext_resource type="Script" path="res://source/actors/player.gd" id="1_aoa8o"]
 [ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_5cj1b"]
 [ext_resource type="PackedScene" uid="uid://b4wv6oj37jqjf" path="res://source/components/DebugLabel.tscn" id="3_i26ru"]
 [ext_resource type="Script" path="res://source/states/state_machine.gd" id="3_k66pc"]
+[ext_resource type="Texture2D" uid="uid://cd5mls8i352ao" path="res://assets/gloom/gloom_idle_right.png" id="3_n321f"]
 [ext_resource type="Script" path="res://source/states/player_states/player_idle.gd" id="4_lxr0t"]
 [ext_resource type="PackedScene" uid="uid://dnyv2hoyl7hif" path="res://source/gui/dash_arrow.tscn" id="4_vt5gr"]
 [ext_resource type="Script" path="res://source/states/player_states/player_air.gd" id="5_sr2d6"]
@@ -23,8 +24,14 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("1_aoa8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -64)
 texture = ExtResource("2_5cj1b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+scale = Vector2(0.579828, 0.579828)
+texture = ExtResource("3_n321f")
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -64)

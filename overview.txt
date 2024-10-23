@@ -15,6 +15,9 @@ Bugs etc
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
+    -   Transition from room to room
+        Can see stars
+        Should be no stars
 
 Small todos that aren't bugs
     omnidirectional DI
@@ -22,8 +25,10 @@ Small todos that aren't bugs
         reduce or increase gravity on y
     railgun stars
     stars with different impulses? yes
-    Door doesn't open if skipped a star? yes
-    have to dash to cleanse star? yes
+    have to dash to cleanse star? ???
+    bounce momentum?
+        When leaving air state, remember final velocity
+        if returning to air state in time, restore most of that velocity
 
 Major todos
     Music

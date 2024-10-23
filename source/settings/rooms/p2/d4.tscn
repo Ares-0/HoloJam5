@@ -32,10 +32,10 @@ z_index = 20
 position = Vector2(51, 578)
 
 [node name="Star" parent="." instance=ExtResource("5_rrnk4")]
-position = Vector2(111, -128)
+position = Vector2(420, 523)
 
 [node name="Star2" parent="." instance=ExtResource("5_rrnk4")]
-position = Vector2(374, -128)
+position = Vector2(1089, 498)
 
 [node name="Star3" parent="." instance=ExtResource("5_rrnk4")]
 position = Vector2(617, -124)

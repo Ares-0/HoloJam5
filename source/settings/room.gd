@@ -87,7 +87,6 @@ func check_door() -> void:
 func _on_room_exit_exit_entered() -> void:
 	if room_enabled:
 		room_exited.emit()
-		print("leaving room")
 
 func _on_killzone_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:

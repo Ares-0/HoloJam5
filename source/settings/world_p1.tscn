@@ -10,7 +10,7 @@
 [node name="WorldP1" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_reeh1")
 current_room = NodePath("RoomR1")
-room_index = 2
+room_index = 8
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

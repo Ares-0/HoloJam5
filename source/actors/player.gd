@@ -2,11 +2,12 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED: float = 400.0 # really should be max speed
-const JUMP_IMPULSE: float = -600.0
+const AIR_SPEED: float = 400.0
+const JUMP_IMPULSE: float = -500.0
 const ACCELERATION: float = 60.0*60.0 # per second aka per 60 frames, so N is delta per frame
 const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
 const AIR_FRICTION: float = 60.0*20.0
-const DASH_IMPULSE: float = 1000.0
+const DASH_IMPULSE: float = 900.0
 const BASE_GRAVITY: float = 980.0*1.5
 
 var gravity: float = BASE_GRAVITY
@@ -33,9 +34,10 @@ func _physics_process(_delta: float) -> void:
 	#print(nearby_stars)
 	update_nearest_star()
 	update_arrow()
-	#print(self.velocity.length())
+	# print(self.velocity.length())
 
 func get_input_direction() -> float:
+	# technically this is only x
 	var direction: float = Input.get_axis("move_left", "move_right")
 
 	# I do not like this here
@@ -77,6 +79,13 @@ func update_nearest_star() -> void:
 	else:
 		nearest_star = closest_star		# Pardon the similar naming
 		angle_to_nearest_star = self.global_position.angle_to_point(closest_star.global_position)
+
+func get_directional_influence() -> Vector2:
+	var direction_x: float = Input.get_axis("move_left", "move_right")
+	var direction_y: float = Input.get_axis("move_up", "move_down")
+
+	var last: Vector2 = Vector2(direction_x, direction_y)
+	return last.normalized()
 
 func has_nearest_star() -> bool:
 	if nearest_star == null:
