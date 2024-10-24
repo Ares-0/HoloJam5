@@ -1,8 +1,11 @@
 extends PlayerState
 
 var falling: bool = false # if false, going upwards, if true going downwards
+var frame_entered: int = 0
 
 func enter(_old_state: String, msg := {}) -> void:
+	frame_entered = Engine.get_frames_drawn()
+
 	# player is jumping
 	if msg.has("do_jump"):
 		player.velocity.y = player.JUMP_IMPULSE
@@ -12,11 +15,12 @@ func enter(_old_state: String, msg := {}) -> void:
 		falling = true
 
 func physics_update(delta: float) -> void:
+	# print(Engine.get_frames_drawn() - frame_entered)
 	# Short jump
 	if Input.is_action_just_released("jump") and player.velocity.y < 0: # aka moving upwards
 		player.gravity *= 2 # higher multiplier means quicker stop after release
 
-	# Update x movement
+	# Update x velocity
 	var input_direction: float = player.get_input_direction()
 	if is_zero_approx(input_direction):
 		player.velocity.x = move_toward(player.velocity.x, 0, player.AIR_FRICTION*delta)
@@ -25,10 +29,13 @@ func physics_update(delta: float) -> void:
 			# if impulsed, just do friction
 			player.velocity.x = move_toward(player.velocity.x, 0, player.AIR_FRICTION*delta)
 		else:
-			# ramping up to run speed
-			player.velocity.x = move_toward(player.velocity.x, player.SPEED*input_direction, player.ACCELERATION*delta)		
-
-	player.velocity.y += player.gravity * delta
+			# ramping up to max air speed
+			player.velocity.x = move_toward(player.velocity.x, player.AIR_SPEED*input_direction, player.ACCELERATION*delta)		
+	
+	var di: Vector2 = player.get_directional_influence()
+	# Update y velocity
+	var di_y: float = 1.0 + di.y * 0.2
+	player.velocity.y += player.gravity * delta * di_y
 	player.move_and_slide()
 
 	if not falling:

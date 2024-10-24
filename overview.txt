@@ -18,6 +18,9 @@ Bugs etc
     -   Transition from room to room
         Can see stars
         Should be no stars
+    -   Air momentum often gets totally killed
+        - Potentially fixed by resetting gravity on air enter
+    -   Right after respawn arrow takes a few frames to deactivate
 
 Small todos that aren't bugs
     omnidirectional DI

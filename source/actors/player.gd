@@ -3,12 +3,12 @@ extends CharacterBody2D
 
 const SPEED: float = 400.0 # really should be max speed
 const AIR_SPEED: float = 400.0
-const JUMP_IMPULSE: float = -500.0
+const JUMP_IMPULSE: float = -650.0
 const ACCELERATION: float = 60.0*60.0 # per second aka per 60 frames, so N is delta per frame
 const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
-const AIR_FRICTION: float = 60.0*20.0
+const AIR_FRICTION: float = 60.0*15.0
 const DASH_IMPULSE: float = 900.0
-const BASE_GRAVITY: float = 980.0*1.5
+const BASE_GRAVITY: float = 980.0*1.6
 
 var gravity: float = BASE_GRAVITY
 
@@ -34,7 +34,9 @@ func _physics_process(_delta: float) -> void:
 	#print(nearby_stars)
 	update_nearest_star()
 	update_arrow()
-	# print(self.velocity.length())
+	
+	# if self.velocity.length() > 20:
+	# 	print(self.velocity.length())
 
 func get_input_direction() -> float:
 	# technically this is only x

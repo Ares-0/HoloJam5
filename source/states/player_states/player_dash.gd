@@ -4,6 +4,7 @@ var exit_by_click: bool = false
 
 func enter(_old_state: String, _msg := {}) -> void:
 	exit_by_click = false
+	player.reset_gravity()
 
 func exit() -> void:
 	#print("done dashing")

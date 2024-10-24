@@ -34,6 +34,7 @@ scale = Vector2(0.579828, 0.579828)
 texture = ExtResource("3_n321f")
 
 [node name="PhysicsShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_ocrjt")
 
@@ -63,6 +64,7 @@ script = ExtResource("5_sr2d6")
 script = ExtResource("6_2lhc3")
 
 [node name="StarCollider" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -64)
 collision_mask = 2
 
