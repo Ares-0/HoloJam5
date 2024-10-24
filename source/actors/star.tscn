@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://pr82feiectmp"]
+[gd_scene load_steps=7 format=3 uid="uid://pr82feiectmp"]
 
 [ext_resource type="Script" path="res://source/actors/star.gd" id="1_7ts7t"]
 [ext_resource type="Texture2D" uid="uid://b0h2vnx2qxc3n" path="res://assets/white_circle.png" id="1_rxoau"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="3_52xph"]
+[ext_resource type="PackedScene" uid="uid://b82w53hb3ln1r" path="res://source/actors/star_charges.tscn" id="4_suu72"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtqo8"]
 radius = 230.035
@@ -43,12 +44,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -20.0
-offset_top = -72.0
+offset_top = -11.0
 offset_right = 20.0
-offset_bottom = -49.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "1"
 horizontal_alignment = 1
+
+[node name="StarCharges" parent="." instance=ExtResource("4_suu72")]
 
 [connection signal="area_entered" from="OverlapShape" to="." method="_on_overlap_shape_area_entered"]
