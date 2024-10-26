@@ -19,6 +19,7 @@ Bugs etc
     -   Air momentum often gets totally killed
         - Potentially fixed by resetting gravity on air enter
     -   Right after respawn arrow takes a few frames to deactivate
+    -   Player sprites are washed out from the light
 
 Small todos that aren't bugs
     railgun stars
@@ -27,6 +28,7 @@ Small todos that aren't bugs
     bounce momentum?
         When leaving air state, remember final velocity
         if returning to air state in time, restore most of that velocity
+    It reaally feels like you should be able to tilt after each dash, but that is too much power
 
 Major todos
     Music
@@ -78,11 +80,16 @@ Lighting
 SFX
     Walk?
     Jump
-    Dash
+v1  Dash
+v1  Tilt
     Death
     Reset
     Room change
 
+Model
+    Eyes bigger
+    Head bigger?
+    Outline thicker
 Rigging
     Body        1
     Arms        2x2
@@ -114,6 +121,14 @@ Credits
 Kenny icons
 Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
 gdquest statemachine
+various / tbd                               https://joshuuu.itch.io/short-loopable-background-music
 
 Addons
 Better-Terrain                              
+
+Programs
+Godot
+Blender
+chiptone
+Gimp
+Clip Studio Paint

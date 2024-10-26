@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dntatxj727v2d"]
+
+[ext_resource type="Script" path="res://source/singletons/audio_manager.gd" id="1_uf4ve"]
+[ext_resource type="AudioStream" uid="uid://ch4vo7vck3urc" path="res://assets/sound/Forever Lost.ogg" id="2_ehl5g"]
+[ext_resource type="AudioStream" uid="uid://cuevjphqphtdl" path="res://assets/sound/zap_02.wav" id="3_wdlg8"]
+[ext_resource type="AudioStream" uid="uid://bcwfa7t6ix43o" path="res://assets/sound/blip_up.wav" id="4_bo44m"]
+[ext_resource type="AudioStream" uid="uid://dkghcgtst77vu" path="res://assets/sound/tilt_02.wav" id="4_vk2pp"]
+[ext_resource type="AudioStream" uid="uid://4bd77mglcngc" path="res://assets/sound/blip_down.wav" id="5_kohil"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_uf4ve")
+
+[node name="OST_Main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ehl5g")
+volume_db = -30.0
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wdlg8")
+volume_db = -10.0
+
+[node name="Tilt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vk2pp")
+volume_db = -10.0
+
+[node name="Sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bo44m")
+
+[node name="Sound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kohil")

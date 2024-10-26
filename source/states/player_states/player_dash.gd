@@ -1,10 +1,13 @@
 extends PlayerState
 
 var exit_by_click: bool = false
+var start_frame: int = 0
 
 func enter(_old_state: String, _msg := {}) -> void:
 	exit_by_click = false
+	start_frame = Engine.get_frames_drawn()
 	player.reset_gravity()
+	player.audio_man_ref.play("Dash")
 
 func exit() -> void:
 	#print("done dashing")
@@ -23,4 +26,10 @@ func physics_update(_delta: float) -> void:
 	if Input.is_action_just_released("dash"):
 		exit_by_click = true
 		finished.emit("Air")
+		return
 	# If collided with star handled in player script
+
+	# want this to be after the click check
+	var frames_elapsed: int = Engine.get_frames_drawn() - start_frame
+	if frames_elapsed % 6 == 0:
+		player.audio_man_ref.play("Dash")

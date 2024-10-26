@@ -9,7 +9,7 @@ const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
 const AIR_FRICTION: float = 60.0*15.0
 const DASH_IMPULSE: float = 900.0
 const BASE_GRAVITY: float = 980.0*1.6
-const TILT_IMPULSE: float = 750
+const TILT_IMPULSE: float = 700
 
 var gravity: float = BASE_GRAVITY
 
@@ -26,6 +26,7 @@ var tilt_charges: int = 0
 @onready var dlabel: DebugLabel = $DebugLabel
 @onready var dash_arrow: DashArrow = $DashArrow
 @onready var star_collider: Area2D = $StarCollider
+@onready var audio_man_ref: Node = $"/root/AudioManager"
 
 func _ready() -> void:
 	# Prep initial is_on_floor

@@ -11,6 +11,7 @@ var dir: Vector2
 func enter(_old_state: String, _msg := {}) -> void:
 	if player.get_tilt_charges() == 0:
 		finished.emit("Air") # this works and doesn't (seem to) mess up Air
+		return
 	else:
 		player.decrement_tilt_charge()
 
@@ -18,6 +19,11 @@ func enter(_old_state: String, _msg := {}) -> void:
 	# I think there's a place for this somewhere, but it feels bad atm
 	if dir == Vector2.ZERO:
 		finished.emit("Air")
+		return
+
+	player.audio_man_ref.play("Tilt")
+	player.velocity = dir * player.TILT_IMPULSE * 2
+	player.move_and_slide()
 
 	timer = Timer.new()
 	timer.wait_time = DURATION
