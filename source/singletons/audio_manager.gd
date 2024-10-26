@@ -4,6 +4,7 @@ extends Node
 
 func _ready() -> void:
 	print("audio")
+	$OST_Main.play()
 
 func _process(_delta: float) -> void:
 	pass

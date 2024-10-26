@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ch4vo7vck3urc"
+path="res://.godot/imported/Forever Lost.ogg-1784e45840d9df718275748a0ead0b45.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Forever Lost.ogg"
+dest_files=["res://.godot/imported/Forever Lost.ogg-1784e45840d9df718275748a0ead0b45.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

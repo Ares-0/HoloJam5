@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://source/singletons/audio_manager.gd" id="1_uf4ve"]
 [ext_resource type="AudioStream" uid="uid://ch4vo7vck3urc" path="res://assets/sound/Forever Lost.ogg" id="2_ehl5g"]
-[ext_resource type="AudioStream" uid="uid://cuevjphqphtdl" path="res://assets/sound/zap_02.wav" id="3_wdlg8"]
+[ext_resource type="AudioStream" uid="uid://0kaplqqcasn8" path="res://assets/sound/dash_02.wav" id="3_av1js"]
 [ext_resource type="AudioStream" uid="uid://bcwfa7t6ix43o" path="res://assets/sound/blip_up.wav" id="4_bo44m"]
 [ext_resource type="AudioStream" uid="uid://dkghcgtst77vu" path="res://assets/sound/tilt_02.wav" id="4_vk2pp"]
 [ext_resource type="AudioStream" uid="uid://4bd77mglcngc" path="res://assets/sound/blip_down.wav" id="5_kohil"]
@@ -12,10 +12,11 @@ script = ExtResource("1_uf4ve")
 
 [node name="OST_Main" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ehl5g")
-volume_db = -30.0
+volume_db = -33.0
+parameters/looping = true
 
 [node name="Dash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wdlg8")
+stream = ExtResource("3_av1js")
 volume_db = -10.0
 
 [node name="Tilt" type="AudioStreamPlayer" parent="."]
