@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bpn8trpmyrfwc"]
+[gd_scene load_steps=8 format=4 uid="uid://bpn8trpmyrfwc"]
 
 [ext_resource type="Script" path="res://source/settings/room.gd" id="1_om816"]
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_ldc34"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/actors/player_respawn.tscn" id="4_6maog"]
 [ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="5_1o4rf"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="6_6xy37"]
+[ext_resource type="PackedScene" uid="uid://b2hpyj317swti" path="res://source/gui/signs/sign_dash.tscn" id="7_y010n"]
 
 [node name="r3" type="Node2D"]
 script = ExtResource("1_om816")
@@ -56,5 +57,8 @@ z_index = 20
 top_level = true
 position = Vector2(-909, -59)
 polygon = PackedVector2Array(1087, 925, 1087, 766, 1531, 766, 1530, 935)
+
+[node name="SignDash" parent="." instance=ExtResource("7_y010n")]
+position = Vector2(370, 582)
 
 [connection signal="area_entered" from="Killzone" to="." method="_on_killzone_area_entered"]

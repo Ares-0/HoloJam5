@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c27fuq3a0nx24"]
+
+[ext_resource type="Texture2D" uid="uid://cjty42oicaexx" path="res://assets/kenny/tile_0120.png" id="1_udh7g"]
+[ext_resource type="Texture2D" uid="uid://df3vm0i4qi7ua" path="res://assets/kenny/tile_0121.png" id="2_qujx6"]
+[ext_resource type="Texture2D" uid="uid://c2thft2ayhtt3" path="res://assets/kenny/tile_0122.png" id="3_ris6f"]
+[ext_resource type="Texture2D" uid="uid://dmbc0jus3ygje" path="res://assets/kenny/tile_0086.png" id="4_m83d1"]
+
+[sub_resource type="SystemFont" id="SystemFont_b3yec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1xosw"]
+font = SubResource("SystemFont_b3yec")
+font_size = 32
+
+[node name="SignMove" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -96.0
+offset_top = -26.0
+offset_right = -3.0
+offset_bottom = 19.0
+text = "Move:"
+label_settings = SubResource("LabelSettings_1xosw")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(43, -27)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-14, 21)
+texture = ExtResource("1_udh7g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 21)
+texture = ExtResource("2_qujx6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(14, 21)
+texture = ExtResource("3_ris6f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 7)
+texture = ExtResource("4_m83d1")

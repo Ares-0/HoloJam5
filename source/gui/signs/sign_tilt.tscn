@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5gn6gfwbi1il"]
+
+[ext_resource type="Texture2D" uid="uid://db0l2oxg7qxne" path="res://assets/kenny/tile_0077.png" id="1_y6d3u"]
+[ext_resource type="Texture2D" uid="uid://cjty42oicaexx" path="res://assets/kenny/tile_0120.png" id="2_laras"]
+[ext_resource type="Texture2D" uid="uid://df3vm0i4qi7ua" path="res://assets/kenny/tile_0121.png" id="3_2kuam"]
+[ext_resource type="Texture2D" uid="uid://c2thft2ayhtt3" path="res://assets/kenny/tile_0122.png" id="4_64wpf"]
+[ext_resource type="Texture2D" uid="uid://dmbc0jus3ygje" path="res://assets/kenny/tile_0086.png" id="5_1vb55"]
+
+[sub_resource type="SystemFont" id="SystemFont_bljdy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pi5ev"]
+font = SubResource("SystemFont_bljdy")
+font_size = 32
+
+[node name="SignDash" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(20, 0)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_y6d3u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(31.5, 7.5)
+texture = ExtResource("2_laras")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(45.5, 7.5)
+texture = ExtResource("3_2kuam")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+position = Vector2(59.5, 7.5)
+texture = ExtResource("4_64wpf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+position = Vector2(45.5, -6.5)
+texture = ExtResource("5_1vb55")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -71.0
+offset_top = -26.0
+offset_right = 22.0
+offset_bottom = 19.0
+text = "Tilt:       +"
+label_settings = SubResource("LabelSettings_pi5ev")
