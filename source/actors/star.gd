@@ -8,12 +8,15 @@ class_name Star extends Node2D
 @onready var near_shape: Area2D = $NearbyShape
 @onready var light: PointLight2D = $Light
 @onready var charge_indicator: StarCharges = $StarCharges
+@onready var scratches: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	if clean:
 		cleanse()
 	else:
 		corrupt()
+	scratches.frame = randi_range(0, 5)
+	scratches.rotation_degrees = [0, 180][randi_range(0, 1)]
 	charge_indicator.set_charges(charges-1)
 
 func _process(_delta: float) -> void:
@@ -33,11 +36,12 @@ func flip() -> void:
 		cleanse()
 
 func corrupt() -> void:
-	sprite.set_modulate(Color.BLACK)
+	#sprite.set_modulate(Color.BLACK)
 	near_shape.set_deferred("monitorable", true)
 	near_shape.visible = true
 	light.energy = 1.0
 	light.scale = Vector2.ONE
+	scratches.visible = true
 	clean = false
 
 func cleanse() -> void:
@@ -46,6 +50,7 @@ func cleanse() -> void:
 	near_shape.visible = false
 	light.energy = 1.5
 	light.scale = Vector2.ONE * 2.0
+	scratches.visible = false
 	clean = true
 
 func charge_down() -> void:

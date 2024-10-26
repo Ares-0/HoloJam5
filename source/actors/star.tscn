@@ -1,15 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://pr82feiectmp"]
+[gd_scene load_steps=13 format=3 uid="uid://pr82feiectmp"]
 
 [ext_resource type="Script" path="res://source/actors/star.gd" id="1_7ts7t"]
 [ext_resource type="Texture2D" uid="uid://b0h2vnx2qxc3n" path="res://assets/white_circle.png" id="1_rxoau"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="3_52xph"]
 [ext_resource type="PackedScene" uid="uid://b82w53hb3ln1r" path="res://source/actors/star_charges.tscn" id="4_suu72"]
+[ext_resource type="Texture2D" uid="uid://440hxx5mektp" path="res://assets/scratches/star_scratch_01.png" id="5_1k1ji"]
+[ext_resource type="Texture2D" uid="uid://fi2xahrqrxgl" path="res://assets/scratches/star_scratch_02.png" id="6_3wjct"]
+[ext_resource type="Texture2D" uid="uid://ddjdb8b7hl4up" path="res://assets/scratches/star_scratch_03.png" id="7_agebt"]
+[ext_resource type="Texture2D" uid="uid://bfiyqvuxsqquu" path="res://assets/scratches/star_scratch_04.png" id="8_dxjht"]
+[ext_resource type="Texture2D" uid="uid://dxyil5kufjkxo" path="res://assets/scratches/star_scratch_05.png" id="9_io721"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtqo8"]
 radius = 230.035
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ohjb3"]
 radius = 33.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tny01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1k1ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3wjct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_agebt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dxjht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_io721")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Star" type="Node2D"]
 script = ExtResource("1_7ts7t")
@@ -53,5 +81,10 @@ text = "1"
 horizontal_alignment = 1
 
 [node name="StarCharges" parent="." instance=ExtResource("4_suu72")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("SpriteFrames_tny01")
+autoplay = "default"
 
 [connection signal="area_entered" from="OverlapShape" to="." method="_on_overlap_shape_area_entered"]
