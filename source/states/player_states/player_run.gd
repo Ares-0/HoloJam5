@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(_old_state: String, _msg := {}) -> void:
-	pass
+	player.reset_tilt_charges()
 	# I think just animation stuff here
 
 func physics_update(delta: float) -> void:

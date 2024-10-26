@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(_old_state: String, _msg := {}) -> void:
-	pass
+	player.reset_tilt_charges()
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():

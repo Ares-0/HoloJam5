@@ -3,8 +3,6 @@ Bloom and Gloom platformer
 (also not the original b&g platformer idea)
 
 Next
-    Air dodge
-    omni DI
     1 song or a sfx or two (placeholders are fine)
     block out a few stages a day
 
@@ -23,9 +21,6 @@ Bugs etc
     -   Right after respawn arrow takes a few frames to deactivate
 
 Small todos that aren't bugs
-    omnidirectional DI
-        DI can reduce or increase air friction on x
-        reduce or increase gravity on y
     railgun stars
     stars with different impulses? yes
     have to dash to cleanse star? ???

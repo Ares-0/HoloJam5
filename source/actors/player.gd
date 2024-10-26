@@ -9,6 +9,7 @@ const FRICTION: float = 60.0*55.0 # high friction = greater deceleration
 const AIR_FRICTION: float = 60.0*15.0
 const DASH_IMPULSE: float = 900.0
 const BASE_GRAVITY: float = 980.0*1.6
+const TILT_IMPULSE: float = 750
 
 var gravity: float = BASE_GRAVITY
 
@@ -18,6 +19,9 @@ var last_direction: float = 0.0
 var nearest_star: Star = null
 var angle_to_nearest_star: float = 0.0
 
+var TILT_CHARGES_MAX: int = 1
+var tilt_charges: int = 0
+
 @onready var machine: StateMachine = $StateMachine
 @onready var dlabel: DebugLabel = $DebugLabel
 @onready var dash_arrow: DashArrow = $DashArrow
@@ -26,6 +30,7 @@ var angle_to_nearest_star: float = 0.0
 func _ready() -> void:
 	# Prep initial is_on_floor
 	velocity = Vector2.ZERO
+	tilt_charges = TILT_CHARGES_MAX
 	move_and_slide()
 
 func _physics_process(_delta: float) -> void:
@@ -88,6 +93,16 @@ func get_directional_influence() -> Vector2:
 
 	var last: Vector2 = Vector2(direction_x, direction_y)
 	return last.normalized()
+
+func reset_tilt_charges() -> void:
+	tilt_charges = TILT_CHARGES_MAX
+
+func decrement_tilt_charge() -> void:
+	if tilt_charges > 0:
+		tilt_charges -= 1
+
+func get_tilt_charges() -> int:
+	return tilt_charges
 
 func has_nearest_star() -> bool:
 	if nearest_star == null:
