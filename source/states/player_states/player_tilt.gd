@@ -4,11 +4,13 @@ extends PlayerState
 # Used for quick correction or an extra bit of distance
 # Only used from the air state
 
-const DURATION: float = 0.10
+const DURATION: float = 0.08
 var timer: Timer
 var dir: Vector2
 
 func enter(_old_state: String, _msg := {}) -> void:
+	# todo: hide arrow during tilt
+
 	if player.get_tilt_charges() == 0:
 		finished.emit("Air") # this works and doesn't (seem to) mess up Air
 		return

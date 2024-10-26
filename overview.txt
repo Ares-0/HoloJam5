@@ -16,8 +16,6 @@ Bugs etc
     -   Transition from room to room
         Can see stars
         Should be no stars
-    -   Air momentum often gets totally killed
-        - Potentially fixed by resetting gravity on air enter
     -   Right after respawn arrow takes a few frames to deactivate
     -   Player sprites are washed out from the light
 
@@ -29,6 +27,8 @@ Small todos that aren't bugs
         When leaving air state, remember final velocity
         if returning to air state in time, restore most of that velocity
     It reaally feels like you should be able to tilt after each dash, but that is too much power
+    Draw 15 total star scratches
+        Make sure they all have leeway to not get cut off
 
 Major todos
     Music
@@ -43,7 +43,6 @@ Stretch
     Intro cutscene
     Ending
     Bloom character
-    smokey texture on dark stars
 
 
 Player Character
@@ -118,7 +117,7 @@ Small dark hallway for screen transitions
 
 
 Credits
-Kenny icons
+Kenny icons                                 https://kenney.nl/assets/1-bit-input-prompts-pixel-16
 Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
 gdquest statemachine
 various / tbd                               https://joshuuu.itch.io/short-loopable-background-music
