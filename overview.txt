@@ -18,6 +18,7 @@ Bugs etc
         Should be no stars
     -   Right after respawn arrow takes a few frames to deactivate
     -   Player sprites are washed out from the light
+    -   First idle state playes land animation
 
 Small todos that aren't bugs
     railgun stars
@@ -31,11 +32,12 @@ Small todos that aren't bugs
         Make sure they all have leeway to not get cut off
 
 Major todos
-    Music
     Menus
     SFX
-    Character art
     itch page
+
+    Character art
+    Music
     Lighting (ongoing)
     Fine tune character movement (ongoing)
 
@@ -98,8 +100,7 @@ Rigging
     Mouth       Shapekey
     Eyes        Shapekey        Narrow
 
-Animations
-    (For left right I think I can just make a right animation then swap the eye colors and mirror the render)
+Animations      drafts 1 done
     Run         10-15
     Jump        5-7
     Fall        7
