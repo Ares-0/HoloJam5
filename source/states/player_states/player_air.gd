@@ -12,6 +12,7 @@ func enter(_old_state: String, msg := {}) -> void:
 		player.velocity.y = player.JUMP_IMPULSE
 		falling = false
 		player.animation_player.play("jump")
+		player.audio_man_ref.play("Jump")
 	elif player.velocity.y > 0:
 		#player is falling (walking off ledge)
 		falling = true

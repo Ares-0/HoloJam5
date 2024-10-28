@@ -39,3 +39,7 @@ func update_rots() -> void:
 		charges[i].rotate_to(2*PI / count * i)
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "rotation", self.rotation+randf_range(-PI/2, PI/2), 0.15)
+
+func rng_whole_rotate() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "rotation", self.rotation+randf_range(-PI, PI), 0.15)

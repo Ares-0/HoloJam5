@@ -32,6 +32,7 @@ var stars_state_list: Array[int] = []
 
 @onready var player_respawn_ref: Node2D = $PlayerRespawn
 @onready var exit_ref: RoomExit = $RoomExit
+@onready var audio_man_ref: Node = $"/root/AudioManager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -66,6 +67,10 @@ func capture_initial_state() -> void:
 			stars_state_list.append(child.charges)
 
 func reset() -> void:
+	audio_man_ref.play("Death")
+	await get_tree().create_timer(1.0).timeout
+	# todo: some screen effect here would be nice
+	# also, this doesn't work if the player dies upwards on some levels
 	player.position = spawn_point
 	for idx in range(0, stars_list.size()):
 		stars_list[idx].set_charges(stars_state_list[idx])

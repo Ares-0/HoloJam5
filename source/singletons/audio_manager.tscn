@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://source/singletons/audio_manager.gd" id="1_uf4ve"]
 [ext_resource type="AudioStream" uid="uid://ch4vo7vck3urc" path="res://assets/sound/Forever Lost.ogg" id="2_ehl5g"]
 [ext_resource type="AudioStream" uid="uid://0kaplqqcasn8" path="res://assets/sound/dash_02.wav" id="3_av1js"]
-[ext_resource type="AudioStream" uid="uid://bcwfa7t6ix43o" path="res://assets/sound/blip_up.wav" id="4_bo44m"]
 [ext_resource type="AudioStream" uid="uid://dkghcgtst77vu" path="res://assets/sound/tilt_02.wav" id="4_vk2pp"]
-[ext_resource type="AudioStream" uid="uid://4bd77mglcngc" path="res://assets/sound/blip_down.wav" id="5_kohil"]
+[ext_resource type="AudioStream" uid="uid://du554s5tpicnj" path="res://assets/sound/jump_01.wav" id="5_x3cwv"]
+[ext_resource type="AudioStream" uid="uid://dq6er2l32dhdx" path="res://assets/sound/death_01.wav" id="6_imefb"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_uf4ve")
@@ -23,8 +23,10 @@ volume_db = -10.0
 stream = ExtResource("4_vk2pp")
 volume_db = -10.0
 
-[node name="Sound2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_bo44m")
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x3cwv")
+volume_db = -10.0
 
-[node name="Sound3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_kohil")
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_imefb")
+volume_db = -10.0

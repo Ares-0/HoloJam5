@@ -14,4 +14,6 @@ func _process(_delta: float) -> void:
 	# 	play("Sound3")
 
 func play(sfx: NodePath):
-	get_node(sfx).play()
+	var sound_node = get_node_or_null(sfx)
+	assert(sound_node != null, str("Sound ", sfx, " does not exist"))
+	sound_node.play()

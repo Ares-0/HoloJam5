@@ -71,6 +71,7 @@ func set_charges(value: int) -> void:
 	else:
 		corrupt()
 		charge_indicator.set_charges(value-1)
+		charge_indicator.rng_whole_rotate()
 
 func _on_overlap_shape_area_entered(area: Area2D) -> void:
 	var obj = area.get_parent()
