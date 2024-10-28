@@ -2,17 +2,37 @@ extends PlayerState
 
 var falling: bool = false # if false, going upwards, if true going downwards
 var frame_entered: int = 0
+var timer: Timer
 
 func enter(_old_state: String, msg := {}) -> void:
 	frame_entered = Engine.get_frames_drawn()
 
-	# player is jumping
 	if msg.has("do_jump"):
+		# player is jumping
 		player.velocity.y = player.JUMP_IMPULSE
 		falling = false
-	else:
-		#player is falling
+		player.animation_player.play("jump")
+	elif player.velocity.y > 0:
+		#player is falling (walking off ledge)
 		falling = true
+		player.animation_player.play("air_fall")
+	else:
+		# tilt or dash upwards
+		falling = false
+		player.animation_player.play("air_up")
+
+	if msg.has("from_tilt"):
+		player.animation_player.play("tilt")
+		timer = Timer.new()
+		timer.wait_time = 0.6
+		timer.one_shot = true
+		timer.autostart = true
+		timer.connect("timeout", override_timeout)
+		self.add_child(timer)
+
+func exit() -> void:
+	if timer != null:
+		timer.queue_free()
 
 func physics_update(delta: float) -> void:
 	#print(Engine.get_frames_drawn())
@@ -43,6 +63,7 @@ func physics_update(delta: float) -> void:
 		if player.velocity.y > 0:
 			player.reset_gravity()
 			falling = true
+			player.animation_player.play("air_fall")
 
 	# Change states
 	if Input.is_action_just_pressed("dash"):
@@ -55,3 +76,6 @@ func physics_update(delta: float) -> void:
 			finished.emit("Idle", {do_land = true})
 		else:
 			finished.emit("Run")
+
+func override_timeout() -> void:
+	player.animation_player.play("air_fall")

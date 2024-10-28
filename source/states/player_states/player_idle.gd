@@ -1,7 +1,11 @@
 extends PlayerState
 
-func enter(_old_state: String, _msg := {}) -> void:
+func enter(_old_state: String, msg := {}) -> void:
 	player.reset_tilt_charges()
+	if msg.has("do_land"):
+		player.animation_player.play("land")
+	else:
+		player.animation_player.play("idle")
 
 func physics_update(delta: float) -> void:
 	if not player.is_on_floor():

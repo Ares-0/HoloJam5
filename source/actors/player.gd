@@ -14,6 +14,7 @@ const TILT_IMPULSE: float = 700
 var gravity: float = BASE_GRAVITY
 
 var last_direction: float = 0.0
+var facing_right: bool = true
 
 #var nearby_stars: Array[Star] = []
 var nearest_star: Star = null
@@ -27,6 +28,9 @@ var tilt_charges: int = 0
 @onready var dash_arrow: DashArrow = $DashArrow
 @onready var star_collider: Area2D = $StarCollider
 @onready var audio_man_ref: Node = $"/root/AudioManager"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_sheet_R: Sprite2D = $SpriteSheetR
+@onready var sprite_sheet_L: Sprite2D = $SpriteSheetL
 
 func _ready() -> void:
 	# Prep initial is_on_floor
@@ -40,6 +44,7 @@ func _physics_process(_delta: float) -> void:
 	#print(nearby_stars)
 	update_nearest_star()
 	update_arrow()
+	#update_sprites(last_direction)
 	
 	# if self.velocity.length() > 20:
 	# 	print(self.velocity.length())
@@ -48,12 +53,24 @@ func get_input_direction() -> float:
 	# technically this is only x
 	var direction: float = Input.get_axis("move_left", "move_right")
 
-	# I do not like this here
-	#if last_direction != direction and direction != 0:
-		#update_sprites(direction)
+	# I do not like this here!
+	if last_direction != direction and direction != 0:
+		update_sprites(direction)
 
 	last_direction = direction
 	return direction
+
+func update_sprites(direction: float) -> void:
+	if direction > 0:
+		facing_right = true
+		animation_player.root_node = "../SpriteSheetR"
+		sprite_sheet_R.visible = facing_right
+		sprite_sheet_L.visible = !facing_right
+	elif direction < 0:
+		facing_right = false
+		animation_player.root_node = "../SpriteSheetL"
+		sprite_sheet_R.visible = facing_right
+		sprite_sheet_L.visible = !facing_right
 
 func reset_gravity() -> void:
 	gravity = BASE_GRAVITY

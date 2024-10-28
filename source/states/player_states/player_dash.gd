@@ -8,6 +8,7 @@ func enter(_old_state: String, _msg := {}) -> void:
 	start_frame = Engine.get_frames_drawn()
 	player.reset_gravity()
 	player.audio_man_ref.play("Dash")
+	player.animation_player.play("dashing")
 
 func exit() -> void:
 	#print("done dashing")

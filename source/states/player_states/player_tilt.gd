@@ -23,6 +23,8 @@ func enter(_old_state: String, _msg := {}) -> void:
 		finished.emit("Air")
 		return
 
+	# by here, tilt is definitely happening
+	player.animation_player.play("tilt")
 	player.audio_man_ref.play("Tilt")
 	player.velocity = dir * player.TILT_IMPULSE * 2
 	player.move_and_slide()
@@ -44,4 +46,4 @@ func physics_update(_delta: float) -> void:
 
 func tilt_timeout() -> void:
 	player.velocity = player.velocity / 2
-	finished.emit("Air")
+	finished.emit("Air", {from_tilt = true})
