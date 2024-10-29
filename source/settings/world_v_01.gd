@@ -37,7 +37,8 @@ func _process(_delta: float) -> void:
 
 func change_to_room(num: int) -> void:
 	# Catch out of bounds error
-	# disable player movement
+
+	player.movement_disable()
 
 	var tween = get_tree().create_tween()
 	tween.tween_property(current_room, "modulate", Color.BLACK, 0.2)
@@ -54,10 +55,13 @@ func change_to_room(num: int) -> void:
 	self.call_deferred("add_child", next_room)
 
 	# Remove the old room
+	$CanvasModulateTotal.visible = true # band aid
 	current_room.queue_free()
 	current_room = next_room
 
 	# Player visual transition
+	player.position -= Vector2(1000, 1000)
+	camera.position -= Vector2(1000, 1000)
 	hallway.visible = true
 	hallway.position = player.position + Vector2.ONE
 	camera.punch_in(1.0, Vector2(player.position.x, camera.position.y), 0.5)
@@ -76,11 +80,15 @@ func change_to_room(num: int) -> void:
 	# Player should already be in final place by now
 	center_camera_on_room()
 	var tween2 = get_tree().create_tween()
-	tween2.tween_property(current_room, "modulate", Color.WHITE, 1.0)
+	tween2.tween_property(current_room, "modulate", Color(0.5, 0.5, 0.5), 0.5)
 	await tween2.finished
-	
+
 	current_room.enable()
-	# reenable player movement
+	player.movement_enable()
+
+	var tween3 = get_tree().create_tween()
+	tween3.tween_property(current_room, "modulate", Color.WHITE, 0.5)
+	await tween3.finished
 
 func center_camera_on_room() -> void:
 	camera.punch_in(current_room.camera_zoom, current_room.room_size * 0.5, 0.5)

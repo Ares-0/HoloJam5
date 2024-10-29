@@ -15,6 +15,7 @@ var gravity: float = BASE_GRAVITY
 
 var last_direction: float = 0.0
 var facing_right: bool = true
+var movement_enabled: bool = true
 
 #var nearby_stars: Array[Star] = []
 var nearest_star: Star = null
@@ -31,11 +32,12 @@ var tilt_charges: int = 0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_sheet_R: Sprite2D = $SpriteSheetR
 @onready var sprite_sheet_L: Sprite2D = $SpriteSheetL
+@onready var light: PointLight2D = $PointLight2D
 
 func _ready() -> void:
-	# Prep initial is_on_floor
-	velocity = Vector2.ZERO
 	tilt_charges = TILT_CHARGES_MAX
+	# Prep initial is_on_floor # edit: or not
+	velocity = Vector2.ZERO
 	move_and_slide()
 
 func _physics_process(_delta: float) -> void:
@@ -50,6 +52,9 @@ func _physics_process(_delta: float) -> void:
 	# 	print(self.velocity.length())
 
 func get_input_direction() -> float:
+	if !movement_enabled:
+		return 0.0
+
 	# technically this is only x
 	var direction: float = Input.get_axis("move_left", "move_right")
 
@@ -111,6 +116,32 @@ func get_directional_influence() -> Vector2:
 
 	var last: Vector2 = Vector2(direction_x, direction_y)
 	return last.normalized()
+
+func turn_transparent(duration: float) -> void:
+	if duration == 0.0:
+		self.modulate = Color.TRANSPARENT
+		light.energy = 0.0
+	else:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "modulate", Color.TRANSPARENT, duration)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(light, "energy", 0.0, duration)
+
+func turn_opaque(duration: float) -> void:
+	if duration == 0.0:
+		self.modulate = Color.WHITE
+		light.energy = 0.5
+	else:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "modulate", Color.WHITE, duration)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(light, "energy", 0.5, duration)
+
+func movement_disable() -> void:
+	movement_enabled = false
+
+func movement_enable() -> void:
+	movement_enabled = true
 
 func reset_tilt_charges() -> void:
 	tilt_charges = TILT_CHARGES_MAX

@@ -67,15 +67,19 @@ func capture_initial_state() -> void:
 			stars_state_list.append(child.charges)
 
 func reset() -> void:
+	print("death?????????????????????")
 	audio_man_ref.play("Death")
+	player.movement_disable()
+	player.turn_transparent(0.2)
 	await get_tree().create_timer(1.0).timeout
 	# todo: some screen effect here would be nice
-	# also, this doesn't work if the player dies upwards on some levels
 	player.position = spawn_point
 	for idx in range(0, stars_list.size()):
 		stars_list[idx].set_charges(stars_state_list[idx])
 	exit_ref.deactivate()
 	check_door()
+	player.turn_opaque(0.0)
+	player.movement_enable()
 
 func enable():
 	room_enabled = true
