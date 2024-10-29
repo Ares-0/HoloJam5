@@ -15,5 +15,6 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p2/d3.tscn",
 		"res://source/settings/rooms/p2/d4.tscn",
 		"res://source/settings/rooms/p2/d5.tscn",
+		"res://source/settings/rooms/p2/d6.tscn",
 	]
 	room_count = room_list.size()

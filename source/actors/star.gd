@@ -3,6 +3,8 @@ class_name Star extends Node2D
 @export var clean: bool = false
 @export var always_on: bool = false
 @export var charges: int = 1
+@export var force_multiplier: float = 1.0
+@export var color_adjust: Color = Color.WHITE
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var near_shape: Area2D = $NearbyShape
@@ -11,6 +13,7 @@ class_name Star extends Node2D
 @onready var scratches: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	self.modulate = color_adjust
 	if clean:
 		cleanse()
 	else:

@@ -64,11 +64,29 @@ num = 6
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button4" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+[node name="Button7" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
 layout_mode = 2
+num = 7
 
-[node name="Button5" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+[node name="Button8" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
 layout_mode = 2
+num = 8
+
+[node name="Button9" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 9
+
+[node name="Button10" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 10
+
+[node name="Button11" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 11
+
+[node name="Button12" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 12
 
 [node name="DevRoom" parent="." instance=ExtResource("2_lfvnr")]
 modulate = Color(1, 1, 1, 0)

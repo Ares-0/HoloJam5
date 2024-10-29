@@ -16,7 +16,7 @@ func _on_new_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://source/settings/world_p1.tscn")
 
 func _on_continue_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://source/gui/menus/room_select.tscn")
 
 func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_file("res://source/gui/menus/credits.tscn")

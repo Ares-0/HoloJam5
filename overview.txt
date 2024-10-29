@@ -13,17 +13,11 @@ Bugs etc
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
-    -   Transition from room to room
-        Can see stars
-        Should be no stars
     -   Right after respawn arrow takes a few frames to deactivate
     -   Player sprites are washed out from the light
     -   First idle state playes land animation
-    -   Death sound gets played during some normal room changes
-            probably mitigated by moving player far from kill zones during transition
 
 Small todos that aren't bugs
-    stars with different impulses? yes
     Draw 15 total star scratches
         Make sure they all have leeway to not get cut off
     bounce momentum?
@@ -31,14 +25,13 @@ Small todos that aren't bugs
         if returning to air state in time, restore most of that velocity
     railgun stars
 
-    It reaally feels like you should be able to tilt after each dash, but that is too much power
-    have to dash to cleanse star?   going with no
-
 Major todos
     Menus
-    SFX
+        pause
+        options
     itch page
 
+    SFX
     Character art
     Music
     Lighting (ongoing)
