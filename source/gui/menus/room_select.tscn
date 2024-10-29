@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjqlcib3xgwi"]
+
+[ext_resource type="Script" path="res://source/gui/menus/room_select.gd" id="1_h0gpu"]
+[ext_resource type="PackedScene" uid="uid://bn1n4ngv8syj3" path="res://source/gui/level_button.tscn" id="2_lfvnr"]
+
+[node name="RoomSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0gpu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.5
+offset_right = 359.5
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Room Select"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 130
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+
+[node name="Button2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 2
+
+[node name="Button3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 3
+
+[node name="Button4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 4
+
+[node name="Button5" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 5
+
+[node name="Button6" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 6
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button4" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+
+[node name="Button5" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+
+[node name="DevRoom" parent="." instance=ExtResource("2_lfvnr")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1228.0
+offset_top = -44.0
+offset_right = 1311.0
+offset_bottom = 53.0

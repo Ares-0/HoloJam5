@@ -1,0 +1,201 @@
+[gd_scene load_steps=6 format=3 uid="uid://f0h68om55dun"]
+
+[ext_resource type="Script" path="res://source/gui/menus/credits.gd" id="1_5g8d5"]
+[ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_7kusd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_40nk2"]
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhmsj"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_ew4a8"]
+font_size = 24
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5g8d5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Thanks" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Thanks for Playing!"
+label_settings = SubResource("LabelSettings_40nk2")
+
+[node name="HSignBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Container" parent="MarginContainer/VBoxContainer/HSignBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Sign" type="Label" parent="MarginContainer/VBoxContainer/HSignBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "- Ares"
+label_settings = SubResource("LabelSettings_xhmsj")
+
+[node name="Disclaimers" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.152941, 0.780392, 1, 1)
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+Made for HoloJam 5 , with the prompt 'Corruption'
+
+'Hololive' is a registered trademark of Cover Corporation. 
+This fan-made game complies with the Cover Derivative Works Guidelines found at
+"
+fit_content = true
+
+[node name="HoloLink" type="LinkButton" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0.152941, 0.780392, 1, 1)
+layout_mode = 2
+text = "https://hololivepro.com/en/terms/"
+uri = "https://hololivepro.com/en/terms/"
+
+[node name="Assets Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+
+CC Asset Credits"
+label_settings = SubResource("LabelSettings_ew4a8")
+
+[node name="Assets Table" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Names" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Assets Table"]
+layout_mode = 2
+
+[node name="Name1" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
+layout_mode = 2
+text = "Name"
+
+[node name="Name2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
+layout_mode = 2
+text = "Name"
+
+[node name="Name3" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
+layout_mode = 2
+text = "Name"
+
+[node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer/Assets Table"]
+layout_mode = 2
+text = "    "
+
+[node name="Authors" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Assets Table"]
+layout_mode = 2
+
+[node name="Author1" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
+layout_mode = 2
+text = "Author"
+
+[node name="Author2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
+layout_mode = 2
+text = "Author"
+
+[node name="Author3" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
+layout_mode = 2
+text = "Author"
+
+[node name="Spacer2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table"]
+layout_mode = 2
+text = "    "
+
+[node name="Links" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Assets Table"]
+layout_mode = 2
+
+[node name="Link1" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
+layout_mode = 2
+text = "https://godotengine.org/"
+uri = "https://godotengine.org/"
+
+[node name="Link2" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
+layout_mode = 2
+text = "https://itch.io/"
+uri = "https://itch.io/"
+
+[node name="Link3" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
+layout_mode = 2
+text = "https://github.com/"
+uri = "https://github.com/"
+
+[node name="Frame" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 907.0
+offset_top = 273.0
+offset_right = 1160.0
+offset_bottom = 647.0
+rotation = 0.0897018
+
+[node name="MarginContainer2" type="MarginContainer" parent="Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Picture" type="TextureRect" parent="Frame/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_7kusd")
+
+[node name="Tape1" type="ColorRect" parent="Frame"]
+layout_mode = 2
+offset_left = -41.0
+offset_top = 32.0
+offset_right = 84.0
+offset_bottom = 62.0
+rotation = -0.549939
+color = Color(0.647059, 0.647059, 0.647059, 0.384314)
+
+[node name="Tape2" type="ColorRect" parent="Frame"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.6093
+offset_top = -27.7782
+offset_right = 56.3907
+offset_bottom = 2.22185
+grow_horizontal = 0
+rotation = 0.519209
+color = Color(0.647059, 0.647059, 0.647059, 0.384314)
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 90.0
+offset_right = 162.0
+offset_bottom = 190.0
+rotation = -0.785616
+text = "
+
+
+Main Menu  "
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

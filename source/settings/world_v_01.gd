@@ -18,6 +18,10 @@ func _ready() -> void:
 	var scene_path = get_tree().current_scene.scene_file_path
 	assert(current_room != null, str("World ", scene_path, " does not have an inital room"))
 
+	var test: int = $"/root/GameState".loading_room_num
+	if test > 0:
+		room_index = test - 1
+
 	fill_room_list()
 	current_room.room_exited.connect(_on_room_exited)
 	current_room.enable()
