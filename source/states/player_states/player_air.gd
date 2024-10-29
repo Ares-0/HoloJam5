@@ -6,6 +6,8 @@ var timer: Timer
 
 func enter(_old_state: String, msg := {}) -> void:
 	frame_entered = Engine.get_frames_drawn()
+	if player.velocity == Vector2.ZERO and not msg.has("do_jump"):
+		print("bad air state enter?")
 
 	if msg.has("do_jump"):
 		# player is jumping

@@ -20,17 +20,19 @@ Bugs etc
     -   Player sprites are washed out from the light
     -   First idle state playes land animation
     -   Death sound gets played during some normal room changes
+            probably mitigated by moving player far from kill zones during transition
 
 Small todos that aren't bugs
-    railgun stars
     stars with different impulses? yes
-    have to dash to cleanse star? ???
+    Draw 15 total star scratches
+        Make sure they all have leeway to not get cut off
     bounce momentum?
         When leaving air state, remember final velocity
         if returning to air state in time, restore most of that velocity
+    railgun stars
+
     It reaally feels like you should be able to tilt after each dash, but that is too much power
-    Draw 15 total star scratches
-        Make sure they all have leeway to not get cut off
+    have to dash to cleanse star?   going with no
 
 Major todos
     Menus
@@ -89,9 +91,7 @@ x   Reset (merged with death)
     Room change
 
 Model
-    Eyes bigger
-    Head bigger?
-    Outline thicker
+    .
 Rigging
     Body        1
     Arms        2x2
