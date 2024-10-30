@@ -26,6 +26,7 @@ func _ready() -> void:
 	current_room.room_exited.connect(_on_room_exited)
 	current_room.enable()
 	current_room.set_player(player)
+	player.position = current_room.player_respawn_ref.position
 	$ColorRect.visible = true
 	AudioManager.soundtrack_start()
 

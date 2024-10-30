@@ -4,13 +4,13 @@
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_qia14"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="3_puxx7"]
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="4_ncaul"]
-[ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="5_gr05x"]
 [ext_resource type="Script" path="res://source/actors/camera.gd" id="5_y67s3"]
 [ext_resource type="PackedScene" uid="uid://8jbjhk0yv4cv" path="res://source/gui/menus/pause_menu.tscn" id="7_dt8vs"]
+[ext_resource type="PackedScene" uid="uid://bu24673hujjvn" path="res://source/settings/intro_cutscene.tscn" id="7_nb7ec"]
 
 [node name="WorldP1" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_reeh1")
-current_room = NodePath("RoomR1")
+current_room = NodePath("IntroCutscene")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -20
@@ -56,7 +56,7 @@ color = Color(0.190762, 0.190762, 0.190762, 1)
 visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="RoomR1" parent="." instance=ExtResource("5_gr05x")]
+[node name="IntroCutscene" parent="." instance=ExtResource("7_nb7ec")]
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
 

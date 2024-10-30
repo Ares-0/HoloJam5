@@ -1,0 +1,64 @@
+[gd_scene load_steps=16 format=3 uid="uid://ykj0hvkhomf2"]
+
+[ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="1_8csbj"]
+[ext_resource type="PackedScene" uid="uid://5jrskp5qj22s" path="res://source/settings/rooms/p1/a2.tscn" id="2_i1emt"]
+[ext_resource type="PackedScene" uid="uid://bpn8trpmyrfwc" path="res://source/settings/rooms/p1/a3.tscn" id="3_1jr5t"]
+[ext_resource type="PackedScene" uid="uid://bgqplrj550h3p" path="res://source/settings/rooms/p1/a4.tscn" id="4_5f2oe"]
+[ext_resource type="PackedScene" uid="uid://iqxomew67rjp" path="res://source/settings/rooms/p1/a5.tscn" id="5_4w26u"]
+[ext_resource type="PackedScene" uid="uid://dn1i3ge0pb3s5" path="res://source/settings/rooms/p1/a6.tscn" id="6_8bvb7"]
+[ext_resource type="PackedScene" uid="uid://e0kw60ne3788" path="res://source/settings/rooms/p2/d1.tscn" id="7_7ie4r"]
+[ext_resource type="PackedScene" uid="uid://qpqhh0rkwlkr" path="res://source/settings/rooms/p2/d2.tscn" id="8_bqy3u"]
+[ext_resource type="PackedScene" uid="uid://cs6ch8700wrxc" path="res://source/settings/rooms/p2/d3.tscn" id="9_ymnwb"]
+[ext_resource type="PackedScene" uid="uid://bngvbo0y7uy0s" path="res://source/settings/rooms/p2/d4.tscn" id="10_ocddk"]
+[ext_resource type="PackedScene" uid="uid://dbun1b65684ui" path="res://source/settings/rooms/p2/d5.tscn" id="11_euc1g"]
+[ext_resource type="PackedScene" uid="uid://co856x562n17s" path="res://source/settings/rooms/p2/d6.tscn" id="12_cdrjp"]
+[ext_resource type="PackedScene" uid="uid://c1os4ab8u14bi" path="res://source/settings/rooms/p2/d7.tscn" id="13_q6qbw"]
+[ext_resource type="PackedScene" uid="uid://byr8iwjannppd" path="res://source/settings/rooms/p2/d8.tscn" id="14_frxl8"]
+[ext_resource type="PackedScene" uid="uid://b0en1y6woox4g" path="res://source/settings/rooms/p2/d9.tscn" id="15_wo4c2"]
+
+[node name="AllRoomsLayout" type="Node2D"]
+
+[node name="a1" parent="." instance=ExtResource("1_8csbj")]
+position = Vector2(1545, 32)
+
+[node name="a2" parent="." instance=ExtResource("2_i1emt")]
+position = Vector2(3009, 32)
+
+[node name="a3" parent="." instance=ExtResource("3_1jr5t")]
+position = Vector2(4537, 32)
+
+[node name="a4" parent="." instance=ExtResource("4_5f2oe")]
+position = Vector2(5649, 32)
+
+[node name="a5" parent="." instance=ExtResource("5_4w26u")]
+position = Vector2(6905, 32)
+
+[node name="a6" parent="." instance=ExtResource("6_8bvb7")]
+position = Vector2(8065, 32)
+
+[node name="d1" parent="." instance=ExtResource("7_7ie4r")]
+position = Vector2(0, 1160)
+
+[node name="d2" parent="." instance=ExtResource("8_bqy3u")]
+position = Vector2(1536, 1160)
+
+[node name="d3" parent="." instance=ExtResource("9_ymnwb")]
+position = Vector2(3144, 1160)
+
+[node name="d4" parent="." instance=ExtResource("10_ocddk")]
+position = Vector2(4224, 1160)
+
+[node name="d5" parent="." instance=ExtResource("11_euc1g")]
+position = Vector2(6408, 1154)
+
+[node name="d6" parent="." instance=ExtResource("12_cdrjp")]
+position = Vector2(7520, 1154)
+
+[node name="d7" parent="." instance=ExtResource("13_q6qbw")]
+position = Vector2(9288, 1154)
+
+[node name="d8" parent="." instance=ExtResource("14_frxl8")]
+position = Vector2(11568, 1154)
+
+[node name="d9" parent="." instance=ExtResource("15_wo4c2")]
+position = Vector2(13256, 1154)

@@ -15,7 +15,7 @@ func physics_update(delta: float) -> void:
 	# slow to stop
 	player.velocity.x = move_toward(player.velocity.x, 0, player.FRICTION*delta)
 	player.move_and_slide()
-	
+
 	if Input.is_action_just_pressed("jump"):
 		finished.emit("Air", {do_jump = true})
 	elif Input.is_action_just_pressed("dash"):
