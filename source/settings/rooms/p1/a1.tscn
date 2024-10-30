@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="6_ctue8"]
 [ext_resource type="PackedScene" uid="uid://qu48rmo8c8d5" path="res://source/gui/signs/sign_jump.tscn" id="7_bnqhp"]
 
-[node name="r1" type="Node2D"]
+[node name="a1" type="Node2D"]
 script = ExtResource("1_om10v")
 room_size = Vector2(1280, 720)
 camera_zoom = 1.0

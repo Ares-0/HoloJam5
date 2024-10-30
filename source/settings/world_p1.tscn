@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_qia14"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="3_puxx7"]
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="4_ncaul"]
-[ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/r1.tscn" id="5_gr05x"]
+[ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="5_gr05x"]
 [ext_resource type="Script" path="res://source/actors/camera.gd" id="5_y67s3"]
 
 [node name="WorldP1" type="Node2D" node_paths=PackedStringArray("current_room")]
