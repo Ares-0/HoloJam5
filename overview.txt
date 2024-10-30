@@ -28,9 +28,11 @@ Small todos that aren't bugs
 
 Major todos
     Menus
-        pause
         options
     itch page
+        name
+        description
+        image
 
     SFX
     Character art

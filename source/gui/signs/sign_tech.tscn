@@ -11,7 +11,7 @@ subpixel_positioning = 0
 font = SubResource("SystemFont_75qcj")
 font_size = 32
 
-[node name="SignJump" type="Node2D"]
+[node name="SignTech" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-52, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bvb87axeolo2j"]
+[gd_scene load_steps=8 format=4 uid="uid://bvb87axeolo2j"]
 
 [ext_resource type="Script" path="res://source/settings/world_p_1.gd" id="1_reeh1"]
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_qia14"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nf3l7necirw1" path="res://source/actors/player.tscn" id="4_ncaul"]
 [ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="5_gr05x"]
 [ext_resource type="Script" path="res://source/actors/camera.gd" id="5_y67s3"]
+[ext_resource type="PackedScene" uid="uid://8jbjhk0yv4cv" path="res://source/gui/menus/pause_menu.tscn" id="7_dt8vs"]
 
 [node name="WorldP1" type="Node2D" node_paths=PackedStringArray("current_room")]
 script = ExtResource("1_reeh1")
@@ -56,3 +57,8 @@ visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="RoomR1" parent="." instance=ExtResource("5_gr05x")]
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="UICanvasLayer" instance=ExtResource("7_dt8vs")]
+visible = false

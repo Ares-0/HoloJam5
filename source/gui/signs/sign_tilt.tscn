@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dmbc0jus3ygje" path="res://assets/kenny/tile_0086.png" id="5_1vb55"]
 
 [sub_resource type="SystemFont" id="SystemFont_bljdy"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi5ev"]
 font = SubResource("SystemFont_bljdy")
 font_size = 32
 
-[node name="SignDash" type="Node2D"]
+[node name="SignTilt" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(20, 0)

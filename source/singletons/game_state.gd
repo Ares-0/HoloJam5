@@ -4,6 +4,7 @@ extends Node
 # globally needed data
 
 var loading_room_num: int = 0
+var pauser: PauseMenu = null
 
 func _ready() -> void:
 	print("ready to handle stuff")

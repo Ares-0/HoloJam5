@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://by0q781ura2aa" path="res://assets/kenny/tile_0360.png" id="1_5euw3"]
 
 [sub_resource type="SystemFont" id="SystemFont_75qcj"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_6grwp"]
 font = SubResource("SystemFont_75qcj")
 font_size = 32
 
-[node name="SignJump" type="Node2D"]
+[node name="SignReset" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(49, 0)

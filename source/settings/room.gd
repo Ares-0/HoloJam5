@@ -32,7 +32,7 @@ var stars_state_list: Array[int] = []
 
 @onready var player_respawn_ref: Node2D = $PlayerRespawn
 @onready var exit_ref: RoomExit = $RoomExit
-@onready var audio_man_ref: Node = $"/root/AudioManager"
+@onready var audio_man_ref: Node = AudioManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

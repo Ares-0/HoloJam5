@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://8jbjhk0yv4cv"]
+
+[ext_resource type="Script" path="res://source/gui/menus/pause_menu.gd" id="1_mhxbs"]
+[ext_resource type="PackedScene" uid="uid://c27fuq3a0nx24" path="res://source/gui/signs/sign_move.tscn" id="2_ri13f"]
+[ext_resource type="PackedScene" uid="uid://b2hpyj317swti" path="res://source/gui/signs/sign_dash.tscn" id="2_uw10h"]
+[ext_resource type="PackedScene" uid="uid://qu48rmo8c8d5" path="res://source/gui/signs/sign_jump.tscn" id="3_g645i"]
+[ext_resource type="PackedScene" uid="uid://b5gn6gfwbi1il" path="res://source/gui/signs/sign_tilt.tscn" id="5_xtn4v"]
+[ext_resource type="PackedScene" uid="uid://dycgyifq1by7x" path="res://source/gui/signs/sign_tech.tscn" id="6_0a4ne"]
+[ext_resource type="PackedScene" uid="uid://cau8b8kw32xkn" path="res://source/gui/signs/sign_reset.tscn" id="7_18kao"]
+[ext_resource type="PackedScene" uid="uid://b3stueiyjug68" path="res://source/gui/signs/sign_skip.tscn" id="7_71j2y"]
+
+[sub_resource type="Gradient" id="Gradient_604gn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.694805)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aitxn"]
+gradient = SubResource("Gradient_604gn")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhxbs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = SubResource("GradientTexture2D_aitxn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.341176)
+
+[node name="PauseMenuUI" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenuUI"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuUI/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeB" type="Button" parent="PauseMenuUI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="OptionsB" type="Button" parent="PauseMenuUI/CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Options"
+
+[node name="MenuB" type="Button" parent="PauseMenuUI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu
+"
+
+[node name="Label" type="Label" parent="PauseMenuUI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SignMove" parent="VBoxContainer" instance=ExtResource("2_ri13f")]
+position = Vector2(230, 115)
+
+[node name="SignJump" parent="VBoxContainer" instance=ExtResource("3_g645i")]
+position = Vector2(230, 268)
+
+[node name="SignDash" parent="VBoxContainer" instance=ExtResource("2_uw10h")]
+position = Vector2(230, 205)
+
+[node name="SignTilt" parent="VBoxContainer" instance=ExtResource("5_xtn4v")]
+position = Vector2(230, 487)
+
+[node name="SignTech" parent="VBoxContainer" instance=ExtResource("6_0a4ne")]
+position = Vector2(230, 590)
+
+[node name="SignReset" parent="VBoxContainer" instance=ExtResource("7_18kao")]
+position = Vector2(1090, 144)
+
+[node name="SignSkip" parent="VBoxContainer" instance=ExtResource("7_71j2y")]
+position = Vector2(1090, 254)
+
+[connection signal="pressed" from="PauseMenuUI/CenterContainer/VBoxContainer/ResumeB" to="." method="_on_resume_b_pressed"]
+[connection signal="pressed" from="PauseMenuUI/CenterContainer/VBoxContainer/OptionsB" to="." method="_on_options_b_pressed"]
+[connection signal="pressed" from="PauseMenuUI/CenterContainer/VBoxContainer/MenuB" to="." method="_on_menu_b_pressed"]

@@ -18,7 +18,7 @@ func _ready() -> void:
 	var scene_path = get_tree().current_scene.scene_file_path
 	assert(current_room != null, str("World ", scene_path, " does not have an inital room"))
 
-	var test: int = $"/root/GameState".loading_room_num
+	var test: int = GameState.loading_room_num
 	if test > 0:
 		room_index = test - 1
 
