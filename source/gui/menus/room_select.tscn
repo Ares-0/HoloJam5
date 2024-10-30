@@ -88,6 +88,33 @@ num = 11
 layout_mode = 2
 num = 12
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button7" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 13
+
+[node name="Button8" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 14
+
+[node name="Button9" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 15
+
+[node name="Button10" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 16
+
+[node name="Button11" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 17
+
+[node name="Button12" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 18
+
 [node name="DevRoom" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1

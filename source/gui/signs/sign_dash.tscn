@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cnb5noed5wcus" path="res://assets/kenny/tile_0078.png" id="1_y5c6r"]
 
 [sub_resource type="SystemFont" id="SystemFont_bljdy"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_pi5ev"]
 font = SubResource("SystemFont_bljdy")

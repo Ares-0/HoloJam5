@@ -3,7 +3,7 @@ extends Control
 @export var num: int = 1
 
 func _ready() -> void:
-	$CenterContainer/Button.text = str(" ", num, " ")
+	$CenterContainer/Button.text = str(" %02d " % num)
 
 func _on_button_pressed() -> void:
 	$"/root/GameState".loading_room_num = num

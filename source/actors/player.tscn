@@ -201,6 +201,7 @@ position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_ocrjt")
 
 [node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]
+visible = false
 offset_top = -132.0
 offset_bottom = -132.0
 metadata/_edit_use_anchors_ = true
