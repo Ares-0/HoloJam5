@@ -11,22 +11,28 @@
 script = ExtResource("1_uf4ve")
 
 [node name="OST_Main" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("2_ehl5g")
 volume_db = -33.0
+bus = &"Music"
 parameters/looping = true
 
 [node name="Dash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_av1js")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Tilt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vk2pp")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_x3cwv")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_imefb")
 volume_db = -10.0
+bus = &"SFX"

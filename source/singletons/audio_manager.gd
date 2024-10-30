@@ -4,6 +4,7 @@ extends Node
 
 func _ready() -> void:
 	print("audio ready")
+	#soundtrack_start()
 
 func _process(_delta: float) -> void:
 	pass

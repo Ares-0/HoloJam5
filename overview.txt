@@ -28,7 +28,8 @@ Small todos that aren't bugs
 
 Major todos
     Menus
-        options
+        main
+
     itch page
         name
         description

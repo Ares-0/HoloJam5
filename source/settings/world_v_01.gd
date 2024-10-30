@@ -27,7 +27,8 @@ func _ready() -> void:
 	current_room.enable()
 	current_room.set_player(player)
 	$ColorRect.visible = true
-	
+	AudioManager.soundtrack_start()
+
 	if room_index > 0:
 		change_to_room(room_index)
 

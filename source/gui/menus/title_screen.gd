@@ -10,6 +10,7 @@ func _ready() -> void:
 	# VersionL.text = "v" + StateManager.version_number
 	pass
 	newgame_B.grab_focus()
+	AudioManager.soundtrack_stop()
 
 func _on_new_game_pressed() -> void:
 	# todo: fade to black before changing
