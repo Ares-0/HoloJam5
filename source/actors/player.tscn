@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://nf3l7necirw1"]
+[gd_scene load_steps=28 format=3 uid="uid://nf3l7necirw1"]
 
 [ext_resource type="Script" path="res://source/actors/player.gd" id="1_aoa8o"]
 [ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_5cj1b"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://source/states/player_states/player_run.gd" id="6_tqfvu"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="10_i2k6b"]
 [ext_resource type="Script" path="res://source/states/player_states/player_tilt.gd" id="11_4lxg0"]
+[ext_resource type="Script" path="res://source/states/player_states/player_tech.gd" id="12_5mhlm"]
 [ext_resource type="Texture2D" uid="uid://biiscw0fnvmtb" path="res://assets/gloom/gloom_sprite_sheet_R.png" id="13_yqicc"]
 [ext_resource type="Texture2D" uid="uid://mgegdc04dbe0" path="res://assets/gloom/gloom_sprite_sheet_L.png" id="14_52051"]
 
@@ -226,6 +227,9 @@ script = ExtResource("6_2lhc3")
 
 [node name="Tilt" type="Node" parent="StateMachine"]
 script = ExtResource("11_4lxg0")
+
+[node name="Tech" type="Node" parent="StateMachine"]
+script = ExtResource("12_5mhlm")
 
 [node name="StarCollider" type="Area2D" parent="."]
 visible = false

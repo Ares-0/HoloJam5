@@ -47,9 +47,10 @@ func _physics_process(_delta: float) -> void:
 	update_nearest_star()
 	update_arrow()
 	#update_sprites(last_direction)
-	
+
 	# if self.velocity.length() > 20:
 	# 	print(self.velocity.length())
+	# 	print(self.velocity)
 
 func get_input_direction() -> float:
 	if !movement_enabled:

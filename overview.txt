@@ -13,16 +13,17 @@ Bugs etc
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
+
     -   Right after respawn arrow takes a few frames to deactivate
+            ignoring for jam
     -   Player sprites are washed out from the light
+            ignoring for jam
     -   First idle state playes land animation
+            ignoring for jam
 
 Small todos that aren't bugs
     Draw 15 total star scratches
         Make sure they all have leeway to not get cut off
-    bounce momentum?
-        When leaving air state, remember final velocity
-        if returning to air state in time, restore most of that velocity
     railgun stars
 
 Major todos
@@ -45,22 +46,22 @@ Stretch
 
 Player Character
 Gloom
-Right click performs *dash*
-    When near a lamp, can right click to dash through the lamp
-    Challenge comes from the timing, not over/undershooting it
-    Hold right click to launch further (faster?)
-
-Left click performs a *tilt*
-    Stops all current momentum and does a slight air dodge in a direction for correction
-
-When player falls into darkness, they reset
-
+    - Right click performs *dash*
+        When near a lamp, can right click to dash through the lamp
+        Challenge comes from the timing, not over/undershooting it
+        Hold right click to launch further (faster?)
+    - Left click performs a *tilt*
+        Stops all current momentum and does a slight air dodge in a direction for correction
+    - When player falls into darkness, they reset
+    - When colliding with wall (floor tbd), can tech off with jump to preserve momentum
 
 Stars
 Two modes
-Dark (corrupted), still has faint light
-Light (cleaned), bright
+    Dark (corrupted), still has faint light
+    Light (cleaned), bright
 Gloom dashes through a lamp to cleanse it
+Can have multiple charges
+Can have different impulse strengths
 Initial main menu is a mostly black screen with some stars
 After finishing the game, dolly out to see all the stars are lit up and twinkling
 

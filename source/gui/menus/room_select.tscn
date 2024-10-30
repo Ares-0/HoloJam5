@@ -88,10 +88,14 @@ num = 11
 layout_mode = 2
 num = 12
 
-[node name="DevRoom" parent="." instance=ExtResource("2_lfvnr")]
+[node name="DevRoom" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 1228.0
-offset_top = -44.0
-offset_right = 1311.0
-offset_bottom = 53.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_bottom = 52.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="DevRoom" to="." method="_on_dev_room_pressed"]

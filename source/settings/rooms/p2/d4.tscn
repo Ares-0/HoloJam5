@@ -62,16 +62,8 @@ range_layer_max = 10
 texture = ExtResource("6_nrhhu")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(242.2, 332)
-scale = Vector2(1.9125, 3.71875)
-texture = ExtResource("6_nrhhu")
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(627, 104)
-scale = Vector2(2.46094, 0.75)
-energy = 0.5
+position = Vector2(1489, 508.5)
+scale = Vector2(1.41406, 0.878906)
 texture = ExtResource("6_nrhhu")
 
 [node name="SignDash" parent="." instance=ExtResource("7_tw1fg")]

@@ -59,6 +59,7 @@ func physics_update(delta: float) -> void:
 	# Update y velocity
 	var di_y: float = 1.0 + di.y * 0.2
 	player.velocity.y += player.gravity * delta * di_y
+	var last_velocity: Vector2 = player.velocity # used for tech stuff in an sec
 	player.move_and_slide()
 
 	if not falling:
@@ -79,6 +80,9 @@ func physics_update(delta: float) -> void:
 			finished.emit("Idle", {do_land = true})
 		else:
 			finished.emit("Run")
+	if player.is_on_wall():
+		if abs(last_velocity.x) > 500:
+			finished.emit("Tech", {on_wall = true, last_v = last_velocity})
 
 func override_timeout() -> void:
 	player.animation_player.play("air_fall")

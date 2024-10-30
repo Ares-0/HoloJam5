@@ -7,3 +7,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_dev_room_pressed() -> void:
+	get_tree().change_scene_to_file("res://source/settings/rooms/dev_room.tscn")

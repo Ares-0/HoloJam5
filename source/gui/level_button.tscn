@@ -19,5 +19,5 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = " 1 "
 
-[connection signal="pressed" from="CenterContainer/Button" to="CenterContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Button" to="CenterContainer/Button" method="_on_pressed"]
