@@ -47,14 +47,18 @@ func _process(_delta: float) -> void:
 			change_to_room(room_index)
 
 func change_to_room(num: int) -> void:
+	var num_fixed: int = num
 	# Catch out of bounds error
+	if num > room_list.size():
+		push_error("Room number ", num, " doesn't exist")
+		num_fixed = 1
 
 	player.movement_disable()
 
 	var tween = get_tree().create_tween()
 	tween.tween_property(current_room, "modulate", Color.BLACK, 0.2)
 
-	var next_scene = load(room_list[num])
+	var next_scene = load(room_list[num_fixed])
 	var next_room = next_scene.instantiate() as Room
 
 	# Set up the new room

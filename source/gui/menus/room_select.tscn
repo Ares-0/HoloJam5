@@ -119,6 +119,14 @@ num = 17
 layout_mode = 2
 num = 18
 
+[node name="Button13" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 19
+
+[node name="Button14" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 20
+
 [node name="DevRoom" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1

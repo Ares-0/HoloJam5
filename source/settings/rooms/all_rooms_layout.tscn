@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ykj0hvkhomf2"]
+[gd_scene load_steps=21 format=3 uid="uid://ykj0hvkhomf2"]
 
 [ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="1_8csbj"]
 [ext_resource type="PackedScene" uid="uid://5jrskp5qj22s" path="res://source/settings/rooms/p1/a2.tscn" id="2_i1emt"]
@@ -15,50 +15,79 @@
 [ext_resource type="PackedScene" uid="uid://c1os4ab8u14bi" path="res://source/settings/rooms/p2/d7.tscn" id="13_q6qbw"]
 [ext_resource type="PackedScene" uid="uid://byr8iwjannppd" path="res://source/settings/rooms/p2/d8.tscn" id="14_frxl8"]
 [ext_resource type="PackedScene" uid="uid://b0en1y6woox4g" path="res://source/settings/rooms/p2/d9.tscn" id="15_wo4c2"]
+[ext_resource type="PackedScene" uid="uid://jj4wo2twjyeg" path="res://source/settings/rooms/p3/g1.tscn" id="16_lvrjf"]
+[ext_resource type="PackedScene" uid="uid://btrv3kkaet3ww" path="res://source/settings/rooms/p3/g2.tscn" id="17_3cvrv"]
+[ext_resource type="PackedScene" uid="uid://dwyw1a40cjpb3" path="res://source/settings/rooms/p3/g3.tscn" id="18_q5bjt"]
+[ext_resource type="PackedScene" uid="uid://cor4mupe556sm" path="res://source/settings/rooms/p3/g4.tscn" id="19_osvj2"]
+[ext_resource type="PackedScene" uid="uid://ctmq7y5axhjk8" path="res://source/settings/rooms/p3/g5.tscn" id="20_nh3m1"]
 
 [node name="AllRoomsLayout" type="Node2D"]
 
-[node name="a1" parent="." instance=ExtResource("1_8csbj")]
+[node name="Group A" type="Node2D" parent="."]
+position = Vector2(937, 0)
+
+[node name="a1" parent="Group A" instance=ExtResource("1_8csbj")]
 position = Vector2(1545, 32)
 
-[node name="a2" parent="." instance=ExtResource("2_i1emt")]
+[node name="a2" parent="Group A" instance=ExtResource("2_i1emt")]
 position = Vector2(3009, 32)
 
-[node name="a3" parent="." instance=ExtResource("3_1jr5t")]
+[node name="a3" parent="Group A" instance=ExtResource("3_1jr5t")]
 position = Vector2(4537, 32)
 
-[node name="a4" parent="." instance=ExtResource("4_5f2oe")]
+[node name="a4" parent="Group A" instance=ExtResource("4_5f2oe")]
 position = Vector2(5649, 32)
 
-[node name="a5" parent="." instance=ExtResource("5_4w26u")]
+[node name="a5" parent="Group A" instance=ExtResource("5_4w26u")]
 position = Vector2(6905, 32)
 
-[node name="a6" parent="." instance=ExtResource("6_8bvb7")]
+[node name="a6" parent="Group A" instance=ExtResource("6_8bvb7")]
 position = Vector2(8065, 32)
 
-[node name="d1" parent="." instance=ExtResource("7_7ie4r")]
+[node name="Group D" type="Node2D" parent="."]
+position = Vector2(0, 464)
+
+[node name="d1" parent="Group D" instance=ExtResource("7_7ie4r")]
 position = Vector2(0, 1160)
 
-[node name="d2" parent="." instance=ExtResource("8_bqy3u")]
+[node name="d2" parent="Group D" instance=ExtResource("8_bqy3u")]
 position = Vector2(1536, 1160)
 
-[node name="d3" parent="." instance=ExtResource("9_ymnwb")]
+[node name="d3" parent="Group D" instance=ExtResource("9_ymnwb")]
 position = Vector2(3144, 1160)
 
-[node name="d4" parent="." instance=ExtResource("10_ocddk")]
+[node name="d4" parent="Group D" instance=ExtResource("10_ocddk")]
 position = Vector2(4224, 1160)
 
-[node name="d5" parent="." instance=ExtResource("11_euc1g")]
+[node name="d5" parent="Group D" instance=ExtResource("11_euc1g")]
 position = Vector2(6408, 1154)
 
-[node name="d6" parent="." instance=ExtResource("12_cdrjp")]
+[node name="d6" parent="Group D" instance=ExtResource("12_cdrjp")]
 position = Vector2(7520, 1154)
 
-[node name="d7" parent="." instance=ExtResource("13_q6qbw")]
+[node name="d7" parent="Group D" instance=ExtResource("13_q6qbw")]
 position = Vector2(9288, 1154)
 
-[node name="d8" parent="." instance=ExtResource("14_frxl8")]
+[node name="d8" parent="Group D" instance=ExtResource("14_frxl8")]
 position = Vector2(11568, 1154)
 
-[node name="d9" parent="." instance=ExtResource("15_wo4c2")]
+[node name="d9" parent="Group D" instance=ExtResource("15_wo4c2")]
 position = Vector2(13256, 1154)
+
+[node name="Group G" type="Node2D" parent="."]
+position = Vector2(0, 887)
+
+[node name="g1" parent="Group G" instance=ExtResource("16_lvrjf")]
+position = Vector2(5, 2434)
+
+[node name="g2" parent="Group G" instance=ExtResource("17_3cvrv")]
+position = Vector2(2187, 2439)
+
+[node name="g3" parent="Group G" instance=ExtResource("18_q5bjt")]
+position = Vector2(3476, 2413)
+
+[node name="g4" parent="Group G" instance=ExtResource("19_osvj2")]
+position = Vector2(5747, 2453)
+
+[node name="g5" parent="Group G" instance=ExtResource("20_nh3m1")]
+position = Vector2(7615, 2520)
