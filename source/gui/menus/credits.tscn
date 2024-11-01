@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://f0h68om55dun"]
+[gd_scene load_steps=7 format=3 uid="uid://f0h68om55dun"]
 
 [ext_resource type="Script" path="res://source/gui/menus/credits.gd" id="1_5g8d5"]
 [ext_resource type="Texture2D" uid="uid://c1nrlerkq5bki" path="res://assets/gloom/hands_pic.png" id="2_sybwj"]
@@ -10,6 +10,9 @@ font_size = 56
 font_size = 41
 
 [sub_resource type="LabelSettings" id="LabelSettings_ew4a8"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_63gwk"]
 font_size = 24
 
 [node name="Credits" type="Control"]
@@ -77,7 +80,6 @@ uri = "https://hololivepro.com/en/terms/"
 [node name="Assets Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "
-
 CC Asset Credits"
 label_settings = SubResource("LabelSettings_ew4a8")
 
@@ -89,15 +91,15 @@ layout_mode = 2
 
 [node name="Name1" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
 layout_mode = 2
-text = "Name"
+text = "Various Icons"
 
 [node name="Name2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
 layout_mode = 2
-text = "Name"
+text = "Dungeon Tileset"
 
 [node name="Name3" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Names"]
 layout_mode = 2
-text = "Name"
+text = "BGM - Forever Lost "
 
 [node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer/Assets Table"]
 layout_mode = 2
@@ -108,15 +110,15 @@ layout_mode = 2
 
 [node name="Author1" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
 layout_mode = 2
-text = "Author"
+text = "KennyNL"
 
 [node name="Author2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
 layout_mode = 2
-text = "Author"
+text = "Raou"
 
 [node name="Author3" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
 layout_mode = 2
-text = "Author"
+text = "joshuuu"
 
 [node name="Spacer2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table"]
 layout_mode = 2
@@ -127,18 +129,28 @@ layout_mode = 2
 
 [node name="Link1" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
 layout_mode = 2
-text = "https://godotengine.org/"
-uri = "https://godotengine.org/"
+text = "https://kenney.nl/assets/1-bit-input-prompts-pixel-16"
+uri = "https://kenney.nl/assets/1-bit-input-prompts-pixel-16"
 
 [node name="Link2" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
 layout_mode = 2
-text = "https://itch.io/"
-uri = "https://itch.io/"
+text = "https://raou.itch.io/dark-dun"
+uri = "https://raou.itch.io/dark-dun"
 
 [node name="Link3" type="LinkButton" parent="MarginContainer/VBoxContainer/Assets Table/Links"]
 layout_mode = 2
-text = "https://github.com/"
-uri = "https://github.com/"
+text = "https://joshuuu.itch.io/short-loopable-background-music"
+uri = "https://joshuuu.itch.io/short-loopable-background-music"
+
+[node name="Programs Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Programs Used:"
+label_settings = SubResource("LabelSettings_63gwk")
+
+[node name="Programs List" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Godot, Blender, Chiptone, Gimp, Clip Studio Paint"
 
 [node name="Frame" type="TextureRect" parent="."]
 layout_mode = 2

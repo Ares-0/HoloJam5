@@ -118,8 +118,8 @@ Small dark hallway for screen transitions
 Credits
 Kenny icons                                 https://kenney.nl/assets/1-bit-input-prompts-pixel-16
 Dark Dungeon Sidescroller Tileset           https://raou.itch.io/dark-dun
+Forever Lost                                https://joshuuu.itch.io/short-loopable-background-music
 gdquest statemachine
-various / tbd                               https://joshuuu.itch.io/short-loopable-background-music
 
 Addons
 Better-Terrain                              
