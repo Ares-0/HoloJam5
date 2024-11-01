@@ -71,14 +71,19 @@ func reset() -> void:
 	audio_man_ref.play("Death")
 	player.movement_disable()
 	player.turn_transparent(0.2)
-	await get_tree().create_timer(1.0).timeout
-	# todo: some screen effect here would be nice
+	await get_tree().create_timer(0.9).timeout
+
+	# work after player moved
 	player.position = spawn_point
 	for idx in range(0, stars_list.size()):
 		stars_list[idx].set_charges(stars_state_list[idx])
+		stars_list[idx].reset_shape()
 	exit_ref.deactivate()
 	check_door()
-	player.turn_opaque(0.0)
+
+	# show player
+	player.turn_opaque(0.1)
+	await get_tree().create_timer(0.1).timeout
 	player.movement_enable()
 
 func enable():

@@ -71,10 +71,11 @@ func physics_update(delta: float) -> void:
 
 	# Change states
 	if Input.is_action_just_pressed("dash"):
-		if player.has_nearest_star():
+		if player.has_nearest_star() and player.movement_enabled:
 			finished.emit("Dash")
 	if Input.is_action_just_pressed("tilt"):
-		finished.emit("Tilt")
+		if player.movement_enabled:
+			finished.emit("Tilt")
 	if player.is_on_floor():
 		if is_zero_approx(input_direction):
 			finished.emit("Idle", {do_land = true})

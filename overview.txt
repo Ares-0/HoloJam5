@@ -13,6 +13,8 @@ Bugs etc
     -   Rare collide with star
         star should cleanse
         star sometimes can be targeted again
+    -   Respawning in range of a star doesnt target right away
+            Thought I fixed that
 
     -   Right after respawn arrow takes a few frames to deactivate
             ignoring for jam

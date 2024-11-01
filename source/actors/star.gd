@@ -76,6 +76,14 @@ func set_charges(value: int) -> void:
 		charge_indicator.set_charges(value-1)
 		charge_indicator.rng_whole_rotate()
 
+func reset_shape() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(near_shape, "scale", Vector2(0.1, 0.1), 0.05)
+	await tween.finished
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(near_shape, "scale", Vector2.ONE, 0.05)
+	await tween2.finished
+
 func _on_overlap_shape_area_entered(area: Area2D) -> void:
 	var obj = area.get_parent()
 	if obj is Player:

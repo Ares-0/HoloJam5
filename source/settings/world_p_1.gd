@@ -12,23 +12,26 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p1/a5.tscn", # need to cleanse stars to exit / hold for distance
 		"res://source/settings/rooms/p1/a6.tscn", # stars can have multiple charges
 
-		# 7 - 14
+		# 7 - 12
 		"res://source/settings/rooms/p2/d1.tscn", # fine
 		"res://source/settings/rooms/p2/d2.tscn", # fine
-		"res://source/settings/rooms/p2/d3.tscn", # harder than it looks
 		"res://source/settings/rooms/p2/d4.tscn", # tilt tutorial
-		"res://source/settings/rooms/p2/d5.tscn", # wall tech tutorial, kinda tricky
 		"res://source/settings/rooms/p2/d6.tscn", # fine, shows different star strengths
-		"res://source/settings/rooms/p2/d7.tscn", # yucky
+		"res://source/settings/rooms/p2/d3.tscn", # decent
 		"res://source/settings/rooms/p2/d8.tscn", # fine
 
-		# 15 - 20
-		"res://source/settings/rooms/p3/g1.tscn", # fine
+		# 13 - 17
 		"res://source/settings/rooms/p3/g2.tscn", # decent
 		"res://source/settings/rooms/p3/g3.tscn", # decent
 		"res://source/settings/rooms/p3/g4.tscn", # decent
-		"res://source/settings/rooms/p3/g5.tscn", # eh
+		"res://source/settings/rooms/p3/g1.tscn", # fine
 		"res://source/settings/rooms/p3/g6.tscn", # Game complete
+
+		# extra 18 -
+		"res://source/settings/rooms/p2/d5.tscn", # wall tech tutorial, kinda tricky
+		"res://source/settings/rooms/p4/j1.tscn", # ok
+		"res://source/settings/rooms/p3/g5.tscn", # eh, needs air dodge
+		"res://source/settings/rooms/p4/j2.tscn", # I like it!
 
 	]
 	room_count = room_list.size()
