@@ -9,7 +9,7 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p1/a2.tscn", # jump over pits
 		"res://source/settings/rooms/p1/a3.tscn", # dash over large pits
 		"res://source/settings/rooms/p1/a4.tscn", # dash up (and down)
-		"res://source/settings/rooms/p1/a5.tscn", # need to cleanse stars to exit
+		"res://source/settings/rooms/p1/a5.tscn", # need to cleanse stars to exit / hold for distance
 		"res://source/settings/rooms/p1/a6.tscn", # stars can have multiple charges
 
 		# 7 - 14
