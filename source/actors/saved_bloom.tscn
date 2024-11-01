@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://co3srp5a2u6rd"]
+
+[ext_resource type="Script" path="res://source/actors/saved_bloom.gd" id="1_gjcnb"]
+[ext_resource type="Texture2D" uid="uid://b8v4r03e1v0a0" path="res://assets/gloom/happy0096.png" id="1_un5t4"]
+[ext_resource type="Texture2D" uid="uid://bdlduk3qis64w" path="res://assets/gloom/happy0095.png" id="2_70co1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh2nm"]
+size = Vector2(96, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnvjn"]
+size = Vector2(937.5, 775)
+
+[node name="SavedBloom" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_gjcnb")
+
+[node name="SpriteL" type="Sprite2D" parent="."]
+position = Vector2(0, -65)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("1_un5t4")
+
+[node name="SpriteR" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -65)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("2_70co1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -68)
+shape = SubResource("RectangleShape2D_hh2nm")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.74999, -377.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xnvjn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

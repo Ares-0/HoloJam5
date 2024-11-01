@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=4 uid="uid://k7stcg506tia"]
+
+[ext_resource type="Script" path="res://source/settings/room.gd" id="1_k5owv"]
+[ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_2rom3"]
+[ext_resource type="PackedScene" uid="uid://dos7k57tdeqp6" path="res://source/actors/room_exit.tscn" id="3_y4gpu"]
+[ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/actors/player_respawn.tscn" id="4_wwruw"]
+[ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="5_1idla"]
+[ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="6_3r0cr"]
+[ext_resource type="Texture2D" uid="uid://blq02gpceiad6" path="res://assets/starry_sky.png" id="7_5sudg"]
+[ext_resource type="PackedScene" uid="uid://co3srp5a2u6rd" path="res://source/actors/saved_bloom.tscn" id="8_5tes0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hkufx"]
+font_size = 24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkhge"]
+size = Vector2(74, 59)
+
+[node name="g6" type="Node2D"]
+script = ExtResource("1_k5owv")
+room_size = Vector2(1280, 720)
+camera_zoom = 1.0
+
+[node name="Nav" type="TileMapLayer" parent="."]
+z_index = -1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAABQAAAABAAIAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAGABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAABAAIAAAATABQAAAABAAIAAAAUABQAAAABAAIAAAAVABQAAAABAAIAAAAWABQAAAABAAIAAAAXABQAAAABAAIAAAAYABQAAAABAAIAAAAZABQAAAABAAIAAAAaABQAAAABAAIAAAAbABQAAAABAAIAAAAcABQAAAABAAIAAAAdABQAAAABAAIAAAAeABQAAAABAAIAAAAfABQAAAABAAIAAAAgABQAAAABAAIAAAAhABQAAAABAAIAAAAiABQAAAABAAIAAAAjABQAAAABAAIAAAAkABQAAAABAAIAAAAlABQAAAABAAIAAAAmABQAAAABAAIAAAAnABQAAAABAAIAAAAAABUAAAADAAQAAAABABUAAAADAAMAAAACABUAAAADAAQAAAADABUAAAADAAQAAAAEABUAAAADAAMAAAAFABUAAAADAAQAAAAGABUAAAADAAMAAAAHABUAAAADAAQAAAAIABUAAAADAAQAAAAJABUAAAADAAMAAAAKABUAAAADAAQAAAALABUAAAADAAMAAAAMABUAAAADAAMAAAANABUAAAADAAQAAAAOABUAAAADAAMAAAAPABUAAAADAAMAAAAQABUAAAADAAQAAAARABUAAAADAAMAAAASABUAAAADAAQAAAATABUAAAADAAQAAAAUABUAAAADAAQAAAAVABUAAAADAAQAAAAWABUAAAADAAQAAAAXABUAAAADAAQAAAAYABUAAAADAAQAAAAZABUAAAADAAQAAAAaABUAAAADAAMAAAAbABUAAAADAAMAAAAcABUAAAADAAQAAAAdABUAAAADAAQAAAAeABUAAAADAAQAAAAfABUAAAADAAQAAAAgABUAAAADAAMAAAAhABUAAAADAAQAAAAiABUAAAADAAMAAAAjABUAAAADAAMAAAAkABUAAAADAAMAAAAlABUAAAADAAQAAAAmABUAAAADAAMAAAAnABUAAAADAAMAAAAAABYAAAABAAUAAAABABYAAAABAAUAAAACABYAAAABAAUAAAADABYAAAABAAUAAAAEABYAAAABAAUAAAAFABYAAAABAAUAAAAGABYAAAABAAUAAAAHABYAAAABAAUAAAAIABYAAAABAAUAAAAJABYAAAABAAUAAAAKABYAAAABAAUAAAALABYAAAABAAUAAAAMABYAAAABAAUAAAANABYAAAABAAUAAAAOABYAAAABAAUAAAAPABYAAAABAAUAAAAQABYAAAABAAUAAAARABYAAAABAAUAAAASABYAAAABAAUAAAATABYAAAABAAUAAAAUABYAAAABAAUAAAAVABYAAAABAAUAAAAWABYAAAABAAUAAAAXABYAAAABAAUAAAAYABYAAAABAAUAAAAZABYAAAABAAUAAAAaABYAAAABAAUAAAAbABYAAAABAAUAAAAcABYAAAABAAUAAAAdABYAAAABAAUAAAAeABYAAAABAAUAAAAfABYAAAABAAUAAAAgABYAAAABAAUAAAAhABYAAAABAAUAAAAiABYAAAABAAUAAAAjABYAAAABAAUAAAAkABYAAAABAAUAAAAlABYAAAABAAUAAAAmABYAAAABAAUAAAAnABYAAAABAAUAAAAaABAAAAAKADAAAAAaABEAAAAKADEAAAAaABMAAAAKADMAAAAbABAAAAALADAAAAAbABEAAAALADEAAAAbABIAAAALADIAAAAbABMAAAALADMAAAAcABAAAAAMADAAAAAcABEAAAAMADEAAAAcABIAAAAMADIAAAAcABMAAAAMADMAAAAdABEAAAANADEAAAAdABIAAAANADIAAAAdABMAAAANADMAAAAEABAAAAAKADAAAAAEABEAAAAKADEAAAAEABMAAAAKADMAAAAFABAAAAALADAAAAAFABEAAAALADEAAAAFABIAAAALADIAAAAFABMAAAALADMAAAAGABAAAAAMADAAAAAGABEAAAAMADEAAAAGABIAAAAMADIAAAAGABMAAAAMADMAAAAHABEAAAANADEAAAAHABIAAAANADIAAAAHABMAAAANADMAAAAoABQAAAABAAUAAAApABQAAAAEAAUAAAApABYAAAABAAUAAAAoABYAAAABAAUAAAApABUAAAADAAMAAAAoABUAAAADAAQAAAD//wEAAAAAAAQAAAD//wIAAAAAAAQAAAD//wMAAAAEAAQAAAD//wQAAAAAAAMAAAD//wUAAAAEAAQAAAD//wYAAAAAAAQAAAD//wcAAAAEAAMAAAD//wgAAAAAAAQAAAD//wkAAAAEAAQAAAD//woAAAAEAAQAAAD//wsAAAAEAAMAAAD//wwAAAAEAAQAAAD//w0AAAAEAAMAAAD//w4AAAAEAAMAAAD//w8AAAAAAAMAAAD//xAAAAAEAAMAAAD//xEAAAAAAAMAAAD//xIAAAAAAAQAAAD//xMAAAAAAAMAAAD///7/AAACAAUAAAD/////AAAEAAQAAAD//wAAAAAEAAMAAAD6/xQAAAAAAAIAAAD7/xQAAAABAAIAAAD8/xQAAAABAAIAAAD9/xQAAAABAAIAAAD+/xQAAAABAAIAAAD//xQAAAABAAIAAAD6/xYAAAAAAAUAAAD7/xYAAAABAAUAAAD8/xYAAAABAAUAAAD9/xYAAAABAAUAAAD+/xYAAAABAAUAAAD//xYAAAABAAUAAAD6/xUAAAAAAAMAAAD7/xUAAAADAAMAAAD8/xUAAAADAAMAAAD9/xUAAAADAAMAAAD+/xUAAAADAAQAAAD//xUAAAADAAQAAAAmABEAAAAAAB8AAAAnABEAAAABAB8AAAAmABIAAAAAACAAAAAnABIAAAABACAAAAAmABMAAAAAACEAAAAnABMAAAABACEAAAAoAAAAAAABAAMAAAAoAAEAAAABAAMAAAAoAAIAAAABAAQAAAAoAAMAAAABAAQAAAAoAAQAAAACAAQAAAAoAAUAAAABAAMAAAAoAAYAAAACAAQAAAAoAAcAAAABAAQAAAAoAAgAAAADAAMAAAAoAAkAAAABAAMAAAAoAAoAAAACAAMAAAAoAAsAAAACAAMAAAAoAAwAAAACAAMAAAAoAA0AAAABAAMAAAAoAA4AAAABAAQAAAAoAA8AAAACAAMAAAAoABAAAAADAAQAAAAoABEAAAACAAMAAAAoABIAAAACAAQAAAAoABMAAAADAAQAAAA=")
+tile_set = ExtResource("2_2rom3")
+
+[node name="RoomExit" parent="." instance=ExtResource("3_y4gpu")]
+position = Vector2(1220, 643)
+
+[node name="PlayerRespawn" parent="." instance=ExtResource("4_wwruw")]
+z_index = 20
+position = Vector2(51, 642)
+
+[node name="Star" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(210, 217)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star2" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(620, 155)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star3" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(1073, 167)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star4" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(754, 307)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star5" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(856, 118)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star6" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(313, 380)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star7" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(352, 59)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="Star8" parent="." instance=ExtResource("5_1idla")]
+position = Vector2(1174, 319)
+scale = Vector2(0.5, 0.5)
+clean = true
+
+[node name="CanvasModulateTotal" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D1" type="PointLight2D" parent="."]
+position = Vector2(657.5, 338)
+scale = Vector2(7.46484, 4.375)
+energy = 2.0
+texture = ExtResource("6_3r0cr")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(102, 548)
+scale = Vector2(3.01172, 1.35938)
+energy = 0.5
+texture = ExtResource("6_3r0cr")
+
+[node name="StarrySky" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(0, -164)
+texture = ExtResource("7_5sudg")
+offset = Vector2(640, 360)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 355.0
+offset_top = 311.0
+offset_right = 619.0
+offset_bottom = 404.0
+text = "You saved Bloom!"
+label_settings = SubResource("LabelSettings_hkufx")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1000.0
+offset_top = 360.0
+offset_right = 1262.0
+offset_bottom = 523.0
+text = "Theres a few more rooms to play, if you like, but they're going to be less and less polished"
+autowrap_mode = 2
+
+[node name="SavedBloom" parent="." instance=ExtResource("8_5tes0")]
+position = Vector2(504, 640)
+
+[node name="BloomPlatform" type="StaticBody2D" parent="."]
+position = Vector2(504, 691)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BloomPlatform"]
+position = Vector2(0, -19.5)
+shape = SubResource("RectangleShape2D_mkhge")

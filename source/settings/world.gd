@@ -111,7 +111,7 @@ func center_camera_on_room() -> void:
 func exit_world() -> void:
 	# After final room, quit or show cutscene or something
 	print("Game Over")
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://source/gui/menus/title_screen.tscn")
 
 func _on_room_exited() -> void:
 	room_index += 1

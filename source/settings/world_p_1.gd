@@ -19,15 +19,16 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p2/d4.tscn", # tilt tutorial
 		"res://source/settings/rooms/p2/d5.tscn", # wall tech tutorial, kinda tricky
 		"res://source/settings/rooms/p2/d6.tscn", # fine, shows different star strengths
-		"res://source/settings/rooms/p2/d7.tscn", # eh
+		"res://source/settings/rooms/p2/d7.tscn", # yucky
 		"res://source/settings/rooms/p2/d8.tscn", # fine
 
-		# 15 - 
+		# 15 - 20
 		"res://source/settings/rooms/p3/g1.tscn", # fine
 		"res://source/settings/rooms/p3/g2.tscn", # decent
 		"res://source/settings/rooms/p3/g3.tscn", # decent
 		"res://source/settings/rooms/p3/g4.tscn", # decent
 		"res://source/settings/rooms/p3/g5.tscn", # eh
+		"res://source/settings/rooms/p3/g6.tscn", # Game complete
 
 	]
 	room_count = room_list.size()
