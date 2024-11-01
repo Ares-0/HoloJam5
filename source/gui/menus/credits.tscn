@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://f0h68om55dun"]
 
 [ext_resource type="Script" path="res://source/gui/menus/credits.gd" id="1_5g8d5"]
-[ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_7kusd"]
+[ext_resource type="Texture2D" uid="uid://c1nrlerkq5bki" path="res://assets/gloom/hands_pic.png" id="2_sybwj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_40nk2"]
 font_size = 56
@@ -140,29 +140,15 @@ layout_mode = 2
 text = "https://github.com/"
 uri = "https://github.com/"
 
-[node name="Frame" type="ColorRect" parent="."]
+[node name="Frame" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = 907.0
 offset_top = 273.0
 offset_right = 1160.0
 offset_bottom = 647.0
 rotation = 0.0897018
-
-[node name="MarginContainer2" type="MarginContainer" parent="Frame"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Picture" type="TextureRect" parent="Frame/MarginContainer2"]
-layout_mode = 2
-texture = ExtResource("2_7kusd")
+texture = ExtResource("2_sybwj")
+expand_mode = 3
 
 [node name="Tape1" type="ColorRect" parent="Frame"]
 layout_mode = 2
@@ -183,7 +169,7 @@ offset_top = -27.7782
 offset_right = 56.3907
 offset_bottom = 2.22185
 grow_horizontal = 0
-rotation = 0.519209
+rotation = 0.590145
 color = Color(0.647059, 0.647059, 0.647059, 0.384314)
 
 [node name="MenuButton" type="Button" parent="."]

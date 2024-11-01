@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr3s4vm5jqtjw"]
+[gd_scene load_steps=5 format=3 uid="uid://dr3s4vm5jqtjw"]
 
 [ext_resource type="Script" path="res://source/gui/menus/title_screen.gd" id="1_781v2"]
-[ext_resource type="Texture2D" uid="uid://bkqmjkocwy2dw" path="res://icon.svg" id="2_is81u"]
+[ext_resource type="Texture2D" uid="uid://blq02gpceiad6" path="res://assets/starry_sky.png" id="2_ckn7u"]
+[ext_resource type="Texture2D" uid="uid://d07wegct2qre3" path="res://assets/rest_both.png" id="2_dmukj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_otf0t"]
 font_size = 72
@@ -18,6 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_781v2")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+rotation = 3.14159
+scale = Vector2(0.677778, 0.677778)
+texture = ExtResource("2_ckn7u")
+
 [node name="VersionLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -29,7 +36,7 @@ offset_left = -176.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v0.0.0"
+text = "v0.9"
 horizontal_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -94,13 +101,18 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 44
 text = "Quit"
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "                                            "
+
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+[node name="B&G" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+self_modulate = Color(0.637843, 0.637843, 0.637843, 1)
 layout_mode = 2
-texture = ExtResource("2_is81u")
+texture = ExtResource("2_dmukj")
 
 [node name="BlackScreen" type="ColorRect" parent="."]
 visible = false
