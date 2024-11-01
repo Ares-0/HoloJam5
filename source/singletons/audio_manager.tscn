@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dntatxj727v2d"]
+[gd_scene load_steps=8 format=3 uid="uid://dntatxj727v2d"]
 
 [ext_resource type="Script" path="res://source/singletons/audio_manager.gd" id="1_uf4ve"]
 [ext_resource type="AudioStream" uid="uid://ch4vo7vck3urc" path="res://assets/sound/Forever Lost.ogg" id="2_ehl5g"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dkghcgtst77vu" path="res://assets/sound/tilt_02.wav" id="4_vk2pp"]
 [ext_resource type="AudioStream" uid="uid://du554s5tpicnj" path="res://assets/sound/jump_01.wav" id="5_x3cwv"]
 [ext_resource type="AudioStream" uid="uid://dq6er2l32dhdx" path="res://assets/sound/death_01.wav" id="6_imefb"]
+[ext_resource type="AudioStream" uid="uid://dosjgd5tphpau" path="res://assets/sound/dark_01.wav" id="7_8o51s"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_uf4ve")
@@ -34,5 +35,10 @@ bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_imefb")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Dark" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8o51s")
 volume_db = -10.0
 bus = &"SFX"

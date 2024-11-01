@@ -1,38 +1,471 @@
-[gd_scene load_steps=8 format=4 uid="uid://bu24673hujjvn"]
+[gd_scene load_steps=19 format=4 uid="uid://bu24673hujjvn"]
 
 [ext_resource type="Texture2D" uid="uid://bjr5yq6bgytg3" path="res://assets/gloom/rest0081.png" id="1_bi8r7"]
 [ext_resource type="Script" path="res://source/settings/room.gd" id="1_hm05c"]
+[ext_resource type="Script" path="res://source/settings/cutscene_controller.gd" id="2_3t0fh"]
 [ext_resource type="PackedScene" uid="uid://dos7k57tdeqp6" path="res://source/actors/room_exit.tscn" id="3_1f53j"]
 [ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/actors/player_respawn.tscn" id="4_xd88c"]
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="5_7ivq2"]
 [ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="6_x5vtn"]
 [ext_resource type="PackedScene" uid="uid://b2hpyj317swti" path="res://source/gui/signs/sign_dash.tscn" id="7_pja2b"]
+[ext_resource type="Texture2D" uid="uid://blq02gpceiad6" path="res://assets/starry_sky.png" id="8_pkn0b"]
+[ext_resource type="PackedScene" uid="uid://dfqo7tmlh410v" path="res://source/settings/square_scratches.tscn" id="10_xqvv2"]
+[ext_resource type="PackedScene" uid="uid://c27fuq3a0nx24" path="res://source/gui/signs/sign_move.tscn" id="11_8vqo6"]
+
+[sub_resource type="Animation" id="Animation_wjhmg"]
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DarkCircleIn:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Star:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, -471)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/SignDash:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/SquareScratchesL:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-595, 584)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/SquareScratchesR:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1870, 584)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/SquareScratchesM:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-170, 607)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Bloom:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/SignMove:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bo6lf"]
+resource_name = "camera_shift"
+length = 7.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(700, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/SignMove:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6.5, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jmgl2"]
+resource_name = "dark_in"
+length = 8.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DarkCircleIn:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(0.5, 0.125), Vector2(0.5, 0.465)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 360), Vector2(640, 540)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Star:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, -471), Vector2(640, 412)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/SignDash:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.1, 7.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/SquareScratchesM:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5.97826, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-44, 607), Vector2(625, 607)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/SquareScratchesL:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.17444, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-201, 584), Vector2(191, 584)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/SquareScratchesR:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.07635, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1447, 584), Vector2(897, 584)]
+}
+
+[sub_resource type="Animation" id="Animation_mevmm"]
+resource_name = "dark_out"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DarkCircleIn:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.465), Vector2(0.5, 0.501)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 540), Vector2(640, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Star:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 412)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/SignDash:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/SquareScratchesM:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(582, 607), Vector2(-170, 607)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/SquareScratchesL:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(191, 584), Vector2(-409, 584)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/SquareScratchesR:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(897, 584), Vector2(1605, 584)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/Bloom:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxi0h"]
+_data = {
+"RESET": SubResource("Animation_wjhmg"),
+"camera_shift": SubResource("Animation_bo6lf"),
+"dark_in": SubResource("Animation_jmgl2"),
+"dark_out": SubResource("Animation_mevmm")
+}
+
+[sub_resource type="Gradient" id="Gradient_ou7ae"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qxoyo"]
+gradient = SubResource("Gradient_ou7ae")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_hm05c")
 room_size = Vector2(1280, 720)
 camera_zoom = 1.0
-
-[node name="Bloom" type="Sprite2D" parent="."]
-position = Vector2(580, 613)
-scale = Vector2(0.245, 0.245)
-texture = ExtResource("1_bi8r7")
-
-[node name="RoomExit" parent="." instance=ExtResource("3_1f53j")]
-position = Vector2(1194, 657)
-scale = Vector2(2, 2)
-
-[node name="PlayerRespawn" parent="." instance=ExtResource("4_xd88c")]
-position = Vector2(616, 640)
+metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="Nav" type="TileMapLayer" parent="."]
 z_index = -1
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAABQAAAAAAAIAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAGABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAABAAIAAAATABQAAAABAAIAAAAUABQAAAABAAIAAAAVABQAAAABAAIAAAAWABQAAAABAAIAAAAXABQAAAABAAIAAAAYABQAAAABAAIAAAAZABQAAAABAAIAAAAaABQAAAABAAIAAAAbABQAAAABAAIAAAAcABQAAAABAAIAAAAdABQAAAABAAIAAAAeABQAAAABAAIAAAAfABQAAAABAAIAAAAgABQAAAABAAIAAAAhABQAAAABAAIAAAAiABQAAAABAAIAAAAjABQAAAABAAIAAAAkABQAAAABAAIAAAAlABQAAAABAAIAAAAmABQAAAABAAIAAAAnABQAAAAEAAIAAAAAABUAAAAAAAQAAAABABUAAAADAAMAAAACABUAAAADAAQAAAADABUAAAADAAQAAAAEABUAAAADAAMAAAAFABUAAAADAAQAAAAGABUAAAADAAMAAAAHABUAAAADAAQAAAAIABUAAAADAAQAAAAJABUAAAADAAMAAAAKABUAAAADAAQAAAALABUAAAADAAMAAAAMABUAAAADAAMAAAANABUAAAADAAQAAAAOABUAAAADAAMAAAAPABUAAAADAAMAAAAQABUAAAADAAQAAAARABUAAAADAAMAAAASABUAAAADAAQAAAATABUAAAADAAQAAAAUABUAAAADAAQAAAAVABUAAAADAAQAAAAWABUAAAADAAQAAAAXABUAAAADAAQAAAAYABUAAAADAAQAAAAZABUAAAADAAQAAAAaABUAAAADAAMAAAAbABUAAAADAAMAAAAcABUAAAADAAQAAAAdABUAAAADAAQAAAAeABUAAAADAAQAAAAfABUAAAADAAQAAAAgABUAAAADAAMAAAAhABUAAAADAAQAAAAiABUAAAADAAMAAAAjABUAAAADAAMAAAAkABUAAAADAAMAAAAlABUAAAADAAQAAAAmABUAAAADAAMAAAAnABUAAAAEAAMAAAAAABYAAAAAAAUAAAABABYAAAABAAUAAAACABYAAAABAAUAAAADABYAAAABAAUAAAAEABYAAAABAAUAAAAFABYAAAABAAUAAAAGABYAAAABAAUAAAAHABYAAAABAAUAAAAIABYAAAABAAUAAAAJABYAAAABAAUAAAAKABYAAAABAAUAAAALABYAAAABAAUAAAAMABYAAAABAAUAAAANABYAAAABAAUAAAAOABYAAAABAAUAAAAPABYAAAABAAUAAAAQABYAAAABAAUAAAARABYAAAABAAUAAAASABYAAAABAAUAAAATABYAAAABAAUAAAAUABYAAAABAAUAAAAVABYAAAABAAUAAAAWABYAAAABAAUAAAAXABYAAAABAAUAAAAYABYAAAABAAUAAAAZABYAAAABAAUAAAAaABYAAAABAAUAAAAbABYAAAABAAUAAAAcABYAAAABAAUAAAAdABYAAAABAAUAAAAeABYAAAABAAUAAAAfABYAAAABAAUAAAAgABYAAAABAAUAAAAhABYAAAABAAUAAAAiABYAAAABAAUAAAAjABYAAAABAAUAAAAkABYAAAABAAUAAAAlABYAAAABAAUAAAAmABYAAAABAAUAAAAnABYAAAAEAAUAAAAaABAAAAAKADAAAAAaABEAAAAKADEAAAAaABMAAAAKADMAAAAbABAAAAALADAAAAAbABEAAAALADEAAAAbABIAAAALADIAAAAbABMAAAALADMAAAAcABAAAAAMADAAAAAcABEAAAAMADEAAAAcABIAAAAMADIAAAAcABMAAAAMADMAAAAdABEAAAANADEAAAAdABIAAAANADIAAAAdABMAAAANADMAAAAEABAAAAAKADAAAAAEABEAAAAKADEAAAAEABMAAAAKADMAAAAFABAAAAALADAAAAAFABEAAAALADEAAAAFABIAAAALADIAAAAFABMAAAALADMAAAAGABAAAAAMADAAAAAGABEAAAAMADEAAAAGABIAAAAMADIAAAAGABMAAAAMADMAAAAHABEAAAANADEAAAAHABIAAAANADIAAAAHABMAAAANADMAAAA=")
+tile_map_data = PackedByteArray("AAAAABQAAAAAAAIAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAGABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAABAAIAAAATABQAAAABAAIAAAAUABQAAAABAAIAAAAVABQAAAABAAIAAAAWABQAAAABAAIAAAAXABQAAAABAAIAAAAYABQAAAABAAIAAAAZABQAAAABAAIAAAAaABQAAAABAAIAAAAbABQAAAABAAIAAAAcABQAAAABAAIAAAAdABQAAAABAAIAAAAeABQAAAABAAIAAAAfABQAAAABAAIAAAAgABQAAAABAAIAAAAhABQAAAABAAIAAAAiABQAAAABAAIAAAAjABQAAAABAAIAAAAkABQAAAABAAIAAAAlABQAAAABAAIAAAAmABQAAAABAAIAAAAnABQAAAABAAIAAAAAABUAAAAAAAQAAAABABUAAAADAAMAAAACABUAAAADAAQAAAADABUAAAADAAQAAAAEABUAAAADAAMAAAAFABUAAAADAAQAAAAGABUAAAADAAMAAAAHABUAAAADAAQAAAAIABUAAAADAAQAAAAJABUAAAADAAMAAAAKABUAAAADAAQAAAALABUAAAADAAMAAAAMABUAAAADAAMAAAANABUAAAADAAQAAAAOABUAAAADAAMAAAAPABUAAAADAAMAAAAQABUAAAADAAQAAAARABUAAAADAAMAAAASABUAAAADAAQAAAATABUAAAADAAQAAAAUABUAAAADAAQAAAAVABUAAAADAAQAAAAWABUAAAADAAQAAAAXABUAAAADAAQAAAAYABUAAAADAAQAAAAZABUAAAADAAQAAAAaABUAAAADAAMAAAAbABUAAAADAAMAAAAcABUAAAADAAQAAAAdABUAAAADAAQAAAAeABUAAAADAAQAAAAfABUAAAADAAQAAAAgABUAAAADAAMAAAAhABUAAAADAAQAAAAiABUAAAADAAMAAAAjABUAAAADAAMAAAAkABUAAAADAAMAAAAlABUAAAADAAQAAAAmABUAAAADAAMAAAAnABUAAAADAAMAAAAAABYAAAAAAAUAAAABABYAAAABAAUAAAACABYAAAABAAUAAAADABYAAAABAAUAAAAEABYAAAABAAUAAAAFABYAAAABAAUAAAAGABYAAAABAAUAAAAHABYAAAABAAUAAAAIABYAAAABAAUAAAAJABYAAAABAAUAAAAKABYAAAABAAUAAAALABYAAAABAAUAAAAMABYAAAABAAUAAAANABYAAAABAAUAAAAOABYAAAABAAUAAAAPABYAAAABAAUAAAAQABYAAAABAAUAAAARABYAAAABAAUAAAASABYAAAABAAUAAAATABYAAAABAAUAAAAUABYAAAABAAUAAAAVABYAAAABAAUAAAAWABYAAAABAAUAAAAXABYAAAABAAUAAAAYABYAAAABAAUAAAAZABYAAAABAAUAAAAaABYAAAABAAUAAAAbABYAAAABAAUAAAAcABYAAAABAAUAAAAdABYAAAABAAUAAAAeABYAAAABAAUAAAAfABYAAAABAAUAAAAgABYAAAABAAUAAAAhABYAAAABAAUAAAAiABYAAAABAAUAAAAjABYAAAABAAUAAAAkABYAAAABAAUAAAAlABYAAAABAAUAAAAmABYAAAABAAUAAAAnABYAAAABAAUAAAAaABAAAAAKADAAAAAaABEAAAAKADEAAAAaABMAAAAKADMAAAAbABAAAAALADAAAAAbABEAAAALADEAAAAbABIAAAALADIAAAAbABMAAAALADMAAAAcABAAAAAMADAAAAAcABEAAAAMADEAAAAcABIAAAAMADIAAAAcABMAAAAMADMAAAAdABEAAAANADEAAAAdABIAAAANADIAAAAdABMAAAANADMAAAAEABAAAAAKADAAAAAEABEAAAAKADEAAAAEABMAAAAKADMAAAAFABAAAAALADAAAAAFABEAAAALADEAAAAFABIAAAALADIAAAAFABMAAAALADMAAAAGABAAAAAMADAAAAAGABEAAAAMADEAAAAGABIAAAAMADIAAAAGABMAAAAMADMAAAAHABEAAAANADEAAAAHABIAAAANADIAAAAHABMAAAANADMAAAAoABQAAAABAAIAAAApABQAAAABAAIAAAAqABQAAAABAAUAAAArABQAAAAEAAIAAAArABUAAAAEAAMAAAArABYAAAAEAAUAAAAqABYAAAABAAUAAAApABYAAAABAAUAAAAoABYAAAABAAUAAAAqABUAAAADAAQAAAApABUAAAADAAMAAAAoABUAAAADAAQAAAAoABEAAAAAAB8AAAApABEAAAABAB8AAAApABIAAAABACAAAAAoABIAAAAAACAAAAAoABMAAAAAACEAAAApABMAAAABACEAAAD//wEAAAAAAAQAAAD//wIAAAAAAAQAAAD//wMAAAAEAAQAAAD//wQAAAAAAAMAAAD//wUAAAAEAAQAAAD//wYAAAAAAAQAAAD//wcAAAAEAAMAAAD//wgAAAAAAAQAAAD//wkAAAAEAAQAAAD//woAAAAEAAQAAAD//wsAAAAEAAMAAAD//wwAAAAEAAQAAAD//w0AAAAEAAMAAAD//w4AAAAEAAMAAAD//w8AAAAAAAMAAAD//xAAAAAEAAMAAAD//xEAAAAAAAMAAAD//xIAAAAAAAQAAAD//xMAAAAAAAYAAAD///7/AAACAAUAAAD/////AAAEAAQAAAD//wAAAAAEAAMAAAAqAAgAAAAEAAQAAAAqAAkAAAAAAAQAAAAqAAoAAAAAAAQAAAAqAAsAAAAEAAMAAAAqAAwAAAAEAAQAAAAqAA0AAAAEAAQAAAAqAA4AAAAAAAQAAAAqAA8AAAAEAAMAAAAqABAAAAAEAAMAAAAqABEAAAAAAAMAAAAqABIAAAAAAAMAAAAqABMAAAAAAAQAAAAqAAAAAAACAAUAAAAqAAEAAAAAAAQAAAAqAAIAAAAEAAQAAAAqAAMAAAAEAAQAAAAqAAQAAAAAAAMAAAAqAAUAAAAEAAQAAAAqAAYAAAAEAAMAAAAqAAcAAAAEAAQAAAABABIAAAAQAAAAAAABABAAAAAQAAAAAAABAA4AAAAQAAAAAAABAAwAAAAQAAAAAAABAA0AAAAQAAAAAAA=")
 tile_set = ExtResource("5_7ivq2")
 
-[node name="Star" parent="." instance=ExtResource("6_x5vtn")]
-position = Vector2(617, 415)
+[node name="RoomExit" parent="." instance=ExtResource("3_1f53j")]
+position = Vector2(1433, 639)
+scale = Vector2(-2, 2)
 
-[node name="SignDash" parent="." instance=ExtResource("7_pja2b")]
-position = Vector2(643, 689)
+[node name="PlayerRespawn" parent="." instance=ExtResource("4_xd88c")]
+position = Vector2(657.36, 640)
+
+[node name="Star" parent="." instance=ExtResource("6_x5vtn")]
+position = Vector2(640, -471)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rxi0h")
+}
+script = ExtResource("2_3t0fh")
+
+[node name="Camera2D" type="Camera2D" parent="AnimationPlayer"]
+position = Vector2(640, 360)
+
+[node name="StarrySky" type="Sprite2D" parent="AnimationPlayer"]
+z_index = -20
+position = Vector2(0, -164)
+texture = ExtResource("8_pkn0b")
+offset = Vector2(640, 360)
+
+[node name="DarkCircleIn" type="TextureRect" parent="AnimationPlayer"]
+z_index = -2
+offset_left = -489.0
+offset_top = -576.0
+offset_right = 1804.0
+offset_bottom = 1717.0
+texture = SubResource("GradientTexture2D_qxoyo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bloom" type="Sprite2D" parent="AnimationPlayer"]
+position = Vector2(621.36, 613)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("1_bi8r7")
+
+[node name="SignDash" parent="AnimationPlayer" instance=ExtResource("7_pja2b")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(640, 689)
+
+[node name="SquareScratchesM" parent="AnimationPlayer" instance=ExtResource("10_xqvv2")]
+position = Vector2(-170, 607)
+
+[node name="SquareScratchesL" parent="AnimationPlayer" instance=ExtResource("10_xqvv2")]
+position = Vector2(-595, 584)
+scale = Vector2(1.63416, 1.63416)
+
+[node name="SquareScratchesR" parent="AnimationPlayer" instance=ExtResource("10_xqvv2")]
+position = Vector2(1870, 584)
+scale = Vector2(1.63416, 1.63416)
+
+[node name="SignMove" parent="AnimationPlayer" instance=ExtResource("11_8vqo6")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1034, 685)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]

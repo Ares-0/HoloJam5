@@ -23,10 +23,10 @@ func _ready() -> void:
 	charge_indicator.set_charges(charges-1)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("debug_01"):
-		set_charges(charges-1)
-	if Input.is_action_just_pressed("debug_02"):
-		set_charges(charges+1)
+	#if Input.is_action_just_pressed("debug_01"):
+		#set_charges(charges-1)
+	#if Input.is_action_just_pressed("debug_02"):
+		#set_charges(charges+1)
 	$Label.text = str(charges)
 
 func is_corrupted() -> bool:

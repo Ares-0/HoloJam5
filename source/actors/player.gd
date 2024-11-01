@@ -39,6 +39,7 @@ func _ready() -> void:
 	# Prep initial is_on_floor # edit: or not
 	velocity = Vector2.ZERO
 	move_and_slide()
+	update_arrow()
 
 func _physics_process(_delta: float) -> void:
 	dlabel.update_line(0, str("State: ", machine.state.name))

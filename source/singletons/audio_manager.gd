@@ -19,3 +19,8 @@ func play(sfx: NodePath):
 	var sound_node = get_node_or_null(sfx)
 	assert(sound_node != null, str("Sound ", sfx, " does not exist"))
 	sound_node.play()
+
+func stop(sfx: NodePath):
+	var sound_node = get_node_or_null(sfx)
+	assert(sound_node != null, str("Sound ", sfx, " does not exist"))
+	sound_node.stop()

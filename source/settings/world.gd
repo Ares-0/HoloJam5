@@ -20,7 +20,7 @@ func _ready() -> void:
 
 	var test: int = GameState.loading_room_num
 	if test > 0:
-		room_index = test - 1
+		room_index = test
 
 	fill_room_list()
 	current_room.room_exited.connect(_on_room_exited)
@@ -28,10 +28,15 @@ func _ready() -> void:
 	current_room.set_player(player)
 	player.position = current_room.player_respawn_ref.position
 	$ColorRect.visible = true
-	AudioManager.soundtrack_start()
+
+	if room_index >= 1:
+		AudioManager.soundtrack_start()
 
 	if room_index > 0:
 		change_to_room(room_index)
+	else:
+		# New game setup
+		player.movement_disable()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("skip_room"):

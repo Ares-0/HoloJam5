@@ -19,10 +19,10 @@ class_name Room extends Node2D
 
 signal room_exited
 
-@export var player: Player
 @export var room_size: Vector2
 @export var camera_zoom: float
 
+var player: Player
 var room_enabled: bool = false # if false, some room elements are disabled or not ready
 
 # Initial state stuff

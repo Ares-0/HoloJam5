@@ -38,6 +38,10 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Button7" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 0
+
 [node name="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_lfvnr")]
 layout_mode = 2
 
