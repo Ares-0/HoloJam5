@@ -16,8 +16,8 @@ func _ready() -> void:
 	$"..".player.movement_enable()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("debug_01"):
-		self.play("dark_in")
+	# if Input.is_action_just_pressed("debug_01"):
+	# 	self.play("dark_in")
 	if Input.is_action_just_pressed("dash"):
 		AudioManager.stop("Dark")
 		self.play("dark_out")

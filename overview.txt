@@ -2,9 +2,9 @@ Bloom and Gloom platformer
 (sorta)
 (also not the original b&g platformer idea)
 
-Next
-    1 song or a sfx or two (placeholders are fine)
-    block out a few stages a day
+Final stretch
+
+
 
 Bugs etc
     -   Steps to reproduce
@@ -29,14 +29,10 @@ Small todos that aren't bugs
     railgun stars
 
 Major todos
+
+
     Menus
-        main
-
     itch page
-        name
-        description
-        image
-
     SFX
     Character art
     Music
