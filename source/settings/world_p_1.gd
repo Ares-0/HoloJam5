@@ -12,6 +12,11 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p1/a5.tscn", # need to cleanse stars to exit / hold for distance
 		"res://source/settings/rooms/p1/a6.tscn", # stars can have multiple charges
 
+		# for clip making
+		# "res://source/settings/rooms/p2/d6.tscn", # fine, shows different star strengths
+		# "res://source/settings/rooms/p2/d2.tscn", # fine
+		# "res://source/settings/rooms/p3/g3.tscn", # decent
+
 		# 7 - 12
 		"res://source/settings/rooms/p2/d1.tscn", # fine
 		"res://source/settings/rooms/p2/d2.tscn", # fine
