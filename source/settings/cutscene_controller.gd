@@ -4,7 +4,10 @@ extends AnimationPlayer
 # The room scene should just act like normal, clean the star then leave
 # This will do all the other work
 
+var cutscene_done: bool = false
+
 func _ready() -> void:
+	cutscene_done = false
 	await($"..".ready)
 	$Camera2D.make_current()
 
@@ -19,8 +22,10 @@ func _process(_delta: float) -> void:
 	# if Input.is_action_just_pressed("debug_01"):
 	# 	self.play("dark_in")
 	if Input.is_action_just_pressed("dash"):
-		AudioManager.stop("Dark")
-		self.play("dark_out")
+		if not cutscene_done:
+			AudioManager.stop("Dark")
+			self.play("dark_out")
+			cutscene_done = true
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "dark_out":

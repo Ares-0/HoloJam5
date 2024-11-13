@@ -110,7 +110,7 @@ layout_mode = 2
 
 [node name="Author1" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
 layout_mode = 2
-text = "KennyNL"
+text = "KenneyNL"
 
 [node name="Author2" type="Label" parent="MarginContainer/VBoxContainer/Assets Table/Authors"]
 layout_mode = 2

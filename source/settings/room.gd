@@ -70,6 +70,7 @@ func reset() -> void:
 	print("death?????????????????????")
 	audio_man_ref.play("Death")
 	player.movement_disable()
+	exit_ref.disable()
 	player.turn_transparent(0.2)
 	await get_tree().create_timer(0.9).timeout
 
@@ -82,9 +83,11 @@ func reset() -> void:
 	check_door()
 
 	# show player
+	player.reset_state()
 	player.turn_opaque(0.1)
 	await get_tree().create_timer(0.1).timeout
 	player.movement_enable()
+	exit_ref.enable()
 
 func enable():
 	room_enabled = true

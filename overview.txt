@@ -23,6 +23,18 @@ Bugs etc
     -   First idle state playes land animation
             ignoring for jam
 
+    -   Some stars with very close boundaries are visually confusing
+    -   Change folder names
+
+Feedback period changes:
+    -   Right click in first room has strange behavior
+    -   Fixed typo in credits
+    -   Holding right click "in" a star makes player go crazy
+    -   Doors are active during death, can cause strange states
+    -   Stuck in rolling animation, reset didn't fix - partial fix?
+    -   Physics box shape is still a square
+    -   Mouse controls should have keyboard alts
+
 Small todos that aren't bugs
     Draw 15 total star scratches
         Make sure they all have leeway to not get cut off

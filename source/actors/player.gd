@@ -20,6 +20,7 @@ var movement_enabled: bool = true
 #var nearby_stars: Array[Star] = []
 var nearest_star: Star = null
 var angle_to_nearest_star: float = 0.0
+var is_overlapping_star: bool = false
 
 var TILT_CHARGES_MAX: int = 1
 var tilt_charges: int = 0
@@ -47,6 +48,7 @@ func _physics_process(_delta: float) -> void:
 	#print(nearby_stars)
 	update_nearest_star()
 	update_arrow()
+	#print(is_overlapping_star)
 	#update_sprites(last_direction)
 
 	# if self.velocity.length() > 20:
@@ -82,6 +84,9 @@ func update_sprites(direction: float) -> void:
 func reset_gravity() -> void:
 	gravity = BASE_GRAVITY
 
+func reset_state() -> void:
+	machine._transition_to_next_state("Idle")
+
 func update_arrow() -> void:
 	if nearest_star == null:
 		dash_arrow.visible = false
@@ -93,7 +98,12 @@ func update_nearest_star() -> void:
 	var closest_star: Star
 	var closest_delta: float = 1e9
 	var delta: float = 0.0
+	is_overlapping_star = false
 	for area in star_collider.get_overlapping_areas():
+		if area.priority == 1:
+			is_overlapping_star = true
+			continue
+		# priority is not 1
 		if not area.monitorable:
 			continue
 		var star: Star = area.get_parent() as Star

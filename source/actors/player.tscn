@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://mgegdc04dbe0" path="res://assets/gloom/gloom_sprite_sheet_L.png" id="14_52051"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocrjt"]
-size = Vector2(128, 128)
+size = Vector2(85, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oot4"]
 size = Vector2(128, 128)
@@ -216,6 +216,7 @@ texture = ExtResource("3_n321f")
 [node name="PhysicsShape" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, -64)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ocrjt")
 
 [node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]
@@ -257,7 +258,7 @@ script = ExtResource("13_lqsip")
 [node name="StarCollider" type="Area2D" parent="."]
 visible = false
 position = Vector2(0, -64)
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StarCollider"]
 shape = SubResource("RectangleShape2D_7oot4")

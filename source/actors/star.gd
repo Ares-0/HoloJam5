@@ -21,6 +21,8 @@ func _ready() -> void:
 	scratches.frame = randi_range(0, 5)
 	scratches.rotation_degrees = [0, 180][randi_range(0, 1)]
 	charge_indicator.set_charges(charges-1)
+	$NearbyShape.priority = 0
+	$OverlapShape.priority = 1
 
 func _process(_delta: float) -> void:
 	#if Input.is_action_just_pressed("debug_01"):

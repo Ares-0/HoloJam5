@@ -23,5 +23,5 @@ offset_left = -96.0
 offset_top = -26.0
 offset_right = -3.0
 offset_bottom = 19.0
-text = "Dash:"
+text = "Dash:      / J"
 label_settings = SubResource("LabelSettings_pi5ev")
