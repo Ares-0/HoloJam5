@@ -46,4 +46,4 @@ func physics_update(_delta: float) -> void:
 
 func tilt_timeout() -> void:
 	player.velocity = player.velocity / 2
-	finished.emit("Air", {from_tilt = true})
+	finished.emit("Air")

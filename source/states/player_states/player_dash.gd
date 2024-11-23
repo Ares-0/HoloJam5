@@ -14,11 +14,10 @@ func enter(_old_state: String, _msg := {}) -> void:
 
 func exit() -> void:
 	#print("done dashing")
-	pass
+	player.recently_dashed_timer_start()
 	if not exit_by_click: # aka exited via collision
 		player.velocity = Vector2.from_angle(player.angle_to_nearest_star) * player.DASH_IMPULSE * 1.2 * player.nearest_star.force_multiplier
 		player.move_and_slide()
-		pass
 
 func physics_update(_delta: float) -> void:
 	# todo

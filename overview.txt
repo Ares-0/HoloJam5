@@ -10,9 +10,6 @@ Bugs etc
     -   Steps to reproduce
         Expected behavior
         Actual behavior
-    -   Rare collide with star
-        star should cleanse
-        star sometimes can be targeted again
     -   Respawning in range of a star doesnt target right away
             Thought I fixed that
 
@@ -24,9 +21,11 @@ Bugs etc
             ignoring for jam
 
     -   Some stars with very close boundaries are visually confusing
+        One suggestion was to use the mouse to prioritize
     -   Change folder names
 
 Feedback period changes:
+    -   Stars deactivate after being dashed through, not neutral collisions
     -   Right click in first room has strange behavior
     -   Fixed typo in credits
     -   Holding right click "in" a star makes player go crazy

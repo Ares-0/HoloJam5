@@ -216,7 +216,6 @@ texture = ExtResource("3_n321f")
 [node name="PhysicsShape" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, -64)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ocrjt")
 
 [node name="DebugLabel" parent="." instance=ExtResource("3_i26ru")]

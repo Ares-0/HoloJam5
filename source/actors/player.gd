@@ -17,6 +17,9 @@ var last_direction: float = 0.0
 var facing_right: bool = true
 var movement_enabled: bool = true
 
+var recently_dashed: bool = false
+var recent_dash_timer: Timer
+
 #var nearby_stars: Array[Star] = []
 var nearest_star: Star = null
 var angle_to_nearest_star: float = 0.0
@@ -170,9 +173,31 @@ func has_nearest_star() -> bool:
 		return false
 	return true
 
+func get_recently_dashed() -> bool:
+	# returns true if currently dashing or recently dashed
+	var last: bool = recently_dashed
+	if machine.state.name == "Dash":
+		last = true
+	return last
+
+func recently_dashed_timer_start() -> void:
+	recent_dash_timer = Timer.new()
+	recent_dash_timer.wait_time = 1.0
+	recent_dash_timer.one_shot = true
+	recent_dash_timer.autostart = true
+	recent_dash_timer.connect("timeout", recent_dash_timeout)
+	self.add_child(recent_dash_timer)
+
+	recently_dashed = true
+
+func recent_dash_timeout() -> void:
+	recently_dashed = false
+
 func end_dash() -> void:
+	# Called to forcibly end a dash
 	if machine.state.name == "Dash":
 		machine._transition_to_next_state("Air")
+	recently_dashed = false # because collided with star
 
 func _on_star_collider_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	pass

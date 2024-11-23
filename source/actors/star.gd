@@ -89,5 +89,6 @@ func reset_shape() -> void:
 func _on_overlap_shape_area_entered(area: Area2D) -> void:
 	var obj = area.get_parent()
 	if obj is Player:
-		charge_down()
-		obj.end_dash()
+		if obj.get_recently_dashed():
+			charge_down()
+			obj.end_dash()

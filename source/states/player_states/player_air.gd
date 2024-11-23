@@ -4,11 +4,12 @@ var falling: bool = false # if false, going upwards, if true going downwards
 var frame_entered: int = 0
 var timer: Timer
 
-func enter(_old_state: String, msg := {}) -> void:
+func enter(old_state: String, msg := {}) -> void:
 	frame_entered = Engine.get_frames_drawn()
 	if player.velocity == Vector2.ZERO and not msg.has("do_jump"):
 		print("bad air state enter?")
 
+	# TODO: replace these velocity checks with old state checks
 	if msg.has("do_jump"):
 		# player is jumping
 		player.velocity.y = player.JUMP_IMPULSE
@@ -24,10 +25,10 @@ func enter(_old_state: String, msg := {}) -> void:
 		falling = false
 		player.animation_player.play("air_up")
 
-	if msg.has("from_tilt"):
+	if old_state == "Tilt":
 		player.animation_player.play("tilt")
 		timer = Timer.new()
-		timer.wait_time = 0.6
+		timer.wait_time = 0.2
 		timer.one_shot = true
 		timer.autostart = true
 		timer.connect("timeout", override_timeout)
