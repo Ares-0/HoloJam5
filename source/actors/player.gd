@@ -53,6 +53,9 @@ func _physics_process(_delta: float) -> void:
 	update_arrow()
 	#print(is_overlapping_star)
 	#update_sprites(last_direction)
+	# print(Engine.get_frames_drawn(), "\t", get_recently_dashed())
+	# if Input.is_action_just_pressed("dash"):
+	# 	print("dash attempted")
 
 	# if self.velocity.length() > 20:
 	# 	print(self.velocity.length())
@@ -103,12 +106,19 @@ func update_nearest_star() -> void:
 	var delta: float = 0.0
 	is_overlapping_star = false
 	for area in star_collider.get_overlapping_areas():
-		if area.priority == 1:
-			is_overlapping_star = true
-			continue
-		# priority is not 1
+		# if inactive star, ignore?
 		if not area.monitorable:
 			continue
+		if area.priority == 1:
+			is_overlapping_star = true
+			# STOP DASHING
+			if get_recently_dashed():
+				area.get_parent().charge_down()
+				end_dash()
+			else:
+				pass # here should only be reachable by jumping / walking into a star
+			continue
+		# priority is not 1 aka just nearby the star
 		var star: Star = area.get_parent() as Star
 		if star == null:
 			continue
@@ -152,6 +162,12 @@ func turn_opaque(duration: float) -> void:
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(light, "energy", 0.5, duration)
 
+func can_dash() -> bool:
+	var last: bool = has_nearest_star() and movement_enabled# and !is_overlapping_star
+	# if not last:
+		# print("dash failed: ", has_nearest_star(), movement_enabled, !is_overlapping_star)
+	return last
+
 func movement_disable() -> void:
 	movement_enabled = false
 
@@ -181,12 +197,16 @@ func get_recently_dashed() -> bool:
 	return last
 
 func recently_dashed_timer_start() -> void:
-	recent_dash_timer = Timer.new()
-	recent_dash_timer.wait_time = 1.0
-	recent_dash_timer.one_shot = true
-	recent_dash_timer.autostart = true
-	recent_dash_timer.connect("timeout", recent_dash_timeout)
-	self.add_child(recent_dash_timer)
+	if recent_dash_timer != null:
+		recent_dash_timer.wait_time = 1.0
+		recent_dash_timer.start()		
+	else:
+		recent_dash_timer = Timer.new()
+		recent_dash_timer.wait_time = 1.0
+		recent_dash_timer.one_shot = true
+		recent_dash_timer.autostart = true
+		recent_dash_timer.connect("timeout", recent_dash_timeout)
+		self.add_child(recent_dash_timer)
 
 	recently_dashed = true
 

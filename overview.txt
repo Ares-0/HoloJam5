@@ -19,6 +19,7 @@ Bugs etc
             ignoring for jam
     -   First idle state playes land animation
             ignoring for jam
+    -   Can reset cutscene room
 
     -   Some stars with very close boundaries are visually confusing
         One suggestion was to use the mouse to prioritize
@@ -26,13 +27,21 @@ Bugs etc
 
 Feedback period changes:
     -   Stars deactivate after being dashed through, not neutral collisions
+    -   Holding right click "in" a star makes player go crazy
+    -   Mouse controls should have keyboard alts
     -   Right click in first room has strange behavior
     -   Fixed typo in credits
-    -   Holding right click "in" a star makes player go crazy
     -   Doors are active during death, can cause strange states
     -   Stuck in rolling animation, reset didn't fix - partial fix?
     -   Physics box shape is still a square
-    -   Mouse controls should have keyboard alts
+
+Room Changes:
+    Add better "hold for distance" tutorial
+    Add focused air dodge tutorial
+        current room can stay, but has to be way later
+    More rooms with different strength stars
+    g4 sucks, kill it
+
 
 Small todos that aren't bugs
     Draw 15 total star scratches
@@ -40,7 +49,8 @@ Small todos that aren't bugs
     railgun stars
 
 Major todos
-
+    Some more levels
+        also removing / reworking bad levels
 
     Menus
     itch page

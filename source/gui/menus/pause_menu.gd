@@ -29,7 +29,6 @@ func unpause() -> void:
 	get_tree().paused = false
 
 func _on_resume_b_pressed() -> void:
-	print("unpause")
 	unpause()
 
 func _on_menu_b_pressed() -> void:

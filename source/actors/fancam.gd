@@ -21,4 +21,4 @@ func _process(_delta: float) -> void:
 	# dont set til the end
 	if self.zoom != zoom_next:
 		self.zoom = zoom_next
-		print(zoom_next)
+		# print(zoom_next)

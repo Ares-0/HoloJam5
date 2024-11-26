@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 	# dont set til the end
 	if self.zoom != zoom_next:
 		self.zoom = zoom_next
-		print(zoom_next)
+		# print(zoom_next)
 
 func punch_in(zoom_lvl: float, pos: Vector2, duration: float) -> void:
 	# center on location and with particular zoom

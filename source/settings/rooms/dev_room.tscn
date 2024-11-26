@@ -68,7 +68,10 @@ energy = 3.9
 texture = SubResource("GradientTexture2D_yld0w")
 
 [node name="Star4" parent="." instance=ExtResource("2_n8y4o")]
-position = Vector2(630, 397)
+position = Vector2(684, 445)
 
 [node name="Star5" parent="." instance=ExtResource("2_n8y4o")]
-position = Vector2(630, 319)
+position = Vector2(684, 367)
+
+[node name="Star6" parent="." instance=ExtResource("2_n8y4o")]
+position = Vector2(684, 289)

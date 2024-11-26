@@ -72,7 +72,7 @@ func physics_update(delta: float) -> void:
 
 	# Change states
 	if Input.is_action_just_pressed("dash"):
-		if player.has_nearest_star() and player.movement_enabled and !player.is_overlapping_star:
+		if player.can_dash():
 			finished.emit("Dash")
 	if Input.is_action_just_pressed("tilt"):
 		if player.movement_enabled:

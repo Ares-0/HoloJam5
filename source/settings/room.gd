@@ -67,7 +67,7 @@ func capture_initial_state() -> void:
 			stars_state_list.append(child.charges)
 
 func reset() -> void:
-	print("death?????????????????????")
+	print("death or reset")
 	audio_man_ref.play("Death")
 	player.movement_disable()
 	exit_ref.disable()

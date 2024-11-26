@@ -20,7 +20,7 @@ func physics_update(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		finished.emit("Air", {do_jump = true})
 	elif Input.is_action_just_pressed("dash"):
-		if player.has_nearest_star():
+		if player.can_dash():
 			finished.emit("Dash")
 	elif is_zero_approx(direction):
 		finished.emit("Idle")

@@ -7,5 +7,5 @@ func physics_update(_delta: float) -> void:
 	if player.get_input_direction() != 0.0:
 		finished.emit("Idle")
 	if Input.is_action_just_pressed("dash"):
-		if player.has_nearest_star():
+		if player.can_dash():
 			finished.emit("Dash")
