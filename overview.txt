@@ -23,7 +23,6 @@ Bugs etc
 
     -   Some stars with very close boundaries are visually confusing
         One suggestion was to use the mouse to prioritize
-    -   Change folder names
 
 Feedback period changes:
     -   Stars deactivate after being dashed through, not neutral collisions

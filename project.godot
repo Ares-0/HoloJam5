@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HoloJam5"
-config/version="v1.0.0"
+config/version="v1.0.5"
 run/main_scene="res://source/gui/menus/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
