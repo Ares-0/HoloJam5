@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://bgqplrj550h3p"]
+[gd_scene load_steps=8 format=4 uid="uid://bgqplrj550h3p"]
 
 [ext_resource type="Script" path="res://source/settings/room.gd" id="1_d8aq8"]
 [ext_resource type="TileSet" uid="uid://buacwoof07psq" path="res://source/settings/dungeon_tileset.tres" id="2_p270l"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyn4ygu2lrl77" path="res://source/actors/player_respawn.tscn" id="4_hqrqs"]
 [ext_resource type="PackedScene" uid="uid://pr82feiectmp" path="res://source/actors/star.tscn" id="5_u1r5h"]
 [ext_resource type="Texture2D" uid="uid://044pvia31a6x" path="res://assets/neutral_point_light.webp" id="6_5emeh"]
+[ext_resource type="PackedScene" uid="uid://b2hpyj317swti" path="res://source/gui/signs/sign_dash.tscn" id="7_5ysob"]
 
 [node name="a4" type="Node2D"]
 script = ExtResource("1_d8aq8")
@@ -52,8 +53,8 @@ range_layer_max = 10
 texture = ExtResource("6_5emeh")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(517, 195)
-scale = Vector2(3.03125, 1.07813)
+position = Vector2(517, 239)
+scale = Vector2(3.03125, 1.625)
 range_layer_max = 10
 texture = ExtResource("6_5emeh")
 
@@ -64,6 +65,9 @@ z_index = 20
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
 top_level = true
 position = Vector2(-909, -59)
-polygon = PackedVector2Array(1090, 892, 1091, 751, 1407, 754, 1429, 897)
+polygon = PackedVector2Array(1044, 892, 1045, 803, 1407, 799, 1429, 897)
+
+[node name="SignDash" parent="." instance=ExtResource("7_5ysob")]
+position = Vector2(511, 188)
 
 [connection signal="area_entered" from="Killzone" to="." method="_on_killzone_area_entered"]

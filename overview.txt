@@ -35,14 +35,15 @@ Feedback period changes:
     -   Physics box shape is still a square
 
 Room Changes:
-    Add better "hold for distance" tutorial
-    Add focused air dodge tutorial
-        current room can stay, but has to be way later
     More rooms with different strength stars
-    g4 sucks, kill it
+    More rooms with multiple charges (scattered throughout)
+    A room where you fall down to a star
 
 
 Small todos that aren't bugs
+    NEED coyote time after hitbox fix
+    Arrow pointing to player when offscreen
+
     Draw 15 total star scratches
         Make sure they all have leeway to not get cut off
     railgun stars

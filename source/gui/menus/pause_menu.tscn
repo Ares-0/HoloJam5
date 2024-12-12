@@ -86,6 +86,30 @@ layout_mode = 2
 visible = false
 layout_mode = 1
 
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 212.0
+offset_top = 150.0
+offset_right = 376.0
+offset_bottom = 199.0
+text = "(Hold for directional influence)"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 212.0
+offset_top = 230.0
+offset_right = 355.0
+offset_bottom = 253.0
+text = "(Hold for distance)"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 212.0
+offset_top = 313.0
+offset_right = 353.0
+offset_bottom = 336.0
+text = "(Hold for height)"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -94,11 +118,11 @@ offset_bottom = 40.0
 [node name="SignMove" parent="VBoxContainer" instance=ExtResource("2_ri13f")]
 position = Vector2(230, 115)
 
-[node name="SignJump" parent="VBoxContainer" instance=ExtResource("3_g645i")]
-position = Vector2(230, 268)
-
 [node name="SignDash" parent="VBoxContainer" instance=ExtResource("2_uw10h")]
-position = Vector2(230, 205)
+position = Vector2(230, 209)
+
+[node name="SignJump" parent="VBoxContainer" instance=ExtResource("3_g645i")]
+position = Vector2(230, 289)
 
 [node name="SignTilt" parent="VBoxContainer" instance=ExtResource("5_xtn4v")]
 position = Vector2(230, 487)

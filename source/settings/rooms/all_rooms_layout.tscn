@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ykj0hvkhomf2"]
+[gd_scene load_steps=26 format=3 uid="uid://ykj0hvkhomf2"]
 
 [ext_resource type="PackedScene" uid="uid://dh584ktteo108" path="res://source/settings/rooms/p1/a1.tscn" id="1_8csbj"]
 [ext_resource type="PackedScene" uid="uid://5jrskp5qj22s" path="res://source/settings/rooms/p1/a2.tscn" id="2_i1emt"]
@@ -6,92 +6,110 @@
 [ext_resource type="PackedScene" uid="uid://bgqplrj550h3p" path="res://source/settings/rooms/p1/a4.tscn" id="4_5f2oe"]
 [ext_resource type="PackedScene" uid="uid://iqxomew67rjp" path="res://source/settings/rooms/p1/a5.tscn" id="5_4w26u"]
 [ext_resource type="PackedScene" uid="uid://dn1i3ge0pb3s5" path="res://source/settings/rooms/p1/a6.tscn" id="6_8bvb7"]
+[ext_resource type="PackedScene" uid="uid://wcitfbomlcfm" path="res://source/settings/rooms/p5/m2.tscn" id="6_lr0ad"]
 [ext_resource type="PackedScene" uid="uid://e0kw60ne3788" path="res://source/settings/rooms/p2/d1.tscn" id="7_7ie4r"]
 [ext_resource type="PackedScene" uid="uid://qpqhh0rkwlkr" path="res://source/settings/rooms/p2/d2.tscn" id="8_bqy3u"]
+[ext_resource type="PackedScene" uid="uid://vqbqway7gtpe" path="res://source/settings/rooms/p5/m4.tscn" id="8_s6q4x"]
 [ext_resource type="PackedScene" uid="uid://cs6ch8700wrxc" path="res://source/settings/rooms/p2/d3.tscn" id="9_ymnwb"]
 [ext_resource type="PackedScene" uid="uid://bngvbo0y7uy0s" path="res://source/settings/rooms/p2/d4.tscn" id="10_ocddk"]
 [ext_resource type="PackedScene" uid="uid://dbun1b65684ui" path="res://source/settings/rooms/p2/d5.tscn" id="11_euc1g"]
+[ext_resource type="PackedScene" uid="uid://dqp48073kstc6" path="res://source/settings/rooms/p5/m5.tscn" id="12_8l4ym"]
 [ext_resource type="PackedScene" uid="uid://co856x562n17s" path="res://source/settings/rooms/p2/d6.tscn" id="12_cdrjp"]
 [ext_resource type="PackedScene" uid="uid://byr8iwjannppd" path="res://source/settings/rooms/p2/d8.tscn" id="14_frxl8"]
 [ext_resource type="PackedScene" uid="uid://jj4wo2twjyeg" path="res://source/settings/rooms/p3/g1.tscn" id="16_lvrjf"]
 [ext_resource type="PackedScene" uid="uid://btrv3kkaet3ww" path="res://source/settings/rooms/p3/g2.tscn" id="17_3cvrv"]
 [ext_resource type="PackedScene" uid="uid://dwyw1a40cjpb3" path="res://source/settings/rooms/p3/g3.tscn" id="18_q5bjt"]
-[ext_resource type="PackedScene" uid="uid://cor4mupe556sm" path="res://source/settings/rooms/p3/g4.tscn" id="19_osvj2"]
 [ext_resource type="PackedScene" uid="uid://ch2v21l2pxhlv" path="res://source/settings/rooms/p4/j1.tscn" id="20_6cvet"]
 [ext_resource type="PackedScene" uid="uid://ewnxyoei3c8q" path="res://source/settings/rooms/p4/j2.tscn" id="20_c8swy"]
 [ext_resource type="PackedScene" uid="uid://ctmq7y5axhjk8" path="res://source/settings/rooms/p3/g5.tscn" id="20_nh3m1"]
 [ext_resource type="PackedScene" uid="uid://k7stcg506tia" path="res://source/settings/rooms/p3/g6.tscn" id="21_iha3e"]
+[ext_resource type="PackedScene" uid="uid://cjviujrxtaqn8" path="res://source/settings/rooms/p5/m1.tscn" id="22_jayhd"]
+[ext_resource type="PackedScene" uid="uid://c4u235flfriff" path="res://source/settings/rooms/p5/m3.tscn" id="24_ade5e"]
 
 [node name="AllRoomsLayout" type="Node2D"]
 
-[node name="Group A" type="Node2D" parent="."]
+[node name="Group 1" type="Node2D" parent="."]
 position = Vector2(937, 0)
 
-[node name="a1" parent="Group A" instance=ExtResource("1_8csbj")]
+[node name="a1" parent="Group 1" instance=ExtResource("1_8csbj")]
 position = Vector2(1545, 32)
 
-[node name="a2" parent="Group A" instance=ExtResource("2_i1emt")]
+[node name="a2" parent="Group 1" instance=ExtResource("2_i1emt")]
 position = Vector2(3009, 32)
 
-[node name="a3" parent="Group A" instance=ExtResource("3_1jr5t")]
+[node name="a3" parent="Group 1" instance=ExtResource("3_1jr5t")]
 position = Vector2(4537, 32)
 
-[node name="a4" parent="Group A" instance=ExtResource("4_5f2oe")]
+[node name="a4" parent="Group 1" instance=ExtResource("4_5f2oe")]
 position = Vector2(5649, 32)
 
-[node name="a5" parent="Group A" instance=ExtResource("5_4w26u")]
-position = Vector2(6905, 32)
+[node name="m1" parent="Group 1" instance=ExtResource("22_jayhd")]
+position = Vector2(7005, 32)
 
-[node name="a6" parent="Group A" instance=ExtResource("6_8bvb7")]
-position = Vector2(8065, 32)
+[node name="m2" parent="Group 1" instance=ExtResource("6_lr0ad")]
+position = Vector2(8260, 32)
 
-[node name="Group D" type="Node2D" parent="."]
+[node name="a6" parent="Group 1" instance=ExtResource("6_8bvb7")]
+position = Vector2(9888, 32)
+
+[node name="m3" parent="Group 1" instance=ExtResource("24_ade5e")]
+position = Vector2(11117, 12)
+
+[node name="Group 2" type="Node2D" parent="."]
 position = Vector2(0, 464)
 
-[node name="d1" parent="Group D" instance=ExtResource("7_7ie4r")]
-position = Vector2(0, 1160)
+[node name="m4" parent="Group 2" instance=ExtResource("8_s6q4x")]
+position = Vector2(142, 1204)
 
-[node name="d2" parent="Group D" instance=ExtResource("8_bqy3u")]
-position = Vector2(1536, 1160)
+[node name="a5" parent="Group 2" instance=ExtResource("5_4w26u")]
+position = Vector2(1779, 1229)
 
-[node name="d3" parent="Group D" instance=ExtResource("9_ymnwb")]
-position = Vector2(7256, 1160)
+[node name="d1" parent="Group 2" instance=ExtResource("7_7ie4r")]
+position = Vector2(2925, 1160)
 
-[node name="d4" parent="Group D" instance=ExtResource("10_ocddk")]
-position = Vector2(3119, 1160)
+[node name="d2" parent="Group 2" instance=ExtResource("8_bqy3u")]
+position = Vector2(4461, 1160)
 
-[node name="d5" parent="Group D" instance=ExtResource("11_euc1g")]
-position = Vector2(224, 4520)
+[node name="m5" parent="Group 2" instance=ExtResource("12_8l4ym")]
+position = Vector2(6040, 1202)
 
-[node name="d6" parent="Group D" instance=ExtResource("12_cdrjp")]
-position = Vector2(5586, 1154)
+[node name="d3" parent="Group 2" instance=ExtResource("9_ymnwb")]
+position = Vector2(7512, 1160)
 
-[node name="d8" parent="Group D" instance=ExtResource("14_frxl8")]
-position = Vector2(8462, 1154)
+[node name="d8" parent="Group 2" instance=ExtResource("14_frxl8")]
+position = Vector2(8718, 1154)
 
-[node name="Group G" type="Node2D" parent="."]
+[node name="d6" parent="Group 2" instance=ExtResource("12_cdrjp")]
+position = Vector2(10247, 1154)
+
+[node name="Group 3" type="Node2D" parent="."]
 position = Vector2(0, 887)
 
-[node name="g1" parent="Group G" instance=ExtResource("16_lvrjf")]
+[node name="d4" parent="Group 3" instance=ExtResource("10_ocddk")]
+position = Vector2(826, 2392)
+
+[node name="g2" parent="Group 3" instance=ExtResource("17_3cvrv")]
+position = Vector2(3164, 2439)
+
+[node name="g3" parent="Group 3" instance=ExtResource("18_q5bjt")]
+position = Vector2(4439, 2413)
+
+[node name="g1" parent="Group 3" instance=ExtResource("16_lvrjf")]
 position = Vector2(6653, 2434)
 
-[node name="g2" parent="Group G" instance=ExtResource("17_3cvrv")]
-position = Vector2(243, 2439)
-
-[node name="g3" parent="Group G" instance=ExtResource("18_q5bjt")]
-position = Vector2(1532, 2413)
-
-[node name="g4" parent="Group G" instance=ExtResource("19_osvj2")]
-position = Vector2(3803, 2453)
-
-[node name="g5" parent="Group G" instance=ExtResource("20_nh3m1")]
-position = Vector2(4663, 4040)
-
-[node name="g6" parent="Group G" instance=ExtResource("21_iha3e")]
+[node name="g6 (final)" parent="Group 3" instance=ExtResource("21_iha3e")]
 position = Vector2(9051, 2706)
 
-[node name="j2" parent="Group G" instance=ExtResource("20_c8swy")]
-position = Vector2(5951, 4009)
+[node name="Group 4" type="Node2D" parent="."]
 
-[node name="j1" parent="." instance=ExtResource("20_6cvet")]
+[node name="d5" parent="Group 4" instance=ExtResource("11_euc1g")]
+position = Vector2(224, 4984)
+
+[node name="j1" parent="Group 4" instance=ExtResource("20_6cvet")]
 position = Vector2(1487, 4833)
+
+[node name="g5" parent="Group 4" instance=ExtResource("20_nh3m1")]
+position = Vector2(4663, 4927)
+
+[node name="j2" parent="Group 4" instance=ExtResource("20_c8swy")]
+position = Vector2(5951, 4896)

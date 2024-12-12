@@ -45,6 +45,10 @@ func _process(_delta: float) -> void:
 			exit_world()
 		else:
 			change_to_room(room_index)
+	if Input.is_action_just_pressed("return_room"):
+		room_index -= 1
+		room_index = max(0, room_index)
+		change_to_room(room_index)
 
 func change_to_room(num: int) -> void:
 	var num_fixed: int = num

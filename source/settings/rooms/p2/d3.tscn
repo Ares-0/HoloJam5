@@ -45,7 +45,7 @@ z_index = 20
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzone"]
 top_level = true
 position = Vector2(-909, -59)
-polygon = PackedVector2Array(944, 821, 942, 724, 1322, 725, 1458, 545, 1695, 540, 1704, 825)
+polygon = PackedVector2Array(944, 821, 945, 762, 1326, 748, 1446, 632, 1709, 628, 1704, 825)
 
 [node name="CanvasModulateMed" type="CanvasModulate" parent="."]
 visible = false
