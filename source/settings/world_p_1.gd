@@ -26,6 +26,7 @@ func fill_room_list() -> void:
 		"res://source/settings/rooms/p5/m4.tscn", # hold for distance
 		"res://source/settings/rooms/p1/a5.tscn", # need to cleanse stars to exit / hold for distance
 		"res://source/settings/rooms/p2/d1.tscn", # fine
+		"res://source/settings/rooms/p3/g2.tscn", # decent
 		"res://source/settings/rooms/p2/d2.tscn", # fine
 		"res://source/settings/rooms/p5/m5.tscn", # tilt tutorial
 		"res://source/settings/rooms/p2/d3.tscn", # decent
@@ -36,7 +37,7 @@ func fill_room_list() -> void:
 
 		# 16 - 20 # REDO WIP
 		"res://source/settings/rooms/p2/d4.tscn", # tilt test
-		"res://source/settings/rooms/p3/g2.tscn", # decent
+		"res://source/settings/rooms/p5/m7.tscn", # multi charge play
 		"res://source/settings/rooms/p3/g3.tscn", # decent
 		"res://source/settings/rooms/p3/g1.tscn", # fine
 		"res://source/settings/rooms/p3/g6.tscn", # Game complete

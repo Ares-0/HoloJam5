@@ -131,15 +131,15 @@ num = 20
 layout_mode = 2
 num = 21
 
+[node name="Button22" parent="MarginContainer/VBoxContainer/Row 3" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 22
+
 [node name="Spacer" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Row 4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Button22" parent="MarginContainer/VBoxContainer/Row 4" instance=ExtResource("2_lfvnr")]
-layout_mode = 2
-num = 22
 
 [node name="Button23" parent="MarginContainer/VBoxContainer/Row 4" instance=ExtResource("2_lfvnr")]
 layout_mode = 2
@@ -152,6 +152,10 @@ num = 24
 [node name="Button25" parent="MarginContainer/VBoxContainer/Row 4" instance=ExtResource("2_lfvnr")]
 layout_mode = 2
 num = 25
+
+[node name="Button26" parent="MarginContainer/VBoxContainer/Row 4" instance=ExtResource("2_lfvnr")]
+layout_mode = 2
+num = 26
 
 [node name="DevRoom" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
