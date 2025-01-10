@@ -1,29 +1,38 @@
 extends PlayerState
 
+const JUMP_BUFFER: float = 0.2 # maximum time for jump buffer
+const COYOTE_TIME: float = 0.2 # maximum time for coyote time
+
 var falling: bool = false # if false, going upwards, if true going downwards
+var jump_buffer_timer: float = 0.0 # timer for jump buffer # if this has a value other than 0.0, the player jumps upon landing
+var coyote_timer: float = 0.0 # timer for coyote time
+
 var frame_entered: int = 0
 var timer: Timer
 
 func enter(old_state: String, msg := {}) -> void:
 	frame_entered = Engine.get_frames_drawn()
+	jump_buffer_timer = 0.0
+	coyote_timer = 0.0
+
 	if player.velocity == Vector2.ZERO and not msg.has("do_jump"):
 		print("bad air state enter?")
 
-	# TODO: replace these velocity checks with old state checks
-	if msg.has("do_jump"):
+	if msg.has("do_jump"): # from run or idle
 		# player is jumping
 		player.velocity.y = player.JUMP_IMPULSE
 		falling = false
 		player.animation_player.play("jump")
 		player.audio_man_ref.play("Jump")
-	elif player.velocity.y > 0:
-		#player is falling (walking off ledge)
-		falling = true
-		player.animation_player.play("air_fall")
-	else:
+	elif old_state == "Dash" or old_state == "Tilt":
 		# tilt or dash upwards
 		falling = false
 		player.animation_player.play("air_up")
+	else: # player velocity.y doesn't read != 0 on this first frame so cant use that to check
+		#player is falling (walking off ledge)
+		falling = true
+		coyote_timer = COYOTE_TIME
+		player.animation_player.play("air_fall")
 
 	if old_state == "Tilt":
 		player.animation_player.play("tilt")
@@ -40,6 +49,14 @@ func exit() -> void:
 
 func physics_update(delta: float) -> void:
 	#print(Engine.get_frames_drawn())
+	
+	# Coyote time
+	if coyote_timer > 0.0:
+		print(coyote_timer)
+		if Input.is_action_just_pressed("jump"):
+			finished.emit("Air", {do_jump = true})
+		coyote_timer -= delta
+	
 	# Short jump
 	if Input.is_action_just_released("jump") and player.velocity.y < 0: # aka moving upwards
 		player.gravity *= 2 # higher multiplier means quicker stop after release
@@ -63,6 +80,12 @@ func physics_update(delta: float) -> void:
 	var last_velocity: Vector2 = player.velocity # used for tech stuff in an sec
 	player.move_and_slide()
 
+	# Update jump buffer
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+	if Input.is_action_just_pressed("jump"):
+		jump_buffer_timer = JUMP_BUFFER
+
 	if not falling:
 		# peak of jump
 		if player.velocity.y > 0:
@@ -78,6 +101,8 @@ func physics_update(delta: float) -> void:
 		if player.movement_enabled:
 			finished.emit("Tilt")
 	if player.is_on_floor():
+		if jump_buffer_timer > 0.0:
+			finished.emit("Air", {do_jump = true})
 		if is_zero_approx(input_direction):
 			finished.emit("Idle", {do_land = true})
 		else:
